@@ -25,7 +25,7 @@ function amChart() {
 
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-    var root = am5.Root.new("chartdiv");
+    var root = am5.Root.new("chartdiv01");
 
 
     // Set themes
@@ -38,10 +38,10 @@ function amChart() {
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
     var chart = root.container.children.push(am5xy.XYChart.new(root, {
-    panX: false,
-    panY: false,
-    wheelX: "panX",
-    wheelY: "zoomX"
+        panX: false,
+        panY: false,
+        wheelX: "panX",
+        wheelY: "zoomX"
     }));
 
 
