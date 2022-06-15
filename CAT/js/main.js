@@ -144,6 +144,7 @@ function animateType() {
 
 (function($) {
     mapChart();
+    amChart();
     animateType();
-    smoothScroll() ;
+    smoothScroll();
 }(jQuery));

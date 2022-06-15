@@ -7,15 +7,26 @@
     width:0;
     height:8px;
     background-color: #3990DC;
-    transition: .8s;
+    transition: width .10s;
     position: absolute;
-    bottom: -8;
+    bottom: -8px;
     left:0;
 }
 .nav-link:hover::after {
     width:100%;
+    transition: width .4s;
 }
-
+/* nav pop up menu fixes */
+.cat-nav-pop-menu > .cat-textbox::-webkit-scrollbar {
+    width: 4px;
+}
+.cat-nav-pop-menu > .cat-textbox::-webkit-scrollbar-track {
+    background-color: #2D2522;
+}
+.cat-nav-pop-menu > .cat-textbox::-webkit-scrollbar-thumb {
+    background-color: #3990DC;
+    width:100%;
+}
 /* Scrollbars */
 body::-webkit-scrollbar {
     width: 8px;
@@ -28,9 +39,23 @@ body::-webkit-scrollbar-thumb {
     background-color: #3990DC;
     width:100%;
 }
-.cat-h1 {
+.cat-learning-popModule::-webkit-scrollbar {
+    width: 8px;
+}
+.cat-learning-popModule::-webkit-scrollbar-track {
+    background-color: #F4F2EF;
+    width:100%;
+}  
+.cat-learning-popModule::-webkit-scrollbar-thumb {
+    background-color: #3990DC;
+    width:100%;
+}
+
+
+/* Element Fix */
+.learning-tile .cat-h1, .learning-tile .cat-h2, .learning-tile .cat-h3 {
 	transition: margin-right .8s;
 }
-.learning-tile::hover > .cat-h1, .learning-tile::hover > .cat-h2, .learning-tile::hover > .cat-h3 {
+.learning-tile:hover > .cat-h1, .learning-tile:hover > .cat-h2, .learning-tile:hover > .cat-h3 {
 	margin-right: 64px;
 }
