@@ -10,114 +10,74 @@ function windowScroll() {
     let scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
     let windowH = $(window).innerHeight(); //the total height of the visible window
 
-    //Scroll Container Sections
-    let scrollTimeline =$('.scroll.timeline-container');
+    // Sections
+    let scrollIntro = $("#intro")
+    let scrollIntroContent      = $('#intro-content');
+    let scrollIntroImage        = $('#intro-image');
+    let scrollMap               = $('#map');
+    let scrollMapImage          = $('#map-image');
+    let scrollWhy               = $('#why');
+    let scrollOffers            = $('#offers');
+    let scrollOffersImage       = $('#offers-image');
+    let scrollTimeline          = $('#timeline');
+    let scrollTimelineImage     = $('#timeline-image');
+    let scrollIndicator         = $('#indicator');
+    let scrollIndicatorContent  = $('#indicator-content');
+    let scrollIndicatorImage    = $('#indicator-image');
+    let scrollLearn             = $('#learning');
+    let scrollLearnContent      = $('#learning-content');
+    let scrollLearnImage        = $('#learning-image');
+    let scrollInvolved          = $('#involved');
+    let scrollInvolvedContent   = $('#involved-content');
+    let scrollInvolvedImage     = $('#involved-image');
+    let scrollAcknow            = $('#acknowledge');
+    let scrollFooter            = $('.footer');
+    
+    // Modules
+    let scrollModuleStruggle    = $('#learning-struggle');
+    let scrollModuleInclusive   = $('#learning-inclusive');
+    let scrollModuleAccess      = $('#learning-access');
+    let scrollModuleAcademic    = $('#learning-academic');
+
+
+
+    // Heights
+    let LengthIntro = scrollIntro.innerHeight()+scrollIntroContent.innerHeight()+scrollIntroImage;
 
     $(window).scroll(function() {
         //changing scroller value
         let wScroll = $(window).scrollTop();
+        console.log(wScroll+" scroll position");
     });
 
 };
 function amChart() {
     // https://www.amcharts.com/
     am5.ready(function() {
+        var root = am5.Root.new("chartdiv01");
+        
+        var chart = root.container.children.push(
+            am5xy.XYChart.new(root, {})
+        );
 
-    // Create root element
-    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-    var root = am5.Root.new("chartdiv01");
+        var xAxis = chart.xAxes.push(
+            am5xy.ValueAxis.new(root, {
+                renderer: am5xy.AxisRendererX.new(root, {})
+            })
+        );
 
-
-    // Set themes
-    // https://www.amcharts.com/docs/v5/concepts/themes/
-    root.setThemes([
-    am5themes_Animated.new(root)
-    ]);
-
-
-    // Create chart
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/
-    var chart = root.container.children.push(am5xy.XYChart.new(root, {
-        panX: false,
-        panY: false,
-        wheelX: "panX",
-        wheelY: "zoomX"
-    }));
-
-
-    // Add cursor
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
-    behavior: "zoomX"
-    }));
-    cursor.lineY.set("visible", false);
-
-    var date = new Date();
-    date.setHours(0, 0, 0, 0);
-    var value = 100;
-
-    function generateData() {
-    value = Math.round((Math.random() * 10 - 5) + value);
-    am5.time.add(date, "day", 1);
-    return {
-        date: date.getTime(),
-        value: value
-    };
-    }
-
-    function generateDatas(count) {
-    var data = [];
-    for (var i = 0; i < count; ++i) {
-        data.push(generateData());
-    }
-    return data;
-    }
-
-
-    // Create axes
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-    var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-    maxDeviation: 0,
-    baseInterval: {
-        timeUnit: "day",
-        count: 1
-    },
-    renderer: am5xy.AxisRendererX.new(root, {}),
-    tooltip: am5.Tooltip.new(root, {})
-    }));
-
-    var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-    renderer: am5xy.AxisRendererY.new(root, {})
-    }));
-
-
-    // Add series
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-    var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-    name: "Series",
-    xAxis: xAxis,
-    yAxis: yAxis,
-    valueYField: "value",
-    valueXField: "date",
-    tooltip: am5.Tooltip.new(root, {
-        labelText: "{valueY}"
-    })
-    }));
-
-    // Add scrollbar
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
-    chart.set("scrollbarX", am5.Scrollbar.new(root, {
-    orientation: "horizontal"
-    }));
-
-    var data = generateDatas(50);
-    series.data.setAll(data);
-
-
-    // Make stuff animate on load
-    // https://www.amcharts.com/docs/v5/concepts/animations/
-    series.appear(1000);
-    chart.appear(1000, 100);
+        var yAxis = chart.yAxes.push(
+            am5xy.CategoryAxis.new(root, {
+                renderer: am5xy.AxisRendererY.new(root, {}),
+                categoryField: "causes"
+            })
+        );
+        am5.net.load("/data/mydata.json").then(function(result) {
+            console.log(result.response);
+            series.data.setAll(am5.CSVParser.parse(result.response));
+        }).catch(function(result){
+            console.log("Error loading " + result.xhr.responseURL);
+        });
 
     }); // end am5.ready()
 };

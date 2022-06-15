@@ -19,6 +19,7 @@
 /* nav pop up menu fixes */
 .cat-nav-pop-menu > .cat-textbox::-webkit-scrollbar {
     width: 4px;
+    cursor: pointer;
 }
 .cat-nav-pop-menu > .cat-textbox::-webkit-scrollbar-track {
     background-color: #2D2522;
@@ -30,6 +31,7 @@
 /* Scrollbars */
 body::-webkit-scrollbar {
     width: 8px;
+    cursor: pointer;
 }
 body::-webkit-scrollbar-track {
     background-color: #F4F2EF;
@@ -41,6 +43,7 @@ body::-webkit-scrollbar-thumb {
 }
 .cat-learning-popModule::-webkit-scrollbar {
     width: 8px;
+    cursor: pointer;
 }
 .cat-learning-popModule::-webkit-scrollbar-track {
     background-color: #F4F2EF;
