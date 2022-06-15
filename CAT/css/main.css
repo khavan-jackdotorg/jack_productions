@@ -8,6 +8,9 @@
     height:8px;
     background-color: #3990DC;
     transition: .8s;
+    position: absolute;
+    bottom: -8;
+    left:0;
 }
 .nav-link:hover::after {
     width:100%;
@@ -24,4 +27,10 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: #3990DC;
     width:100%;
+}
+.cat-h1 {
+	transition: margin-right .8s;
+}
+.learning-tile::hover > .cat-h1, .learning-tile::hover > .cat-h2, .learning-tile::hover > .cat-h3 {
+	margin-right: 64px;
 }
