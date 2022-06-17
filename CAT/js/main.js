@@ -114,7 +114,7 @@ function windowScroll() {
         console.log(wScroll+" scroll position");
 
         // Window Position Information
-        let posthIntro           = scrollIntro.offset().top;
+        let posIntro           = scrollIntro.offset().top;
         let posIntroContent      = scrollIntroContent.offset().top;
         let posIntroImage        = scrollIntroImage.offset().top;
         let posMap               = scrollMap.offset().top;
@@ -145,6 +145,10 @@ function windowScroll() {
         // console.log(mScrollPercent);
 
         //timeline section
+
+
+        //indicator section
+        
     });
 
     scrollModStruggle.scroll(function() {
@@ -159,6 +163,8 @@ function windowScroll() {
         let posEndModInclusive   = scrollEndModInclusive.offset().top;
         let posEndModAccess      = scrollEndModAccess.offset().top;
         let posEndModAcademic    = scrollEndModAcademic.offset().top;
+
+        //learning section
     });
 
 }
@@ -194,6 +200,7 @@ function amChart() {
 }
 function mapChart() {
     let mapContainer = $("#map");
+
 }
 function smoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
