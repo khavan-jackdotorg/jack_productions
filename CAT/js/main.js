@@ -23,6 +23,11 @@ function windowScroll() {
 
     let scrollTimeline          = $('#timeline');
     let scrollTimelineImage     = $('#timeline-image');
+        let scrollTimeOne       = $("#time-one");
+        let scrollTimeTwo       = $("#time-two");
+        let scrollTimeThree     = $("#time-three");
+        let scrollTimeFour      = $("#time-four");
+        let scrollTimeFive      = $("#time-five");
 
     let scrollIndicator         = $('#indicator');
     let scrollIndicatorContent  = $('#indicator-content');
@@ -63,6 +68,11 @@ function windowScroll() {
     
     let lengthTimeline          = scrollTimeline.innerHeight();
     let lengthTimelineImage     = scrollTimelineImage.innerHeight();
+        let lengthtimeOne       = scrollTimeOne.innerHeight();
+        let lengthtimetwo       = scrollTimeTwo.innerHeight();
+        let lengthtimethree     = scrollTimeThree.innerHeight();
+        let lengthtimefour      = scrollTimeFour.innerHeight();
+        let lengthtimefive      = scrollTimeFive.innerHeight();
     
     let lengthIndicator         = scrollIndicator.innerHeight();
     let lengthIndicatorContent  = scrollIndicatorContent.innerHeight();
@@ -90,8 +100,9 @@ function windowScroll() {
     let lengthEndModAccess      = scrollEndModAccess.innerHeight();
     let lengthEndModAcademic    = scrollEndModAcademic.innerHeight();
 
+
     //(for section indicator)
-    let lengthIntroSI = lengthIntro+lengthIntroContent+lengthIntroImage+lengthMap+lengthMapImage+lengthWhy+lengthOffers+lengthOffersImage+lengthTimeline+lengthTimelineImage;
+    let lengthIntroSI = lengthIntro+lengthIntroContent+lengthIntroImage+lengthMap+lengthMapImage+lengthWhy+lengthOffers+lengthOffersImage+lengthTimeline+lengthTimelineImage+lengthIndicator+lengthIndicatorContent+lengthIndicatorImage;
     let lengthLearningsSI = lengthLearn+lengthLearnContent+lengthLearnImage;
     let lengthInvolvedSI = lengthInvolved+lengthInvolvedContent+lengthInvolvedImage;
 
@@ -113,8 +124,13 @@ function windowScroll() {
         let posOffersImage       = scrollOffersImage.offset().top;
         let posTimeline          = scrollTimeline.offset().top;
         let posTimelineImage     = scrollTimelineImage.offset().top;
+            let postimeOne       = scrollTimeOne.innerHeight();
+            let postimetwo       = scrollTimeTwo.innerHeight();
+            let postimethree     = scrollTimeThree.innerHeight();
+            let postimefour      = scrollTimeFour.innerHeight();
+            let postimefive      = scrollTimeFive.offset().top;
         let posIndicator         = scrollIndicator.offset().top;
-        let posIndicatorContent  = scrollIndicatorConent.offset().top;
+        let posIndicatorContent  = scrollIndicatorContent.offset().top;
         let posIndicatorImage    = scrollIndicatorImage.offset().top;
         let posLearn             = scrollLearn.offset().top;
         let posLearnContent      = scrollLearnContent.offset().top;
@@ -134,7 +150,7 @@ function windowScroll() {
     scrollModStruggle.scroll(function() {
         
         // Position
-        let poshModStruggle       = scrollModStruggle.offset().top;
+        let poshModStruggle      = scrollModStruggle.offset().top;
         let posModInclusive      = scrollModInclusive.offset().top;
         let posModAccess         = scrollModAccess.offset().top;
         let posModAcademic       = scrollModAcademic.innerHeight();
