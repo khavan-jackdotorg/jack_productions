@@ -153,15 +153,15 @@ function windowScroll() {
         let poshModStruggle      = scrollModStruggle.offset().top;
         let posModInclusive      = scrollModInclusive.offset().top;
         let posModAccess         = scrollModAccess.offset().top;
-        let posModAcademic       = scrollModAcademic.innerHeight();
+        let posModAcademic       = scrollModAcademic.offset().top;
 
-        let posEndModStruggle    = scrollEndModStruggle.innerHeight();
-        let posEndModInclusive   = scrollEndModInclusive.innerHeight();
+        let posEndModStruggle    = scrollEndModStruggle.offset().top;
+        let posEndModInclusive   = scrollEndModInclusive.offset().top;
         let posEndModAccess      = scrollEndModAccess.offset().top;
         let posEndModAcademic    = scrollEndModAcademic.offset().top;
     });
 
-};
+}
 function amChart() {
     // https://www.amcharts.com/
     am5.ready(function() {
@@ -191,10 +191,10 @@ function amChart() {
         });
 
     }); // end am5.ready()
-};
+}
 function mapChart() {
     let mapContainer = $("#map");
-};
+}
 function smoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -205,13 +205,13 @@ function smoothScroll() {
             });
         });
     });
-};
+}
 function animateType() {
     let animateChar = $(".animatechar");
     let animateWord = $(".animateword");
     animateChar.lettering();
     animateWord.lettering('words');
-};
+}
 
 (function($) {
     windowScroll();
