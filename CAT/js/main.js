@@ -155,18 +155,22 @@ function windowScroll() {
         } else if (wScroll >= posIntro - windowH*startTrans && wScroll < posIndicatorImage + lengthIndicatorImage - windowH*startTrans) {
             // Introduction Indicator
             console.log(posIntro + "Intro");
+            sectionIndicator.html("Introduction");
         } else if (wScroll >= posLearn - windowH*startTrans && wScroll < posInvolved  - windowH*startTrans) {
             // Learning Section
             console.log(posLearn + "Learn");
+            sectionIndicator.html("Learning");
         } else if (wScroll >= posInvolved - windowH*startTrans && wScroll < posAcknow - windowH*startTrans) {
             // Involved Section
             console.log(posInvolved + "Involved");
         } else if (wScroll >= posAcknow - windowH*startTrans && wScroll < posAcknow + lengthAcknow - windowH*startTrans) {
             // Acknowledge Section
             console.log(posAcknow + "Acknow");
+            sectionIndicator.html("Learning");
         } else if (wScroll >= posFooter - windowH*startTrans && wScroll < posFooter + lengthFooter - windowH*startTrans) {
             // Footer Section
             console.log(posFooter + "Footer");
+            sectionIndicator.html("Learning");
         } else {
             console.log("blank header section");
         }
