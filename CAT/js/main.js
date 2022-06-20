@@ -9,9 +9,11 @@ function windowScroll() {
     // Main Body and Window Height
     let scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
     let windowH = $(window).innerHeight(); //the total height of the visible window
-    let endTrans = 0;
-    let startTrans = 0;
+    let endTrans = 0.15;
+    let startTrans = 0.15;
 
+    // Objects
+    let sectionIndicator = $(".sectionindicator");
 
     // Sections
     let scrollIntro             = $("#intro");
@@ -150,19 +152,19 @@ function windowScroll() {
         if (wScroll > 0 && wScroll < posIntro){
             // Blank Section Indicator
             console.log("blank header section");
-        } else if (wScroll > posIntro && wScroll < posIndicatorImage + lengthIndicatorImage) {
+        } else if (wScroll > posIntro - windowH*startTrans && wScroll < posIndicatorImage + lengthIndicatorImage - windowH*startTrans) {
             // Introduction Indicator
             console.log(posIntro + "Intro");
-        } else if (wScroll > posLearn && wScroll < posLearnImage + lengthLearnImage) {
+        } else if (wScroll > posLearn - windowH*startTrans && wScroll < posInvolved  - windowH*startTrans) {
             // Learning Section
             console.log(posLearn + "Learn");
-        } else if (wScroll > posInvolved && wScroll < posInvolvedImage + lengthInvolvedImage) {
+        } else if (wScroll > posInvolved - windowH*startTrans && wScroll < posAcknow - windowH*startTrans) {
             // Involved Section
             console.log(posInvolved + "Involved");
-        } else if (wScroll > posAcknow && wScroll < posAcknow + lengthAcknow) {
+        } else if (wScroll > posAcknow - windowH*startTrans && wScroll < posAcknow + lengthAcknow - windowH*startTrans) {
             // Acknowledge Section
             console.log(posAcknow + "Acknow");
-        } else if (wScroll > posFooter && wScroll < posFooter + lengthFooter) {
+        } else if (wScroll > posFooter - windowH*startTrans && wScroll < posFooter + lengthFooter - windowH*startTrans) {
             // Footer Section
             console.log(posFooter + "Footer");
         } else {
@@ -170,6 +172,8 @@ function windowScroll() {
         }
 
         //timeline section
+        if (wScroll > posTimeOne && wScroll < posTimeOne + lengthtimeOne - windowH*startTrans )
+
         //indicator section
         
     });
