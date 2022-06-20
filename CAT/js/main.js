@@ -9,6 +9,9 @@ function windowScroll() {
     // Main Body and Window Height
     let scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
     let windowH = $(window).innerHeight(); //the total height of the visible window
+    let endTrans = 0;
+    let startTrans = 0;
+
 
     // Sections
     let scrollIntro             = $("#intro");
@@ -105,13 +108,12 @@ function windowScroll() {
     let lengthIntroSI = lengthIntro+lengthIntroContent+lengthIntroImage+lengthMap+lengthMapImage+lengthWhy+lengthOffers+lengthOffersImage+lengthTimeline+lengthTimelineImage+lengthIndicator+lengthIndicatorContent+lengthIndicatorImage;
     let lengthLearningsSI = lengthLearn+lengthLearnContent+lengthLearnImage;
     let lengthInvolvedSI = lengthInvolved+lengthInvolvedContent+lengthInvolvedImage;
-
     
 
     $(window).scroll(function() {
         //changing scroller value
-        let wScroll = $(window).scrollTop();
-        console.log(wScroll+" scroll position");
+        var wScroll = $(window).scrollTop();
+        // CHECK console.log(wScroll + " scroll position");
 
         // Window Position Information
         let posIntro           = scrollIntro.offset().top;
@@ -143,10 +145,31 @@ function windowScroll() {
 
         let mScrollPercent = (wScroll / (scrollHeight - windowH)) * 100;
         // console.log(mScrollPercent);
+        
+        // Section indicator
+        if (wScroll > 0 && wScroll < posIntro){
+            // Blank Section Indicator
+            console.log("blank header section");
+        } else if (wScroll > posIntro && wScroll < posIndicatorImage + lengthIndicatorImage) {
+            // Introduction Indicator
+            console.log(posIntro + "Intro");
+        } else if (wScroll > posLearn && wScroll < posLearnImage + lengthLearnImage) {
+            // Learning Section
+            console.log(posLearn + "Learn");
+        } else if (wScroll > posInvolved && wScroll < posInvolvedImage + lengthInvolvedImage) {
+            // Involved Section
+            console.log(posInvolved + "Involved");
+        } else if (wScroll > posAcknow && wScroll < posAcknow + lengthAcknow) {
+            // Acknowledge Section
+            console.log(posAcknow + "Acknow");
+        } else if (wScroll > posFooter && wScroll < posFooter + lengthFooter) {
+            // Footer Section
+            console.log(posFooter + "Footer");
+        } else {
+            console.log("blank header section");
+        }
 
         //timeline section
-
-
         //indicator section
         
     });
