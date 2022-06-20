@@ -166,17 +166,23 @@ function windowScroll() {
         } else if (wScroll >= posAcknow - windowH*startTrans && wScroll < posAcknow + lengthAcknow - windowH*startTrans) {
             // Acknowledge Section
             console.log(posAcknow + "Acknow");
-            sectionIndicator.html("Learning");
+            sectionIndicator.html("Acknowledge");
         } else if (wScroll >= posFooter - windowH*startTrans && wScroll < posFooter + lengthFooter - windowH*startTrans) {
             // Footer Section
             console.log(posFooter + "Footer");
-            sectionIndicator.html("Learning");
+            sectionIndicator.html("Footer");
         } else {
             console.log("blank header section");
         }
 
         //timeline section
         if (wScroll >= posTimeOne - windowH*startTrans && wScroll < posTimeTwo - windowH*startTrans ) {
+            var margin = wScroll - posTimeOne; //scroll position vs
+            // percentage posTimeOne
+            var screenSection = 0.5;
+            // 50% of the screen should be the marker at when the element appears
+
+            scrollTimeOne.css("margin-left", margin );
 
         } else if (wScroll >= postimetwo - windowH*startTrans && wScroll < posTimeThree - windowH*startTrans) {
 
