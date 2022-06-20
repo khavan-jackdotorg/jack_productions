@@ -152,19 +152,19 @@ function windowScroll() {
         if (wScroll > 0 && wScroll < posIntro){
             // Blank Section Indicator
             console.log("blank header section");
-        } else if (wScroll > posIntro - windowH*startTrans && wScroll < posIndicatorImage + lengthIndicatorImage - windowH*startTrans) {
+        } else if (wScroll >= posIntro - windowH*startTrans && wScroll < posIndicatorImage + lengthIndicatorImage - windowH*startTrans) {
             // Introduction Indicator
             console.log(posIntro + "Intro");
-        } else if (wScroll > posLearn - windowH*startTrans && wScroll < posInvolved  - windowH*startTrans) {
+        } else if (wScroll >= posLearn - windowH*startTrans && wScroll < posInvolved  - windowH*startTrans) {
             // Learning Section
             console.log(posLearn + "Learn");
-        } else if (wScroll > posInvolved - windowH*startTrans && wScroll < posAcknow - windowH*startTrans) {
+        } else if (wScroll >= posInvolved - windowH*startTrans && wScroll < posAcknow - windowH*startTrans) {
             // Involved Section
             console.log(posInvolved + "Involved");
-        } else if (wScroll > posAcknow - windowH*startTrans && wScroll < posAcknow + lengthAcknow - windowH*startTrans) {
+        } else if (wScroll >= posAcknow - windowH*startTrans && wScroll < posAcknow + lengthAcknow - windowH*startTrans) {
             // Acknowledge Section
             console.log(posAcknow + "Acknow");
-        } else if (wScroll > posFooter - windowH*startTrans && wScroll < posFooter + lengthFooter - windowH*startTrans) {
+        } else if (wScroll >= posFooter - windowH*startTrans && wScroll < posFooter + lengthFooter - windowH*startTrans) {
             // Footer Section
             console.log(posFooter + "Footer");
         } else {
@@ -172,7 +172,22 @@ function windowScroll() {
         }
 
         //timeline section
-        if (wScroll > posTimeOne && wScroll < posTimeOne + lengthtimeOne - windowH*startTrans )
+        if (wScroll >= posTimeOne - windowH*startTrans && wScroll < posTimeTwo - windowH*startTrans ) {
+
+        } else if (wScroll >= postimetwo - windowH*startTrans && wScroll < posTimeThree - windowH*startTrans) {
+
+        } else if (wScroll >= postimethree - windowH*startTrans && wScroll < posTimeFour - windowH*startTrans) {
+
+        }
+        else if (wScroll >= postimefour - windowH*startTrans && wScroll < posTimefive - windowH*startTrans) {
+
+        }
+        else if (wScroll >= postimefive - windowH*startTrans && wScroll < posTimefive + lengthtimeOne - windowH*startTrans) {
+
+        }
+        else if (wScroll >= postimetwo - windowH*startTrans && wScroll < posTimeTwo + lengthtimeOne - windowH*startTrans) {
+
+        }
 
         //indicator section
         
