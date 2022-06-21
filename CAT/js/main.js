@@ -203,6 +203,7 @@ function windowScroll() {
 
         //indicator section
         
+        
     });
 
     scrollModStruggle.scroll(function() {
