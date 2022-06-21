@@ -152,6 +152,7 @@ function windowScroll() {
         if (wScroll > 0 && wScroll < posIntro){
             // Blank Section Indicator
             console.log("blank header section");
+            sectionIndicator.html("0");
         } else if (wScroll >= posIntro - windowH*startTrans && wScroll < posIndicatorImage - windowH*startTrans) {
             // Introduction Indicator
             console.log(posIntro + "Intro");
@@ -164,14 +165,10 @@ function windowScroll() {
             // Involved Section
             console.log(posInvolved + "Involved");
             sectionIndicator.html("Get Involved");
-        } else if (wScroll >= posAcknow - windowH*startTrans && wScroll < posAcknow + lengthAcknow - windowH*startTrans) {
+        } else if (wScroll >= posAcknow - windowH*startTrans ) {
             // Acknowledge Section
             console.log(posAcknow + "Acknow");
             sectionIndicator.html("Acknowledge");
-        } else if (wScroll >= posFooter - windowH*startTrans && wScroll < posFooter + lengthFooter - windowH*startTrans) {
-            // Footer Section
-            console.log(posFooter + "Footer");
-            sectionIndicator.html("Footer");
         } else {
             console.log("blank header section");
         }
