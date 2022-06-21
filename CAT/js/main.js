@@ -181,7 +181,7 @@ function windowScroll() {
             var marginOne = (wScroll - postimeone) / lengthtimeone * 100; //scroll position vs
             // percentage posTimeOne
             var screenSection = 0.5;
-            var margin = ;
+            var margin = 4;
             // 50% of the screen should be the marker at when the element appears
 
             scrollTimeOne.css("margin-left", margin );
@@ -203,7 +203,7 @@ function windowScroll() {
 
         //indicator section
         
-        
+
     });
 
     scrollModStruggle.scroll(function() {
@@ -223,6 +223,18 @@ function windowScroll() {
     });
 
 }
+function navLink() {
+    let navHam = $(".nav-hamburger");
+    let navLink = $(".nav-link");
+    let navClose = $(".cat-navmenu-item .close-button");
+    let navMenu = $(".cat-navmenu-pop");
+    navHam.click(function(){
+        navMenu.addClass("opened");
+    });
+
+
+}
+
 function amChart() {
     // https://www.amcharts.com/
     am5.ready(function() {
