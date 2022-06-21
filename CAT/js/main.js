@@ -73,7 +73,7 @@ function windowScroll() {
     
     let lengthTimeline          = scrollTimeline.innerHeight();
     let lengthTimelineImage     = scrollTimelineImage.innerHeight();
-        let lengthtimeOne       = scrollTimeOne.innerHeight();
+        let lengthtimeone       = scrollTimeOne.innerHeight();
         let lengthtimetwo       = scrollTimeTwo.innerHeight();
         let lengthtimethree     = scrollTimeThree.innerHeight();
         let lengthtimefour      = scrollTimeFour.innerHeight();
@@ -128,7 +128,7 @@ function windowScroll() {
         let posOffersImage       = scrollOffersImage.offset().top;
         let posTimeline          = scrollTimeline.offset().top;
         let posTimelineImage     = scrollTimelineImage.offset().top;
-            let postimeOne       = scrollTimeOne.innerHeight();
+            let postimeone       = scrollTimeOne.innerHeight();
             let postimetwo       = scrollTimeTwo.innerHeight();
             let postimethree     = scrollTimeThree.innerHeight();
             let postimefour      = scrollTimeFour.innerHeight();
@@ -152,11 +152,11 @@ function windowScroll() {
         if (wScroll > 0 && wScroll < posIntro){
             // Blank Section Indicator
             console.log("blank header section");
-        } else if (wScroll >= posIntro - windowH*startTrans && wScroll < posIndicatorImage + lengthIndicatorImage - windowH*startTrans) {
+        } else if (wScroll >= posIntro - windowH*startTrans && wScroll < posIndicatorImage - windowH*startTrans) {
             // Introduction Indicator
             console.log(posIntro + "Intro");
             sectionIndicator.html("Introduction");
-        } else if (wScroll >= posLearn - windowH*startTrans && wScroll < posInvolved  - windowH*startTrans) {
+        } else if (wScroll >= posIndicatorImage - windowH*startTrans && wScroll < posInvolved  - windowH*startTrans) {
             // Learning Section
             console.log(posLearn + "Learn");
             sectionIndicator.html("Learning");
@@ -177,25 +177,27 @@ function windowScroll() {
 
         //timeline section
         if (wScroll >= posTimeOne - windowH*startTrans && wScroll < posTimeTwo - windowH*startTrans ) {
-            var margin = wScroll - posTimeOne; //scroll position vs
+            centerScreen = lengthtimeone/2 - (wScroll - postimeone);
+            var marginOne = (wScroll - postimeone) / lengthtimeone * 100; //scroll position vs
             // percentage posTimeOne
             var screenSection = 0.5;
+            var margin = ;
             // 50% of the screen should be the marker at when the element appears
 
             scrollTimeOne.css("margin-left", margin );
 
-        } else if (wScroll >= postimetwo - windowH*startTrans && wScroll < posTimeThree - windowH*startTrans) {
+        } else if (wScroll >= postimetwo - windowH*startTrans && wScroll < postimethree - windowH*startTrans) {
 
-        } else if (wScroll >= postimethree - windowH*startTrans && wScroll < posTimeFour - windowH*startTrans) {
-
-        }
-        else if (wScroll >= postimefour - windowH*startTrans && wScroll < posTimefive - windowH*startTrans) {
+        } else if (wScroll >= postimethree - windowH*startTrans && wScroll < postimefour - windowH*startTrans) {
 
         }
-        else if (wScroll >= postimefive - windowH*startTrans && wScroll < posTimefive + lengthtimeOne - windowH*startTrans) {
+        else if (wScroll >= postimefour - windowH*startTrans && wScroll < postimefive - windowH*startTrans) {
 
         }
-        else if (wScroll >= postimetwo - windowH*startTrans && wScroll < posTimeTwo + lengthtimeOne - windowH*startTrans) {
+        else if (wScroll >= postimefive - windowH*startTrans && wScroll < postimefive + lengthtimefive - windowH*startTrans) {
+
+        }
+        else {
 
         }
 
