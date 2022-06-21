@@ -10,7 +10,7 @@ function windowScroll() {
     let scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
     let windowH = $(window).innerHeight(); //the total height of the visible window
     let endTrans = 0.15;
-    let startTrans = 0.15;
+    let startTrans = 0.75;
 
     // Objects
     let sectionIndicator = $(".sectionindicator");
@@ -176,7 +176,7 @@ function windowScroll() {
         }
 
         //timeline section
-        if (wScroll >= posTimeOne - windowH*startTrans && wScroll < posTimeTwo - windowH*startTrans ) {
+        if (wScroll >= postimeone - windowH*startTrans && wScroll < postimetwo - windowH*startTrans ) {
             centerScreen = lengthtimeone/2 - (wScroll - postimeone);
             var marginOne = (wScroll - postimeone) / lengthtimeone * 100; //scroll position vs
             // percentage posTimeOne
@@ -231,6 +231,9 @@ function navLink() {
     navHam.click(function(){
         navMenu.addClass("opened");
     });
+    navLink.click(function(){
+
+    })
 
 
 }
