@@ -163,6 +163,7 @@ function windowScroll() {
         } else if (wScroll >= posInvolved - windowH*startTrans && wScroll < posAcknow - windowH*startTrans) {
             // Involved Section
             console.log(posInvolved + "Involved");
+            sectionIndicator.html("Get Involved");
         } else if (wScroll >= posAcknow - windowH*startTrans && wScroll < posAcknow + lengthAcknow - windowH*startTrans) {
             // Acknowledge Section
             console.log(posAcknow + "Acknow");
@@ -190,14 +191,11 @@ function windowScroll() {
 
         } else if (wScroll >= postimethree - windowH*startTrans && wScroll < postimefour - windowH*startTrans) {
 
-        }
-        else if (wScroll >= postimefour - windowH*startTrans && wScroll < postimefive - windowH*startTrans) {
+        } else if (wScroll >= postimefour - windowH*startTrans && wScroll < postimefive - windowH*startTrans) {
 
-        }
-        else if (wScroll >= postimefive - windowH*startTrans && wScroll < postimefive + lengthtimefive - windowH*startTrans) {
+        } else if (wScroll >= postimefive - windowH*startTrans && wScroll < postimefive + lengthtimefive - windowH*startTrans) {
 
-        }
-        else {
+        } else {
 
         }
 
