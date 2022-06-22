@@ -171,9 +171,10 @@ function windowScroll() {
 
         //timeline section
         if (wScroll >= postimeone - windowH*startTrans && wScroll < postimetwo - windowH*startTrans ) {
-            centerScreen = lengthtimeone - (wScroll - postimeone);
-            // half the length of the time on minus the scroll position starting at timeone
-            var marginOne = (wScroll - postimeone) / lengthtimeone * 100; //scroll position vs
+
+            var GuideTimeOne = lengthtimeone - (wScroll - postimeone);
+            // half the length of the time on minus the scroll position starting at timeone - largest valuee to smaller value
+            var marginOne = GuideTimeOne / lengthtimeone * 100; //scroll position vs
             // percentage posTimeOne
             var screenSection = 0.5;
             var margin = 4;
