@@ -193,23 +193,6 @@ function windowScroll() {
             }
         }
 
-        // test
-        if (wScroll >= postimeone - windowH*startTrans && wScroll < postimetwo - windowH*startTrans ) {
-
-         
-
-        } else if (wScroll >= postimetwo - windowH*startTrans && wScroll < postimethree - windowH*startTrans) {
-
-        } else if (wScroll >= postimethree - windowH*startTrans && wScroll < postimefour - windowH*startTrans) {
-
-        } else if (wScroll >= postimefour - windowH*startTrans && wScroll < postimefive - windowH*startTrans) {
-
-        } else if (wScroll >= postimefive - windowH*startTrans && wScroll < postimefive + lengthtimefive - windowH*startTrans) {
-
-        } else {
-
-        }
-
         //indicator section
 
     });
@@ -237,32 +220,32 @@ function navLink() {
     let navClose = $(".cat-navmenu-item .close-button");
     let navMenu = $(".cat-navmenu-pop");
     navHam.click(function(){
-        navMenu.css({
-            "display":"flex"
-        }).delay(30).queue(function(){
-            $(this).addClass("opened");
-            console.log("open-menu-animated")
+        navMenu.addClass("opened").delay(30).queue(function(){
+            $(this).css({
+                "opacity":"1",
+                "transform":"translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+            }).dequeue();
         });
         console.log("open-menu")
     });
     navLink.click(function(){
-        navMenu.removeClass("opened").delay(550).queue(function(){
-            $(this).css({
-                "display":"none"
-            }).dequeue()
+        navMenu.css({
+            "opacity":"0",
+            "transform":"translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+        }).delay(550).queue(function(){
+            $(this).removeClass("opened").dequeue();
         });
         console.log("close-menu")
     });
     navClose.click(function(){
-        navMenu.removeClass("opened").delay(550).queue(function(){
-            $(this).css({
-                "display":"none"
-            }).dequeue()
+        navMenu.css({
+            "opacity":"0",
+            "transform":"translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+        }).delay(550).queue(function(){
+            $(this).removeClass("opened").dequeue();
         });
         console.log("close-menu")
     });
-
-
 }
 
 function amChart() {
@@ -300,7 +283,7 @@ function mapChart() {
 
 }
 function smoothScroll() {
-    $('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
     
@@ -328,3 +311,4 @@ function animateType() {
         windowScroll();
     });
 }(jQuery));
+
