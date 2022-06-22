@@ -220,17 +220,30 @@ function navLink() {
     let navClose = $(".cat-navmenu-item .close-button");
     let navMenu = $(".cat-navmenu-pop");
     navHam.click(function(){
-        navMenu.addClass("opened");
+        navMenu.css({
+            "display":"flex"
+        }).delay(30).queue(function(){
+            $(this).addClass("opened");
+            console.log("open-menu-animated")
+        });
         console.log("open-menu")
     });
     navLink.click(function(){
-        navMenu.removeClass("opened");
+        navMenu.removeClass("opened").delay(550).queue(function(){
+            $(this).css({
+                "display":"none"
+            }).dequeue()
+        });
         console.log("close-menu")
-    })
+    });
     navClose.click(function(){
-        navMenu.removeClass("opened");
+        navMenu.removeClass("opened").delay(550).queue(function(){
+            $(this).css({
+                "display":"none"
+            }).dequeue()
+        });
         console.log("close-menu")
-    })
+    });
 
 
 }
