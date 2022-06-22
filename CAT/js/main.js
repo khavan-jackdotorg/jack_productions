@@ -133,10 +133,10 @@ function windowScroll() {
         let posOffersImage       = scrollOffersImage.offset().top;
         let posTimeline          = scrollTimeline.offset().top;
         let posTimelineImage     = scrollTimelineImage.offset().top;
-            let postimeone       = scrollTimeOne.innerHeight();
-            let postimetwo       = scrollTimeTwo.innerHeight();
-            let postimethree     = scrollTimeThree.innerHeight();
-            let postimefour      = scrollTimeFour.innerHeight();
+            let postimeone       = scrollTimeOne.offset().top;
+            let postimetwo       = scrollTimeTwo.offset().top;
+            let postimethree     = scrollTimeThree.offset().top;
+            let postimefour      = scrollTimeFour.offset().top;
             let postimefive      = scrollTimeFive.offset().top;
         let posIndicator         = scrollIndicator.offset().top;
         let posIndicatorContent  = scrollIndicatorContent.offset().top;
@@ -177,19 +177,55 @@ function windowScroll() {
         //timeline section
         //logic: while scrolling in the timeline section, the margin would decrease from 100% to 0% for each $("project-timeline") element
         if (wScroll >= posTimeline - windowH*startTrans && wScroll < posTimeline + lengthTimeline - windowH*startTrans) {
-            var countTimeOne = wScroll - (postimeone - windowH); //as soon as posttimeone is visible on the screen - time on sc
-            var visibleTimeOne =  windowH + lengthtimeone; // a value to stop countTimeOne.
+            var countTimeOne = wScroll - (postimeone - windowH);
+            var visibleTimeOne =  (windowH + lengthtimeone)/2; 
             var percentTimeOne = (visibleTimeOne - countTimeOne) / visibleTimeOne * 100;
-
-            console.log(countTimeOne+"timeone check");
             if (countTimeOne >= 0 && countTimeOne <= visibleTimeOne ){
-                console.log(visibleTimeOne + "animation trigger one");
                 animTimeOne.css("margin-left", percentTimeOne + "%" );
             } else if (countTimeOne < 0) {
-                //if the counter is before timeone is visible
                 animTimeOne.css("margin-left", 100 + "%" );
             } else {
                 animTimeOne.css("margin-left", 0 + "%" );
+            }
+            var countTimeTwo = wScroll - (postimetwo - windowH);
+            var visibleTimeTwo =  (windowH + lengthtimetwo)/2; 
+            var percentTimeTwo = (visibleTimeTwo - countTimeTwo) / visibleTimeTwo * 100;
+            if (countTimeTwo >= 0 && countTimeTwo <= visibleTimeTwo ){
+                animTimeTwo.css("margin-left", percentTimeTwo + "%" );
+            } else if (countTimeTwo < 0) {
+                animTimeTwo.css("margin-left", 100 + "%" );
+            } else {
+                animTimeTwo.css("margin-left", 0 + "%" );
+            }
+            var countTimeThree = wScroll - (postimethree - windowH);
+            var visibleTimeThree =  (windowH + lengthtimethree)/2; 
+            var percentTimeThree = (visibleTimeThree - countTimeThree) / visibleTimeThree * 100;
+            if (countTimeThree >= 0 && countTimeThree <= visibleTimeThree ){
+                animTimeThree.css("margin-left", percentTimeThree + "%" );
+            } else if (countTimeThree < 0) {
+                animTimeThree.css("margin-left", 100 + "%" );
+            } else {
+                animTimeThree.css("margin-left", 0 + "%" );
+            }
+            var countTimeFour = wScroll - (postimefour - windowH);
+            var visibleTimeFour =  (windowH + lengthtimefour)/2; 
+            var percentTimeFour = (visibleTimeFour - countTimeFour) / visibleTimeFour * 100;
+            if (countTimeFour >= 0 && countTimeFour <= visibleTimeFour ){
+                animTimeFour.css("margin-left", percentTimeFour + "%" );
+            } else if (countTimeFour < 0) {
+                animTimeFour.css("margin-left", 100 + "%" );
+            } else {
+                animTimeFour.css("margin-left", 0 + "%" );
+            }
+            var countTimeFive = wScroll - (postimefive - windowH);
+            var visibleTimeFive =  (windowH + lengthtimefive)/2; 
+            var percentTimeFive = (visibleTimeFive - countTimeFive) / visibleTimeFive * 100;
+            if (countTimeFive >= 0 && countTimeFive <= visibleTimeFive ){
+                animTimeFive.css("margin-left", percentTimeFive + "%" );
+            } else if (countTimeFive < 0) {
+                animTimeFive.css("margin-left", 100 + "%" );
+            } else {
+                animTimeFive.css("margin-left", 0 + "%" );
             }
         }
 
@@ -311,7 +347,8 @@ function animateType() {
     navLink();
     smoothScroll();
     $(window).on('resize', function(){
-        windowScroll();
+        let scrollHeight = $("body").innerHeight();
+        let windowH = $(window).innerHeight();
     });
 }(jQuery));
 
