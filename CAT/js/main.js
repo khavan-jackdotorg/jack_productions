@@ -223,7 +223,8 @@ function navLink() {
         navMenu.addClass("opened").delay(30).queue(function(){
             $(this).css({
                 "opacity":"1",
-                "transform":"translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+                "transform":"translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
             }).dequeue();
         });
         console.log("open-menu")
@@ -231,7 +232,8 @@ function navLink() {
     navLink.click(function(){
         navMenu.css({
             "opacity":"0",
-            "transform":"translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+            "transform":"translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            "clip-path": "polygon(0 0, 100% 0, 100% 85%, 0% 100%)"
         }).delay(550).queue(function(){
             $(this).removeClass("opened").dequeue();
         });
@@ -240,7 +242,8 @@ function navLink() {
     navClose.click(function(){
         navMenu.css({
             "opacity":"0",
-            "transform":"translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+            "transform":"translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            "clip-path": "polygon(0 0, 100% 0, 100% 85%, 0% 100%)"
         }).delay(550).queue(function(){
             $(this).removeClass("opened").dequeue();
         });

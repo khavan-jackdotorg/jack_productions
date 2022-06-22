@@ -60,6 +60,9 @@ body::-webkit-scrollbar-thumb {
     background-color: #3990DC;
     width:100%;
 }
+.cat-navmenu-pop {
+    transition: opacity 200ms ease, transform 500ms ease, clip-path 800ms ease;
+}
 .cat-navmenu-pop.opened {
     display: flex;
 }
