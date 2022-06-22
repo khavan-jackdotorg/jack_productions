@@ -150,32 +150,29 @@ function windowScroll() {
         
         // Section indicator
         if (wScroll > 0 && wScroll < posIntro){
-            // Blank Section Indicator
-            console.log("blank header section");
-            sectionIndicator.html("0");
+            // console.log("blank header section");
+            sectionIndicator.html(" ");
         } else if (wScroll >= posIntro - windowH*startTrans && wScroll < posIndicatorImage - windowH*startTrans) {
-            // Introduction Indicator
-            console.log(posIntro + "Intro");
+            // console.log(posIntro + "Intro");
             sectionIndicator.html("Introduction");
         } else if (wScroll >= posIndicatorImage - windowH*startTrans && wScroll < posInvolved  - windowH*startTrans) {
-            // Learning Section
-            console.log(posLearn + "Learn");
+            // console.log(posLearn + "Learn");
             sectionIndicator.html("Learning");
         } else if (wScroll >= posInvolved - windowH*startTrans && wScroll < posAcknow - windowH*startTrans) {
-            // Involved Section
-            console.log(posInvolved + "Involved");
+            // console.log(posInvolved + "Involved");
             sectionIndicator.html("Get Involved");
         } else if (wScroll >= posAcknow - windowH*startTrans ) {
-            // Acknowledge Section
-            console.log(posAcknow + "Acknow");
+            // console.log(posAcknow + "Acknow");
             sectionIndicator.html("Acknowledge");
         } else {
-            console.log("blank header section");
+            // console.log("blank header section");
+            sectionIndicator.html(" ");
         }
 
         //timeline section
         if (wScroll >= postimeone - windowH*startTrans && wScroll < postimetwo - windowH*startTrans ) {
-            centerScreen = lengthtimeone/2 - (wScroll - postimeone);
+            centerScreen = lengthtimeone - (wScroll - postimeone);
+            // half the length of the time on minus the scroll position starting at timeone
             var marginOne = (wScroll - postimeone) / lengthtimeone * 100; //scroll position vs
             // percentage posTimeOne
             var screenSection = 0.5;
@@ -197,7 +194,6 @@ function windowScroll() {
         }
 
         //indicator section
-        
 
     });
 
@@ -225,9 +221,15 @@ function navLink() {
     let navMenu = $(".cat-navmenu-pop");
     navHam.click(function(){
         navMenu.addClass("opened");
+        console.log("open-menu")
     });
     navLink.click(function(){
-
+        navMenu.removeClass("opened");
+        console.log("close-menu")
+    })
+    navClose.click(function(){
+        navMenu.removeClass("opened");
+        console.log("close-menu")
     })
 
 
@@ -290,5 +292,6 @@ function animateType() {
     mapChart();
     amChart();
     animateType();
+    navLink();
     smoothScroll();
 }(jQuery));
