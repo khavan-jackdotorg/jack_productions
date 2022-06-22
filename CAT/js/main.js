@@ -163,7 +163,7 @@ function windowScroll() {
             sectionIndicator.html("Get Involved");
         } else if (wScroll >= posAcknow - windowH*startTrans ) {
             // console.log(posAcknow + "Acknow");
-            sectionIndicator.html("Acknowledge");
+            sectionIndicator.html("Acknowledgements");
         } else {
             // console.log("blank header section");
             sectionIndicator.html(" ");
@@ -270,7 +270,7 @@ function mapChart() {
 
 }
 function smoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    $('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
     
