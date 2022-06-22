@@ -33,6 +33,11 @@ function windowScroll() {
         let scrollTimeThree     = $("#time-three");
         let scrollTimeFour      = $("#time-four");
         let scrollTimeFive      = $("#time-five");
+        let animTimeOne       = $("#time-one .project-timeline");
+        let animTimeTwo       = $("#time-two .project-timeline");
+        let animTimeThree     = $("#time-three .project-timeline");
+        let animTimeFour      = $("#time-four .project-timeline");
+        let animTimeFive      = $("#time-five .project-timeline");
 
     let scrollIndicator         = $('#indicator');
     let scrollIndicatorContent  = $('#indicator-content');
@@ -170,17 +175,28 @@ function windowScroll() {
         }
 
         //timeline section
+        //logic: while scrolling in the timeline section, the margin would decrease from 100% to 0% for each $("project-timeline") element
+        if (wScroll >= posTimeline - windowH*startTrans && wScroll < posTimeline + lengthTimeline - windowH*startTrans) {
+            var countTimeOne = wScroll - (postimeone - windowH); //as soon as posttimeone is visible on the screen - time on sc
+            var visibleTimeOne =  windowH + lengthtimeone; // a value to stop countTimeOne.
+            var percentTimeOne = (visibleTimeOne - countTimeOne) / visibleTimeOne * 100;
+
+            console.log(countTimeOne+"timeone check");
+            if (countTimeOne >= 0 && countTimeOne <= visibleTimeOne ){
+                console.log(visibleTimeOne + "animation trigger one");
+                animTimeOne.css("margin-left", percentTimeOne + "%" );
+            } else if (countTimeOne < 0) {
+                //if the counter is before timeone is visible
+                animTimeOne.css("margin-left", 100 + "%" );
+            } else {
+                animTimeOne.css("margin-left", 0 + "%" );
+            }
+        }
+
+        // test
         if (wScroll >= postimeone - windowH*startTrans && wScroll < postimetwo - windowH*startTrans ) {
 
-            var GuideTimeOne = lengthtimeone - (wScroll - postimeone);
-            // half the length of the time on minus the scroll position starting at timeone - largest valuee to smaller value
-            var marginOne = GuideTimeOne / lengthtimeone * 100; //scroll position vs
-            // percentage posTimeOne
-            var screenSection = 0.5;
-            var margin = 4;
-            // 50% of the screen should be the marker at when the element appears
-
-            scrollTimeOne.css("margin-left", margin );
+         
 
         } else if (wScroll >= postimetwo - windowH*startTrans && wScroll < postimethree - windowH*startTrans) {
 
