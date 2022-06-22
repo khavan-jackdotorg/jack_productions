@@ -294,4 +294,7 @@ function animateType() {
     animateType();
     navLink();
     smoothScroll();
+    $(window).on('resize', function(){
+        windowScroll();
+    });
 }(jQuery));
