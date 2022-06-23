@@ -48,15 +48,15 @@ body::-webkit-scrollbar-thumb {
     background-color: #3990DC;
     width:100%;
 }
-.cat-learning-popModule::-webkit-scrollbar {
+.cat-learning-Module::-webkit-scrollbar {
     width: 8px;
     cursor: pointer;
 }
-.cat-learning-popModule::-webkit-scrollbar-track {
+.cat-learning-Module::-webkit-scrollbar-track {
     background-color: #F4F2EF;
     width:100%;
 }  
-.cat-learning-popModule::-webkit-scrollbar-thumb {
+.cat-learning-Module::-webkit-scrollbar-thumb {
     background-color: #3990DC;
     width:100%;
 }
@@ -66,7 +66,11 @@ body::-webkit-scrollbar-thumb {
 .cat-navmenu-pop.opened {
     display: flex;
 }
-
+/* module */
+.learn-open {
+    display: grid;
+    transform:translate3d(100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
 
 /* Element Fix */
 .learning-tile .cat-h1, .learning-tile .cat-h2, .learning-tile .cat-h3 {

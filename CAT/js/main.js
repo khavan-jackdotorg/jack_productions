@@ -99,16 +99,7 @@ function windowScroll() {
     let lengthAcknow            = scrollAcknow.innerHeight();
     let lengthFooter            = scrollFooter.innerHeight();
 
-    // Modules
-    let lengthModStruggle       = scrollModStruggle.innerHeight();
-    let lengthModInclusive      = scrollModInclusive.innerHeight();
-    let lengthModAccess         = scrollModAccess.innerHeight();
-    let lengthModAcademic       = scrollModAcademic.innerHeight();
-    
-    let lengthEndModStruggle    = scrollEndModStruggle.innerHeight();
-    let lengthEndModInclusive   = scrollEndModInclusive.innerHeight();
-    let lengthEndModAccess      = scrollEndModAccess.innerHeight();
-    let lengthEndModAcademic    = scrollEndModAcademic.innerHeight();
+
 
 
     //(for section indicator)
@@ -233,6 +224,85 @@ function windowScroll() {
 
     });
 
+
+}
+function moduleClick() {
+    //   // Modules
+    //   let scrollModStruggle       = $('#learning-struggle');
+    //   let scrollModInclusive      = $('#learning-inclusive');
+    //   let scrollModAccess         = $('#learning-access');
+    //   let scrollModAcademic       = $('#learning-academic');
+    //   let scrollEndModStruggle    = $('#learning-struggle .scrolling-space');
+    //   let scrollEndModInclusive   = $('#learning-inclusive .scrolling-space');
+    //   let scrollEndModAccess      = $('#learning-access .scrolling-space');
+    //   let scrollEndModAcademic    = $('#learning-academic .scrolling-space');
+
+    let moduleClose = $(".cat-learning-module .close-button");
+    let struggleTile = $(".learning-tile.struggle");
+    let inclusiveTile = $(".learning-tile.inclusivity");
+    let accessTile = $(".learning-tile.access");
+    let academicTile = $(".learning-tile.academic");
+
+    struggleTile.click(function(){
+        scrollModStruggle.addClass("learn-open").delay(300).queue(function(){
+            $(this).css({
+                "transform":"translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+            }).dequeue();
+            console.log("open-struggle-animate");
+        });
+        console.log("open-struggle");
+    });
+    inclusiveTile.click(function(){
+        scrollModInclusive.addClass("learn-open").delay(300).queue(function(){
+            $(this).css({
+                "transform":"translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+            }).dequeue();
+            console.log("open-struggle-animate");
+        });
+        console.log("open-struggle");
+    });
+    accessTile.click(function(){
+        scrollModAccess.addClass("learn-open").delay(300).queue(function(){
+            $(this).css({
+                "transform":"translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+            }).dequeue();
+            console.log("open-struggle-animate");
+        });
+        console.log("open-struggle");
+    });
+    academicTile.click(function(){
+        scrollModAcademic.addClass("learn-open").delay(300).queue(function(){
+            $(this).css({
+                "transform":"translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+            }).dequeue();
+            console.log("open-struggle-animate");
+        });
+        console.log("open-struggle");
+    });
+
+    moduleClose.click(function(){
+        $(this).each(function(){
+            $(this).parents("cat-learning-module").css({
+                "transform":"translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+            }).delay(300).queue(function(){
+                $(this).removeClass("learn-open").dequeue();
+            });
+        });
+
+    });
+}
+function moduleScroll() {
+    // Modules
+    let lengthModStruggle       = scrollModStruggle.innerHeight();
+    let lengthModInclusive      = scrollModInclusive.innerHeight();
+    let lengthModAccess         = scrollModAccess.innerHeight();
+    let lengthModAcademic       = scrollModAcademic.innerHeight();
+    
+    let lengthEndModStruggle    = scrollEndModStruggle.innerHeight();
+    let lengthEndModInclusive   = scrollEndModInclusive.innerHeight();
+    let lengthEndModAccess      = scrollEndModAccess.innerHeight();
+    let lengthEndModAcademic    = scrollEndModAcademic.innerHeight();
+
     scrollModStruggle.scroll(function() {
         // Position
         let posModStruggle       = scrollModStruggle.offset().top;
@@ -260,7 +330,6 @@ function windowScroll() {
         }
 
     });
-
 }
 function navLink() {
     let navHam = $(".nav-hamburger");
@@ -336,6 +405,7 @@ function animateType() {
     navLink();
     smoothScroll();
     windowScroll();
+    moduleScroll();
     $(window).on('resize', function(){
         windowScroll();
     });
