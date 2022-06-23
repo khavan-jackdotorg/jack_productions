@@ -266,8 +266,14 @@ function navLink() {
     let navLink = $(".nav-link");
     let navClose = $(".cat-navmenu-item .close-button");
     let navMenu = $(".cat-navmenu-pop");
+    let closeButt = $(".close-button");
 
     navHam.each(function(){
+        if($(this).attr('html') !== 'undefined' || $(this).attr('html') !== false ) {
+            $(this).removeAttr("href");
+        }
+    })
+    closeButt.each(function(){
         if($(this).attr('html') !== 'undefined' || $(this).attr('html') !== false ) {
             $(this).removeAttr("href");
         }
