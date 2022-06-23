@@ -54,17 +54,6 @@ function windowScroll() {
     let scrollAcknow = $('#acknowledge');
     let scrollFooter = $('.footer');
 
-    // Modules
-    let scrollModStruggle = $('#learning-struggle');
-    let scrollModInclusive = $('#learning-inclusive');
-    let scrollModAccess = $('#learning-access');
-    let scrollModAcademic = $('#learning-academic');
-
-    let scrollEndModStruggle = $('#learning-struggle .scrolling-space');
-    let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
-    let scrollEndModAccess = $('#learning-access .scrolling-space');
-    let scrollEndModAcademic = $('#learning-academic .scrolling-space');
-
     // Heights 
     let lengthIntro = scrollIntro.innerHeight();
     let lengthIntroContent = scrollIntroContent.innerHeight();
@@ -228,14 +217,15 @@ function windowScroll() {
 }
 function moduleClick() {
     //   // Modules
-    //   let scrollModStruggle       = $('#learning-struggle');
-    //   let scrollModInclusive      = $('#learning-inclusive');
-    //   let scrollModAccess         = $('#learning-access');
-    //   let scrollModAcademic       = $('#learning-academic');
-    //   let scrollEndModStruggle    = $('#learning-struggle .scrolling-space');
-    //   let scrollEndModInclusive   = $('#learning-inclusive .scrolling-space');
-    //   let scrollEndModAccess      = $('#learning-access .scrolling-space');
-    //   let scrollEndModAcademic    = $('#learning-academic .scrolling-space');
+     let scrollModStruggle = $('#learning-struggle');
+     let scrollModInclusive = $('#learning-inclusive');
+     let scrollModAccess = $('#learning-access');
+     let scrollModAcademic = $('#learning-academic');
+ 
+     let scrollEndModStruggle = $('#learning-struggle .scrolling-space');
+     let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
+     let scrollEndModAccess = $('#learning-access .scrolling-space');
+     let scrollEndModAcademic = $('#learning-academic .scrolling-space');
 
     let moduleClose = $(".cat-learning-module .close-button");
     let struggleTile = $(".learning-tile.struggle");
