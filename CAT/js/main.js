@@ -345,11 +345,11 @@ function animateType() {
     animateType();
     navLink();
     smoothScroll();
-    $(window).on('resize', function(){
-        let scrollHeight = $("body").innerHeight();
-        let windowH = $(window).innerHeight();
-    });
     windowScroll();
+    $(window).on('resize', function(){
+        windowScroll();
+    });
+    
     
 }(jQuery));
 
