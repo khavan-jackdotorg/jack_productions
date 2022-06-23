@@ -334,7 +334,7 @@ function chart() {
     const data = {
         labels: labels,
         datasets: [{
-            label: '% of Item',
+            label: 'Percent (%) cause of struggle',
             data: [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05],
             backgroundColor: [
                 '#F4F2EF'
