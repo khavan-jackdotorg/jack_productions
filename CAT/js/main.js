@@ -255,6 +255,12 @@ function navLink() {
     let navLink = $(".nav-link");
     let navClose = $(".cat-navmenu-item .close-button");
     let navMenu = $(".cat-navmenu-pop");
+
+    navHam.each(function(){
+        if($(this).attr('html') !== 'undefined' || $(this).attr('html') !== false ) {
+            $(this).removeAttr("href");
+        }
+    })
     navHam.click(function(){
         navMenu.addClass("opened").delay(30).queue(function(){
             $(this).css({
