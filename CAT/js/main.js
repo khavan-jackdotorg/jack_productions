@@ -178,7 +178,7 @@ function windowScroll() {
         //logic: while scrolling in the timeline section, the margin would decrease from 100% to 0% for each $("project-timeline") element
         if (wScroll >= posTimeline - windowH*startTrans && wScroll < posTimeline + lengthTimeline - windowH*startTrans) {
             var countTimeOne = wScroll - (postimeone - windowH);
-            var visibleTimeOne =  (windowH + lengthtimeone)/2; 
+            var visibleTimeOne =  (windowH + lengthtimeone)*0.4; 
             var percentTimeOne = (visibleTimeOne - countTimeOne) / visibleTimeOne * 100;
             if (countTimeOne >= 0 && countTimeOne <= visibleTimeOne ){
                 animTimeOne.css("margin-left", percentTimeOne + "%" );
@@ -188,7 +188,7 @@ function windowScroll() {
                 animTimeOne.css("margin-left", 0 + "%" );
             }
             var countTimeTwo = wScroll - (postimetwo - windowH);
-            var visibleTimeTwo =  (windowH + lengthtimetwo)/2; 
+            var visibleTimeTwo =  (windowH + lengthtimetwo)*0.4; 
             var percentTimeTwo = (visibleTimeTwo - countTimeTwo) / visibleTimeTwo * 100;
             if (countTimeTwo >= 0 && countTimeTwo <= visibleTimeTwo ){
                 animTimeTwo.css("margin-left", percentTimeTwo + "%" );
@@ -198,7 +198,7 @@ function windowScroll() {
                 animTimeTwo.css("margin-left", 0 + "%" );
             }
             var countTimeThree = wScroll - (postimethree - windowH);
-            var visibleTimeThree =  (windowH + lengthtimethree)/2; 
+            var visibleTimeThree =  (windowH + lengthtimethree)*0.4; 
             var percentTimeThree = (visibleTimeThree - countTimeThree) / visibleTimeThree * 100;
             if (countTimeThree >= 0 && countTimeThree <= visibleTimeThree ){
                 animTimeThree.css("margin-left", percentTimeThree + "%" );
@@ -208,7 +208,7 @@ function windowScroll() {
                 animTimeThree.css("margin-left", 0 + "%" );
             }
             var countTimeFour = wScroll - (postimefour - windowH);
-            var visibleTimeFour =  (windowH + lengthtimefour)/2; 
+            var visibleTimeFour =  (windowH + lengthtimefour)*0.4; 
             var percentTimeFour = (visibleTimeFour - countTimeFour) / visibleTimeFour * 100;
             if (countTimeFour >= 0 && countTimeFour <= visibleTimeFour ){
                 animTimeFour.css("margin-left", percentTimeFour + "%" );
@@ -340,7 +340,6 @@ function animateType() {
 }
 
 (function($) {
-    windowScroll();
     mapChart();
     amChart();
     animateType();
@@ -350,5 +349,7 @@ function animateType() {
         let scrollHeight = $("body").innerHeight();
         let windowH = $(window).innerHeight();
     });
+    windowScroll();
+    
 }(jQuery));
 
