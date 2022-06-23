@@ -9,7 +9,6 @@ function windowScroll() {
     // Main Body and Window Height
     let scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
     let windowH = $(window).innerHeight(); //the total height of the visible window
-    let endTrans = 0.15;
     let startTrans = 0.75;
 
     // Objects
@@ -267,16 +266,19 @@ function moduleClick() {
 
     moduleClose.click(function () {
         $(this).each(function () {
-            $(this).parents("cat-learning-module").css({
+            $(this).parents(".cat-learning-module").css({
                 "transform": "translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).delay(300).queue(function () {
                 $(this).removeClass("learn-open").css({"transform":""}).dequeue();
             });
         });
+        console.log("close-struggle");
 
     });
 }
 function moduleScroll() {
+    let windowH = $(window).innerHeight(); //the total height of the visible window
+    let startTrans = 0.75;
     let scrollModStruggle = $('#learning-struggle');
     let scrollModInclusive = $('#learning-inclusive');
     let scrollModAccess = $('#learning-access');
