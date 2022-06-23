@@ -1,4 +1,5 @@
 let tileCont = $(".resource-tilebox");
+let tileContBook = $(".resource-tilebox.book")
 let tilePrideSupport = $("#pride-support");
 let tileFrancSupport = $("#francophone-support");
 let tileAdvocate = $("#advocate");
@@ -40,23 +41,89 @@ function fewButton() {
         //hide the elements that are not there
         $(this).children().slice(3).addClass("tile-hidden");
     });
+    tileContBook.each(function () {
+        //hide the elements that are not there
+        $(this).children().slice(1).addClass("tile-hidden");
+    });
+
     //media based sizing
     if (resizer < 480) {
+        fewButton.click(function () { // show only the first three children of the colleciton list
+            $(this).each(function () {
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(1).addClass("tile-hidden");
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(0, 0).removeClass("tile-hidden");
+            });
+            $(this).addClass("button-selected");
+            $(this).siblings().removeClass("button-selected");
+            $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
+        });
 
     } else if (resizer < 768 && resizer >= 480) {
+        fewButton.click(function () { // show only the first three children of the colleciton list
+            $(this).each(function () {
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(1).addClass("tile-hidden");
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(0, 0).removeClass("tile-hidden");
+            });
+            $(this).addClass("button-selected");
+            $(this).siblings().removeClass("button-selected");
+            $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
+        });
 
     } else if (resizer < 992 && resizer >= 768) {
+        fewButton.click(function () { // show only the first three children of the colleciton list
+            $(this).each(function () {
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(2).addClass("tile-hidden");
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(0, 1).removeClass("tile-hidden");
+            });
+            $(this).addClass("button-selected");
+            $(this).siblings().removeClass("button-selected");
+            $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
+        });
 
     } else if (resizer < 1279 && resizer >= 992) {
-    
+        fewButton.click(function () { // show only the first three children of the colleciton list
+            $(this).each(function () {
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(3).addClass("tile-hidden");
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(0, 2).removeClass("tile-hidden");
+            });
+            $(this).addClass("button-selected");
+            $(this).siblings().removeClass("button-selected");
+            $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
+        });
     } else if (resizer < 1440 && resizer >= 1279) {
+        fewButton.click(function () { // show only the first three children of the colleciton list
+            $(this).each(function () {
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(3).addClass("tile-hidden");
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(0, 2).removeClass("tile-hidden");
+            });
+            $(this).addClass("button-selected");
+            $(this).siblings().removeClass("button-selected");
+            $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
+        });
     
     } else if (resizer < 1920 && resizer >= 1440) {
+        fewButton.click(function () { // show only the first three children of the colleciton list
+            $(this).each(function () {
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(4).addClass("tile-hidden");
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(0, 3).removeClass("tile-hidden");
+            });
+            $(this).addClass("button-selected");
+            $(this).siblings().removeClass("button-selected");
+            $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
+        });
+    
 
     } else if (resizer >= 1920) {
-
+        fewButton.click(function () { // show only the first three children of the colleciton list
+            $(this).each(function () {
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(5).addClass("tile-hidden");
+                $(this).parent().parent().parent().find(".resource-tilebox").children().slice(0, 4).removeClass("tile-hidden");
+            });
+            $(this).addClass("button-selected");
+            $(this).siblings().removeClass("button-selected");
+            $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
+        });
     } else {
-        // general statement
         fewButton.click(function () { // show only the first three children of the colleciton list
             $(this).each(function () {
                 $(this).parent().parent().parent().find(".resource-tilebox").children().slice(3).addClass("tile-hidden");
@@ -81,7 +148,13 @@ function fewButton() {
 
     });
     tileBooks.find(".few").click(function () {
-
+        $(this).each(function () {
+            $(this).parent().parent().parent().find(".resource-tilebox").children().slice(1).addClass("tile-hidden");
+            $(this).parent().parent().parent().find(".resource-tilebox").children().slice(0, 1).removeClass("tile-hidden");
+        });
+        $(this).addClass("button-selected");
+        $(this).siblings().removeClass("button-selected");
+        $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
     });
 }
 (function ($) {
