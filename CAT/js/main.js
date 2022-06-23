@@ -234,9 +234,14 @@ function windowScroll() {
     });
 
     scrollModStruggle.scroll(function() {
-        
+        var modScroll01 = scrollModStruggle.scrollTop();
+
+        console.log(posModStruggle+"scrolling item");
+        if (modScroll01 >= posEndModStruggle - windowH*startTrans){
+            console.log("open next module")
+        }
         // Position
-        let poshModStruggle      = scrollModStruggle.offset().top;
+        let posModStruggle       = scrollModStruggle.offset().top;
         let posModInclusive      = scrollModInclusive.offset().top;
         let posModAccess         = scrollModAccess.offset().top;
         let posModAcademic       = scrollModAcademic.offset().top;
@@ -293,40 +298,6 @@ function navLink() {
     });
 }
 
-function amChart() {
-    // https://www.amcharts.com/
-    am5.ready(function() {
-        var root = am5.Root.new("chartdiv01");
-        
-        var chart = root.container.children.push(
-            am5xy.XYChart.new(root, {})
-        );
-
-        var xAxis = chart.xAxes.push(
-            am5xy.ValueAxis.new(root, {
-                renderer: am5xy.AxisRendererX.new(root, {})
-            })
-        );
-
-        var yAxis = chart.yAxes.push(
-            am5xy.CategoryAxis.new(root, {
-                renderer: am5xy.AxisRendererY.new(root, {}),
-                categoryField: "causes"
-            })
-        );
-        am5.net.load("/data/mydata.json").then(function(result) {
-            console.log(result.response);
-            series.data.setAll(am5.CSVParser.parse(result.response));
-        }).catch(function(result){
-            console.log("Error loading " + result.xhr.responseURL);
-        });
-
-    }); // end am5.ready()
-}
-function mapChart() {
-    let mapContainer = $("#map");
-
-}
 function smoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -341,13 +312,13 @@ function smoothScroll() {
 function animateType() {
     let animateChar = $(".animatechar");
     let animateWord = $(".animateword");
+    let animateLine = $(".animateline")
     animateChar.lettering();
     animateWord.lettering('words');
+    animateLine.lettering('line');
 }
 
 (function($) {
-    mapChart();
-    amChart();
     animateType();
     navLink();
     smoothScroll();
