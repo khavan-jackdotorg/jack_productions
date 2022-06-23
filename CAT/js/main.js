@@ -230,6 +230,7 @@ function moduleClick() {
     struggleTile.click(function () {
         scrollModStruggle.addClass("learn-open").delay(500).queue(function () {
             $(this).css({
+                "display":"grid",
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).dequeue();
             console.log("open-struggle-animate");
@@ -239,6 +240,7 @@ function moduleClick() {
     inclusiveTile.click(function () {
         scrollModInclusive.addClass("learn-open").delay(500).queue(function () {
             $(this).css({
+                "display":"grid",
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).dequeue();
             console.log("open-struggle-animate");
@@ -248,6 +250,7 @@ function moduleClick() {
     accessTile.click(function () {
         scrollModAccess.addClass("learn-open").delay(500).queue(function () {
             $(this).css({
+                "display":"grid",
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).dequeue();
             console.log("open-struggle-animate");
@@ -257,6 +260,7 @@ function moduleClick() {
     academicTile.click(function () {
         scrollModAcademic.addClass("learn-open").delay(500).queue(function () {
             $(this).css({
+                "display":"grid",
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).dequeue();
             console.log("open-struggle-animate");
@@ -269,7 +273,7 @@ function moduleClick() {
             $(this).parents(".cat-learning-module").css({
                 "transform": "translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).delay(300).queue(function () {
-                $(this).removeClass("learn-open").css({"transform":""}).dequeue();
+                $(this).removeClass("learn-open").css({"transform":"","display":"none"}).dequeue();
             });
         });
         console.log("close-struggle");
