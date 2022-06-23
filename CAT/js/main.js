@@ -281,7 +281,7 @@ function moduleScroll() {
     let scrollModInclusive = $('#learning-inclusive');
     let scrollModAccess = $('#learning-access');
     let scrollModAcademic = $('#learning-academic'); 
-    
+
     let scrollEndModStruggle = $('#learning-struggle .scrolling-space');
     let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
     let scrollEndModAccess = $('#learning-access .scrolling-space');
@@ -432,6 +432,7 @@ function animateType() {
     navLink();
     smoothScroll();
     windowScroll();
+    moduleClick();
     moduleScroll();
     chart();
     $(window).on('resize', function () {
