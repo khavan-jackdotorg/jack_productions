@@ -238,7 +238,13 @@ function windowScroll() {
 
         console.log(posModStruggle+"scrolling item");
         if (modScroll01 >= posEndModStruggle - windowH*startTrans){
-            console.log("open next module")
+            console.log(modScroll01+"open next module")
+            scrollModStruggle.css({
+                "display": "none", 
+                "transform": "translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                "opacity": 0,
+                "transform-style": "preserve-3d"
+            })
         }
         // Position
         let posModStruggle       = scrollModStruggle.offset().top;
