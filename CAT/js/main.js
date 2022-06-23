@@ -270,7 +270,7 @@ function moduleClick() {
             $(this).parents("cat-learning-module").css({
                 "transform": "translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).delay(300).queue(function () {
-                $(this).removeClass("learn-open").dequeue();
+                $(this).removeClass("learn-open").css({"transform":""}).dequeue();
             });
         });
 
