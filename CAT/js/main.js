@@ -229,7 +229,7 @@ function moduleClick() {
     let academicTile = $(".learning-tile.academic");
 
     struggleTile.click(function () {
-        scrollModStruggle.addClass("learn-open").delay(300).queue(function () {
+        scrollModStruggle.addClass("learn-open").delay(500).queue(function () {
             $(this).css({
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).dequeue();
@@ -238,7 +238,7 @@ function moduleClick() {
         console.log("open-struggle");
     });
     inclusiveTile.click(function () {
-        scrollModInclusive.addClass("learn-open").delay(300).queue(function () {
+        scrollModInclusive.addClass("learn-open").delay(500).queue(function () {
             $(this).css({
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).dequeue();
@@ -247,7 +247,7 @@ function moduleClick() {
         console.log("open-struggle");
     });
     accessTile.click(function () {
-        scrollModAccess.addClass("learn-open").delay(300).queue(function () {
+        scrollModAccess.addClass("learn-open").delay(500).queue(function () {
             $(this).css({
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).dequeue();
@@ -256,7 +256,7 @@ function moduleClick() {
         console.log("open-struggle");
     });
     academicTile.click(function () {
-        scrollModAcademic.addClass("learn-open").delay(300).queue(function () {
+        scrollModAcademic.addClass("learn-open").delay(500).queue(function () {
             $(this).css({
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
             }).dequeue();
