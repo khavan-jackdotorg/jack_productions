@@ -228,55 +228,28 @@ function moduleClick() {
     let academicTile = $(".learning-tile.academic");
 
     struggleTile.click(function () {
-        scrollModStruggle.addClass("learn-open").delay(500).queue(function () {
-            $(this).css({
-                "display":"grid",
-                "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
-            }).dequeue();
-            console.log("open-struggle-animate");
-        });
+        scrollModStruggle.addClass("learn-open");
         console.log("open-struggle");
     });
     inclusiveTile.click(function () {
-        scrollModInclusive.addClass("learn-open").delay(500).queue(function () {
-            $(this).css({
-                "display":"grid",
-                "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
-            }).dequeue();
-            console.log("open-struggle-animate");
-        });
-        console.log("open-struggle");
+        scrollModInclusive.addClass("learn-open");
+        console.log("open-inclusive");
     });
     accessTile.click(function () {
-        scrollModAccess.addClass("learn-open").delay(500).queue(function () {
-            $(this).css({
-                "display":"grid",
-                "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
-            }).dequeue();
-            console.log("open-struggle-animate");
-        });
-        console.log("open-struggle");
+        scrollModAccess.addClass("learn-open");
+        console.log("open-access");
     });
     academicTile.click(function () {
-        scrollModAcademic.addClass("learn-open").delay(500).queue(function () {
-            $(this).css({
-                "display":"grid",
-                "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
-            }).dequeue();
-            console.log("open-struggle-animate");
-        });
-        console.log("open-struggle");
+        scrollModAcademic.addClass("learn-open");
+        console.log("open-academic");
     });
 
     moduleClose.click(function () {
         $(this).each(function () {
-            $(this).parents(".cat-learning-module").css({
-                "transform": "translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
-            }).delay(300).queue(function () {
-                $(this).removeClass("learn-open").css({"transform":"","display":"none"}).dequeue();
-            });
+            $(this).parents(".cat-learning-module").removeClass("learn-open");
+            console.log("close-module");
         });
-        console.log("close-struggle");
+        
 
     });
 }
