@@ -327,7 +327,7 @@ function animateType() {
     let animateLine = $(".animateline")
     animateChar.lettering();
     animateWord.lettering('words');
-    animateLine.lettering('line');
+    animateLine.lettering('lines');
 }
 
 (function($) {
