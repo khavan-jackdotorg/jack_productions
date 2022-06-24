@@ -254,11 +254,11 @@ function moduleClick() {
 
             if (x.matches) {
                 $(this).each(function(){
-                    children(".learning").css("padding-right", pad+64);
+                    $(this).children(".learning").css("padding-right", pad+64);
                 });
             } else {
                 $(this).each(function(){
-                    children(".learning").css("padding-right", pad+16);
+                    $(this).children(".learning").css("padding-right", pad+16);
                 });
             }
         }
@@ -271,11 +271,11 @@ function moduleClick() {
 
             if (x.matches) {
                 $(this).each(function(){
-                    children(".learning").css("padding-right", pad-64);
+                    $(this).children(".learning").css("padding-right", pad-64);
                 });
             } else {
                 $(this).each(function(){
-                    children(".learning").css("padding-right", pad-16);
+                    $(this).children(".learning").css("padding-right", pad-16);
                 });
             }
         }
