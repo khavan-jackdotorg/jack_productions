@@ -295,7 +295,7 @@ function moduleClick() {
     moduleClose.click(function () {
         $(this).each(function () {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function(){
-                $(this).removeClass("learn-open learn-remove learn-init");
+                $(".cat-learning-module").removeClass("learn-open learn-remove learn-init");
                 console.log("reset");
             });
             console.log("close-module");
@@ -327,15 +327,15 @@ function moduleScroll() {
 
     scrollModStruggle.scroll(function () {
         // Position
-        let posModStruggle = scrollModStruggle.offset().top;
-        let posModInclusive = scrollModInclusive.offset().top;
-        let posModAccess = scrollModAccess.offset().top;
-        let posModAcademic = scrollModAcademic.offset().top;
+        let posModStruggle = scrollModStruggle.position().top;
+        let posModInclusive = scrollModInclusive.position().top;
+        let posModAccess = scrollModAccess.position().top;
+        let posModAcademic = scrollModAcademic.position().top;
 
-        let posEndModStruggle = scrollEndModStruggle.offset().top;
-        let posEndModInclusive = scrollEndModInclusive.offset().top;
-        let posEndModAccess = scrollEndModAccess.offset().top;
-        let posEndModAcademic = scrollEndModAcademic.offset().top;
+        let posEndModStruggle = scrollEndModStruggle.position().top;
+        let posEndModInclusive = scrollEndModInclusive.position().top;
+        let posEndModAccess = scrollEndModAccess.position().top;
+        let posEndModAcademic = scrollEndModAcademic.position().top;
 
         //learning section
         var modScroll01 = scrollModStruggle.scrollTop();
@@ -530,6 +530,13 @@ function mapClick() {
                 $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
                     "display":"none"
                 })
+                catMap.css({
+                    "bottom":"auto",
+                    "right":"auto",
+                    "left":"auto",
+                    "top":"auto",
+                    "width":"100vw"
+                })
             })
         }
     })
@@ -546,11 +553,93 @@ function mapClick() {
     let windsorButton = $("#chapter-windsor");
 
     let catMap = $(".cat-map-object");
-
     bishopButton.click(function(){
         catMap.css({
             "bottom":"27.3112807464vw",
             "right":"24.2578456319vw",
+            "left":"auto",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    camosunButton.click(function(){
+        catMap.css({
+            "bottom":"19.1687871077vw",
+            "right":"auto",
+            "left":"39.8642917727vw",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    dalhousieButton.click(function(){
+        catMap.css({
+            "bottom":"22.9007633588vw",
+            "right":"35.4537743851vw",
+            "left":"auto",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    lakeheadButton.click(function(){
+        catMap.css({
+            "bottom":"27.0568278202vw",
+            "right":"1.69635284139vw",
+            "left":"auto",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    tmuButton.click(function(){
+        catMap.css({
+            "bottom":"33.0788804071vw",
+            "right":"16.6242578456vw",
+            "left":"auto",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    trentButton.click(function(){
+        catMap.css({
+            "bottom":"31.5521628499vw",
+            "right":"17.3876166243vw",
+            "left":"auto",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    guelphButton.click(function(){
+        catMap.css({
+            "bottom":"33.8422391858vw",
+            "right":"14.588634436vw",
+            "left":"auto",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    brunButton.click(function(){
+        catMap.css({
+            "bottom":"24.5971162002vw",
+            "right":"31.6369804919vw",
+            "left":"auto",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    torontoButton.click(function(){
+        catMap.css({
+            "bottom":"33.3333333333vw",
+            "right":"16.2849872774vw",
+            "left":"auto",
+            "top":"auto",
+            "width":"200vw"
+        })
+    })
+    windsorButton.click(function(){
+        catMap.css({
+            "bottom":"37.4893977947vw",
+            "right":"11.5351993215vw",
+            "left":"auto",
+            "top":"auto",
             "width":"200vw"
         })
     })
