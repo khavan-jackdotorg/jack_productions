@@ -358,9 +358,14 @@ function highChart(){
         chart: {
             backgroundColor: "#3990DC",
             borderWidth: 2,
-            plotBackgroundColor: 'rgba(255, 255, 255, .9)',
+            plotBackgroundColor: '#2D2522',
             plotShadow: true,
-            plotBorderWidth: 1
+            plotBorderWidth: 1,
+            style: {
+                fontFamily: 'Helvetica',
+                fontSize: 21,
+                fontColor: "2D2522"
+            }
         }
     });
 
@@ -369,7 +374,10 @@ function highChart(){
     document.addEventListener('DOMContentLoaded', function () {
         const chart = Highcharts.chart('barchart', {
             chart: {
-                type: 'bar'
+                type: 'bar',
+
+                width: '100%',
+                height: '100%'
             },
             title: {
                 text: 'Causes of Struggle Survey'
@@ -383,8 +391,12 @@ function highChart(){
                 }
             },
             series: [{
+                name:'Percent (%) of students',
                 data: data
-            }]
+            }],
+            legend: {
+                enabled: false
+            }
         });
     });
 
