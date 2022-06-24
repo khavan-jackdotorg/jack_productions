@@ -305,6 +305,12 @@ function moduleScroll() {
     });
 }
 function chart() {
+
+    //Global Options
+    Chart.defaults.global.defaultFontFamily = "Helvetica";
+    Chart.defaults.global.defaultFontSize = 21;
+    Chart.defaults.global.defaultFontColor = "#2D2522";
+
     const labels = ['Academic stress', 'Financial stress', 'COVID-19 pandemic', 'Relationships with family', 'Finding a job', 'Work stress', 'Relationships with peers', 'Dating', 'Other health-related stress', 'Housing stress', 'Other - Write In', 'Social media', 'Climate change', 'Food insecurity', 'My own substance use', 'Substance use by friends or family', 'Experiences with the justice system'
     ];
     //setup
@@ -315,7 +321,8 @@ function chart() {
             data: [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05],
             backgroundColor: [
                 '#F4F2EF'
-            ]
+            ],
+            hoverBackgrounColor: "#2D2522"
         }]
     }
     //config
@@ -328,11 +335,20 @@ function chart() {
                     beginAtZero: true
                 }
             },
-            indexAxis: 'y'
+            indexAxis: 'y',
+            legend:{
+                position:"bottom"
+            },
+            tooltips:{
+                backgroundColor: "#2D2522",
+                titleColor: "#F4F2EF",
+                boxPadding: 12,
+                padding: 12,
+            }
         }
     }
     //render
-    const myBarChart = new chart(
+    const myBarChart = new Chart(
         document.getElementById('myBarChart'),
         config
     );
