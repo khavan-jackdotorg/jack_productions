@@ -376,46 +376,46 @@ function chart() {
     // Chart.defaults.global.defaultFontSize = 21;
     // Chart.defaults.global.defaultFontColor = "#2D2522";
 
-    const labels = ;
-    //setup
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Percent (%) cause of struggle',
-            data: [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05],
-            backgroundColor: [
-                '#F4F2EF'
-            ],
-            hoverBackgrounColor: "#2D2522"
-        }]
-    }
-    //config
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {
-            scales: {
-                x: {
-                    beginAtZero: true
-                }
-            },
-            indexAxis: 'y',
-            legend:{
-                position:"bottom"
-            },
-            tooltips:{
-                backgroundColor: "#2D2522",
-                titleColor: "#F4F2EF",
-                boxPadding: 12,
-                padding: 12,
-            }
-        }
-    }
-    //render
-    const myBarChart = new Chart(
-        document.getElementById('myBarChart'),
-        config
-    );
+    // const labels = label;
+    // //setup
+    // const data = {
+    //     labels: labels,
+    //     datasets: [{
+    //         label: 'Percent (%) cause of struggle',
+    //         data: [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05],
+    //         backgroundColor: [
+    //             '#F4F2EF'
+    //         ],
+    //         hoverBackgrounColor: "#2D2522"
+    //     }]
+    // }
+    // //config
+    // const config = {
+    //     type: 'bar',
+    //     data: data,
+    //     options: {
+    //         scales: {
+    //             x: {
+    //                 beginAtZero: true
+    //             }
+    //         },
+    //         indexAxis: 'y',
+    //         legend:{
+    //             position:"bottom"
+    //         },
+    //         tooltips:{
+    //             backgroundColor: "#2D2522",
+    //             titleColor: "#F4F2EF",
+    //             boxPadding: 12,
+    //             padding: 12,
+    //         }
+    //     }
+    // }
+    // //render
+    // const myBarChart = new Chart(
+    //     document.getElementById('myBarChart'),
+    //     config
+    // );
 }
 function navLink() {
     let navHam = $(".nav-hamburger");
@@ -484,20 +484,59 @@ function animateType() {
 }
 function mapClick() {
     let chapter = $(".cat-chapter-button");
-    chapter.click(function(){
-        $(this).each(function(){
-            $(this).siblings(".cat-chapter-button").css({
-                "background-color":"#2D2522",
-                "color":"#F4F2EF"
+    let mapArea = $(".cat-sec-container.map");
+    mapArea.on("click", function(event){
+        if($(event.target).closest(".cat-chapter-button").length){
+            console.log("click on button");
+            $(this).each(function(){
+                $(this).siblings(".cat-chapter-button").css({
+                    "background-color":"#2D2522",
+                    "color":"#F4F2EF"
+                });
+                $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+                    "display":"none"
+                });
+                $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+                    "display":"none"
+                })
             });
-            $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
-                "display":"none"
-            });
-            $(this).siblings(".cat-chapter-button").children(".chapter-box").cs({
-                "display":"none"
+        } else {
+            chapter.each(function(){
+                $(this).css({
+                    "background-color":"#2D2522",
+                    "color":"#F4F2EF"
+                });
+                $(this).children(".chapter-content-p").css({
+                    "display":"none"
+                });
+                $(this).children(".chapter-box").css({
+                    "display":"none"
+                })
             })
+        }
+    })
+
+    let bishopButton = $("#chapter-bishop");
+    let camosunButton = $("#chapter-camosun");
+    let dalhousieButton = $("#chapter-dalhousie");
+    let lakeheadButton = $("#chapter-lakehead");
+    let tmuButton = $("#chapter-tmu");
+    let trentButton = $("#chapter-trent");
+    let guelphButton = $("#chapter-guelph");
+    let brunButton = $("#chapter-brunswick");
+    let torontoButton = $("#chapter-toronto");
+    let windsorButton = $("#chapter-windsor");
+
+    let catMap = $(".cat-map-object");
+
+    bishopButton.click(function(){
+        catMap.css({
+            "bottom":"19.1687871077vw",
+            "left":"40.203562341vw",
+            "width":"200vw"
         })
     })
+
 }
 
 (function ($) {
