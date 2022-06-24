@@ -246,6 +246,43 @@ function moduleClick() {
         scrollModAcademic.addClass("learn-open");
         console.log("open-academic");
     });
+
+    learnTile.mouseenter(function(){  
+        
+        function functionX(x) {
+            var pad = $(this).children(".learning").css("padding-right");
+
+            if (x.matches) {
+                $(this).each(function(){
+                    children(".learning").css("padding-right", pad+64);
+                });
+            } else {
+                $(this).each(function(){
+                    children(".learning").css("padding-right", pad+16);
+                });
+            }
+        }
+        var x = window.matchMedia("(min-width: 478px)");
+        functionX(x);
+        x.addEventListener(functionX);      
+    }).mouseleave(function(){
+        function functionX(x) {
+            var pad = $(this).children(".learning").css("padding-right");
+
+            if (x.matches) {
+                $(this).each(function(){
+                    children(".learning").css("padding-right", pad-64);
+                });
+            } else {
+                $(this).each(function(){
+                    children(".learning").css("padding-right", pad-16);
+                });
+            }
+        }
+        var x = window.matchMedia("(min-width: 478px)");
+        functionX(x);
+        x.addEventListener(functionX);  
+    })
     
     moduleClose.click(function () {
         $(this).each(function () {
