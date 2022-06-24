@@ -67,12 +67,18 @@ body::-webkit-scrollbar-thumb {
     display: flex;
 }
 /* module */
+.cat-learn-module {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
+}
 .cat-learning-module.learn-open {
     display: grid;
-    transform:translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 }
 .cat-learning-module.learn-open.learn-remove {
     transform:translate3d(0%, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+.cat-learning-module.learn-open.learn-init {
+    transform:translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 /* Element Fix */

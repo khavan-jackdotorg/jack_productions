@@ -228,22 +228,30 @@ function moduleClick() {
     let inclusiveTile = $(".learning-tile.inclusivity");
     let accessTile = $(".learning-tile.access");
     let academicTile = $(".learning-tile.academic");
-    
+    console.log("close-module");
     // click
     struggleTile.click(function () {
-        scrollModStruggle.addClass("learn-open");
+        scrollModStruggle.addClass("learn-open").delay(500).queue(function(){
+            $(this).addClass("learn-init");
+        });
         console.log("open-struggle");
     });
     inclusiveTile.click(function () {
-        scrollModInclusive.addClass("learn-open");
+        scrollModInclusive.addClass("learn-open").delay(500).queue(function(){
+            $(this).addClass("learn-init");
+        });
         console.log("open-inclusive");
     });
     accessTile.click(function () {
-        scrollModAccess.addClass("learn-open");
+        scrollModAccess.addClass("learn-open").delay(500).queue(function(){
+            $(this).addClass("learn-init");
+        });
         console.log("open-access");
     });
     academicTile.click(function () {
-        scrollModAcademic.addClass("learn-open");
+        scrollModAcademic.addClass("learn-open").delay(500).queue(function(){
+            $(this).addClass("learn-init");
+        });
         console.log("open-academic");
     });
 
@@ -287,7 +295,7 @@ function moduleClick() {
     moduleClose.click(function () {
         $(this).each(function () {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function(){
-                $(this).removeClass("learn-open");
+                $(this).removeClass("learn-open learn-remove learn-init");
                 console.log("reset");
             });
             console.log("close-module");
