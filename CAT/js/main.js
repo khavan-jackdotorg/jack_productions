@@ -332,7 +332,7 @@ function chart() {
         }
     }
     //render
-    const myBarChart = new Chart(
+    const myBarChart = new chart(
         document.getElementById('myBarChart'),
         config
     );
@@ -405,6 +405,23 @@ function animateType() {
     animateWord.lettering('words');
     animateLine.lettering('lines');
 }
+function mapClick() {
+    let chapter = $(".cat-chapter-button");
+    chapter.click(function(){
+        $(this).each(function(){
+            $(this).siblings(".cat-chapter-button").css({
+                "background-color":"#2D2522",
+                "color":"#F4F2EF"
+            });
+            $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+                "display":"none"
+            });
+            $(this).siblings(".cat-chapter-button").children(".chapter-box").cs({
+                "display":"none"
+            })
+        })
+    })
+}
 
 (function ($) {
     animateType();
@@ -414,6 +431,7 @@ function animateType() {
     moduleClick();
     moduleScroll();
     chart();
+    mapClick();
     $(window).on('resize', function () {
         windowScroll();
     });
