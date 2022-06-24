@@ -216,6 +216,8 @@ function windowScroll() {
 }
 function moduleClick() {
     //   // Modules
+    let learnTile = $(".learning-tile");
+
     let scrollModStruggle = $('#learning-struggle');
     let scrollModInclusive = $('#learning-inclusive');
     let scrollModAccess = $('#learning-access');
@@ -226,7 +228,8 @@ function moduleClick() {
     let inclusiveTile = $(".learning-tile.inclusivity");
     let accessTile = $(".learning-tile.access");
     let academicTile = $(".learning-tile.academic");
-
+    
+    // click
     struggleTile.click(function () {
         scrollModStruggle.addClass("learn-open");
         console.log("open-struggle");
@@ -243,14 +246,15 @@ function moduleClick() {
         scrollModAcademic.addClass("learn-open");
         console.log("open-academic");
     });
-
+    
     moduleClose.click(function () {
         $(this).each(function () {
-            $(this).parents(".cat-learning-module").removeClass("learn-open");
+            $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function(){
+                $(this).removeClass("learn-open");
+                console.log("reset");
+            });
             console.log("close-module");
         });
-        
-
     });
 }
 function moduleScroll() {
@@ -304,15 +308,38 @@ function moduleScroll() {
 
     });
 }
+function highChart(){
+    document.addEventListener('DOMContentLoaded', function () {
+        const chart = Highcharts.chart('barchart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Causes of Struggle Survey'
+            },
+            xAxis: {
+                categories: ['Academic stress', 'Financial stress', 'COVID-19 pandemic', 'Relationships with family', 'Finding a job', 'Work stress', 'Relationships with peers', 'Dating', 'Other health-related stress', 'Housing stress', 'Other - Write In', 'Social media', 'Climate change', 'Food insecurity', 'My own substance use', 'Substance use by friends or family', 'Experiences with the justice system' ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Percent (%) of students'
+                }
+            },
+            series: [{
+                data: [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05]
+            }]
+        });
+    });
+
+}
 function chart() {
 
     //Global Options
-    Chart.defaults.global.defaultFontFamily = "Helvetica";
-    Chart.defaults.global.defaultFontSize = 21;
-    Chart.defaults.global.defaultFontColor = "#2D2522";
+    // Chart.defaults.global.defaultFontFamily = "Helvetica";
+    // Chart.defaults.global.defaultFontSize = 21;
+    // Chart.defaults.global.defaultFontColor = "#2D2522";
 
-    const labels = ['Academic stress', 'Financial stress', 'COVID-19 pandemic', 'Relationships with family', 'Finding a job', 'Work stress', 'Relationships with peers', 'Dating', 'Other health-related stress', 'Housing stress', 'Other - Write In', 'Social media', 'Climate change', 'Food insecurity', 'My own substance use', 'Substance use by friends or family', 'Experiences with the justice system'
-    ];
+    const labels = ;
     //setup
     const data = {
         labels: labels,
@@ -373,7 +400,6 @@ function navLink() {
     navHam.click(function () {
         navMenu.addClass("opened").delay(30).queue(function () {
             $(this).css({
-                "opacity": "1",
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
                 "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
             }).dequeue();
@@ -382,8 +408,7 @@ function navLink() {
     });
     navLink.click(function () {
         navMenu.css({
-            "opacity": "0",
-            "transform": "translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            "transform": "translate3d(0, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
             "clip-path": "polygon(0 0, 100% 0, 100% 85%, 0% 100%)"
         }).delay(550).queue(function () {
             $(this).removeClass("opened").dequeue();
@@ -392,8 +417,7 @@ function navLink() {
     });
     navClose.click(function () {
         navMenu.css({
-            "opacity": "0",
-            "transform": "translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            "transform": "translate3d(0%, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
             "clip-path": "polygon(0 0, 100% 0, 100% 85%, 0% 100%)"
         }).delay(550).queue(function () {
             $(this).removeClass("opened").dequeue();
@@ -446,10 +470,12 @@ function mapClick() {
     windowScroll();
     moduleClick();
     moduleScroll();
-    chart();
+    highChart();
+    // chart();
     mapClick();
     $(window).on('resize', function () {
         windowScroll();
+        moduleScroll();
     });
 
 
