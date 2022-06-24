@@ -454,7 +454,7 @@ function navLink() {
     navLink.click(function () {
         navMenu.css({
             "transform": "translate3d(0, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-            "clip-path": "polygon(0 0, 100% 0, 100% 85%, 0% 100%)"
+            "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 90%)"
         }).delay(550).queue(function () {
             $(this).removeClass("opened").dequeue();
         });
@@ -463,7 +463,7 @@ function navLink() {
     navClose.click(function () {
         navMenu.css({
             "transform": "translate3d(0%, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-            "clip-path": "polygon(0 0, 100% 0, 100% 85%, 0% 100%)"
+            "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 90%)"
         }).delay(550).queue(function () {
             $(this).removeClass("opened").dequeue();
         });
@@ -520,6 +520,16 @@ function mapClick() {
                 $(this).children(".chapter-box").css({
                     "display":"none"
                 })
+                $(this).siblings(".cat-chapter-button").css({
+                    "background-color":"#2D2522",
+                    "color":"#F4F2EF"
+                });
+                $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+                    "display":"none"
+                });
+                $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+                    "display":"none"
+                })
             })
         }
     })
@@ -539,8 +549,8 @@ function mapClick() {
 
     bishopButton.click(function(){
         catMap.css({
-            "bottom":"19.1687871077vw",
-            "left":"40.203562341vw",
+            "bottom":"27.3112807464vw",
+            "right":"24.2578456319vw",
             "width":"200vw"
         })
     })

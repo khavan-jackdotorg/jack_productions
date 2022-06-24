@@ -61,7 +61,7 @@ body::-webkit-scrollbar-thumb {
     width:100%;
 }
 .cat-navmenu-pop {
-    transition: opacity 200ms ease, transform 500ms ease, clip-path 800ms ease;
+    transition: opacity 200ms ease, transform 500ms ease, clip-path 500ms ease;
 }
 .cat-navmenu-pop.opened {
     display: flex;
@@ -72,6 +72,7 @@ body::-webkit-scrollbar-thumb {
 }
 .cat-learning-module.learn-open {
     display: grid;
+    transition: opacity 0ms ease, transform 900ms ease, -webkit-transform 900ms ease, clip-path 500ms ease;
 }
 .cat-learning-module.learn-open.learn-remove {
     transform:translate3d(0%, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
