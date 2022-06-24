@@ -429,7 +429,7 @@ function highChart(){
                     step: 1
                 },
                 accessibility: {
-                    description: 'Age (male)'
+                    description: 'Agree'
                 }
             }, { // mirror axis on right side
                 opposite: true,
@@ -440,7 +440,7 @@ function highChart(){
                     step: 1
                 },
                 accessibility: {
-                    description: 'Age (female)'
+                    description: 'Disagree'
                 }
             }],
             yAxis: {
