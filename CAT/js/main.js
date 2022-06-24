@@ -232,25 +232,25 @@ function moduleClick() {
     // click
     struggleTile.click(function () {
         scrollModStruggle.addClass("learn-open").delay(500).queue(function(){
-            $(this).addClass("learn-init");
+            $(this).addClass("learn-init").dequeue();
         });
         console.log("open-struggle");
     });
     inclusiveTile.click(function () {
         scrollModInclusive.addClass("learn-open").delay(500).queue(function(){
-            $(this).addClass("learn-init");
+            $(this).addClass("learn-init").dequeue();
         });
         console.log("open-inclusive");
     });
     accessTile.click(function () {
         scrollModAccess.addClass("learn-open").delay(500).queue(function(){
-            $(this).addClass("learn-init");
+            $(this).addClass("learn-init").dequeue();
         });
         console.log("open-access");
     });
     academicTile.click(function () {
         scrollModAcademic.addClass("learn-open").delay(500).queue(function(){
-            $(this).addClass("learn-init");
+            $(this).addClass("learn-init").dequeue();
         });
         console.log("open-academic");
     });
@@ -295,7 +295,7 @@ function moduleClick() {
     moduleClose.click(function () {
         $(this).each(function () {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function(){
-                $(".cat-learning-module").removeClass("learn-open learn-remove learn-init");
+                $(".cat-learning-module").removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("reset");
             });
             console.log("close-module");
@@ -354,6 +354,18 @@ function moduleScroll() {
     });
 }
 function highChart(){
+    Highcharts.setOptions({
+        chart: {
+            backgroundColor: "#3990DC",
+            borderWidth: 2,
+            plotBackgroundColor: 'rgba(255, 255, 255, .9)',
+            plotShadow: true,
+            plotBorderWidth: 1
+        }
+    });
+
+    const data = [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05];
+
     document.addEventListener('DOMContentLoaded', function () {
         const chart = Highcharts.chart('barchart', {
             chart: {
@@ -371,60 +383,13 @@ function highChart(){
                 }
             },
             series: [{
-                data: [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05]
+                data: data
             }]
         });
     });
 
 }
-function chart() {
 
-    //Global Options
-    // Chart.defaults.global.defaultFontFamily = "Helvetica";
-    // Chart.defaults.global.defaultFontSize = 21;
-    // Chart.defaults.global.defaultFontColor = "#2D2522";
-
-    // const labels = label;
-    // //setup
-    // const data = {
-    //     labels: labels,
-    //     datasets: [{
-    //         label: 'Percent (%) cause of struggle',
-    //         data: [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05],
-    //         backgroundColor: [
-    //             '#F4F2EF'
-    //         ],
-    //         hoverBackgrounColor: "#2D2522"
-    //     }]
-    // }
-    // //config
-    // const config = {
-    //     type: 'bar',
-    //     data: data,
-    //     options: {
-    //         scales: {
-    //             x: {
-    //                 beginAtZero: true
-    //             }
-    //         },
-    //         indexAxis: 'y',
-    //         legend:{
-    //             position:"bottom"
-    //         },
-    //         tooltips:{
-    //             backgroundColor: "#2D2522",
-    //             titleColor: "#F4F2EF",
-    //             boxPadding: 12,
-    //             padding: 12,
-    //         }
-    //     }
-    // }
-    // //render
-    // const myBarChart = new Chart(
-    //     document.getElementById('myBarChart'),
-    //     config
-    // );
-}
 function navLink() {
     let navHam = $(".nav-hamburger");
     let navLink = $(".nav-link");
@@ -535,7 +500,8 @@ function mapClick() {
                     "right":"auto",
                     "left":"auto",
                     "top":"auto",
-                    "width":"100vw"
+                    "width":"100vw",
+                    "height":"100vw"
                 })
             })
         }
@@ -559,6 +525,7 @@ function mapClick() {
             "right":"24.2578456319vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -568,6 +535,7 @@ function mapClick() {
             "right":"auto",
             "left":"39.8642917727vw",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -577,6 +545,7 @@ function mapClick() {
             "right":"35.4537743851vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -586,6 +555,7 @@ function mapClick() {
             "right":"1.69635284139vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -595,6 +565,7 @@ function mapClick() {
             "right":"16.6242578456vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -604,6 +575,7 @@ function mapClick() {
             "right":"17.3876166243vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -613,6 +585,7 @@ function mapClick() {
             "right":"14.588634436vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -622,6 +595,7 @@ function mapClick() {
             "right":"31.6369804919vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -631,6 +605,7 @@ function mapClick() {
             "right":"16.2849872774vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -640,6 +615,7 @@ function mapClick() {
             "right":"11.5351993215vw",
             "left":"auto",
             "top":"auto",
+            "height":"200vw",
             "width":"200vw"
         })
     })
@@ -654,7 +630,6 @@ function mapClick() {
     moduleClick();
     moduleScroll();
     highChart();
-    // chart();
     mapClick();
     $(window).on('resize', function () {
         windowScroll();
