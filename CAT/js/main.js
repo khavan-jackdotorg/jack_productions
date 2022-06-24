@@ -272,7 +272,7 @@ function moduleClick() {
         }
         var x = window.matchMedia("(min-width: 478px)");
         functionX(x);
-        x.addEventListener(functionX);      
+        x.addEventListener("mouseenter",functionX);      
     }).mouseleave(function(){
         function functionX(x) {
             var pad = $(this).children(".learning").css("padding-right");
@@ -289,7 +289,7 @@ function moduleClick() {
         }
         var x = window.matchMedia("(min-width: 478px)");
         functionX(x);
-        x.addEventListener(functionX);  
+        x.addEventListener("mouseleave",functionX);  
     })
     
     moduleClose.click(function () {
