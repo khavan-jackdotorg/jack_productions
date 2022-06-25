@@ -228,7 +228,9 @@ function moduleClick() {
     let inclusiveTile = $(".learning-tile.inclusivity");
     let accessTile = $(".learning-tile.access");
     let academicTile = $(".learning-tile.academic");
-    console.log("close-module");
+
+    let learnMod = $(".cat-learning-module");
+
     // click
     struggleTile.click(function () {
         scrollModStruggle.addClass("learn-open").delay(500).queue(function(){
@@ -262,11 +264,11 @@ function moduleClick() {
 
             if (x.matches) {
                 $(this).each(function(){
-                    $(this).children(".learning").css("padding-right", pad+64);
+                    $(this).children(".learning").css("padding-right", pad+64 + "px");
                 });
             } else {
                 $(this).each(function(){
-                    $(this).children(".learning").css("padding-right", pad+16);
+                    $(this).children(".learning").css("padding-right", pad+16 + "px");
                 });
             }
         }
@@ -279,11 +281,11 @@ function moduleClick() {
 
             if (x.matches) {
                 $(this).each(function(){
-                    $(this).children(".learning").css("padding-right", pad-64);
+                    $(this).children(".learning").css("padding-right", pad-64 + "px");
                 });
             } else {
                 $(this).each(function(){
-                    $(this).children(".learning").css("padding-right", pad-16);
+                    $(this).children(".learning").css("padding-right", pad-16 + "px");
                 });
             }
         }
@@ -295,7 +297,7 @@ function moduleClick() {
     moduleClose.click(function () {
         $(this).each(function () {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function(){
-                $(".cat-learning-module").removeClass("learn-open learn-remove learn-init").dequeue();
+                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("reset");
             });
             console.log("close-module");
@@ -314,6 +316,8 @@ function moduleScroll() {
     let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
     let scrollEndModAccess = $('#learning-access .scrolling-space');
     let scrollEndModAcademic = $('#learning-academic .scrolling-space');
+
+    let learnMod = $(".cat-learning-module");
     // Modules
     let lengthModStruggle = scrollModStruggle.innerHeight();
     let lengthModInclusive = scrollModInclusive.innerHeight();
@@ -344,8 +348,13 @@ function moduleScroll() {
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
             console.log(modScroll01 + "open next module")
             scrollModStruggle.addClass("learn-remove").delay(1000).queue(function(){
-                $(".cat-learning-module").removeClass("learn-open learn-remove learn-init").dequeue();
-                console.log("reset");
+                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
+                console.log("all reset");
+
+                scrollModInclusive.addClass("learn-open").delay(500).queue(function(){
+                    $(this).addClass("learn-init").dequeue();
+                });
+                console.log("open-inclusive");
             });
             console.log("close-module");
         }
@@ -374,9 +383,6 @@ function highChart(){
         const chart = Highcharts.chart('barchart', {
             chart: {
                 type: 'bar',
-
-                width: '100%',
-                height: '100%'
             },
             title: {
                 text: 'Causes of Struggle Survey'
@@ -414,6 +420,7 @@ function highChart(){
             "The campus mental health services  I used met my needs",	
             "The campus mental health services I used were responsive to my background and experiences"
         ];
+
         const chartdiv02 = Highcharts.chart('chartdiv02', {
             chart: {
                 type: 'bar'
