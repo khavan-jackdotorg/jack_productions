@@ -331,22 +331,12 @@ function moduleScroll() {
 
     scrollModStruggle.scroll(function () {
         // Position
-        let posModStruggle = scrollModStruggle.position().top;
-        let posModInclusive = scrollModInclusive.position().top;
-        let posModAccess = scrollModAccess.position().top;
-        let posModAcademic = scrollModAcademic.position().top;
-
         let posEndModStruggle = scrollEndModStruggle.position().top;
-        let posEndModInclusive = scrollEndModInclusive.position().top;
-        let posEndModAccess = scrollEndModAccess.position().top;
-        let posEndModAcademic = scrollEndModAcademic.position().top;
 
         //learning section
         var modScroll01 = scrollModStruggle.scrollTop();
 
-        console.log(posModStruggle + "scrolling item");
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
-            console.log(modScroll01 + "open next module")
             scrollModStruggle.addClass("learn-remove").delay(1000).queue(function(){
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
@@ -356,10 +346,65 @@ function moduleScroll() {
                 });
                 console.log("open-inclusive");
             });
-            console.log("close-module");
         }
-
     });
+    scrollModInclusive.scroll(function () {
+        // Position
+        let posEndModInclusive = scrollEndModInclusive.position().top;
+
+        //learning section
+        var modScroll02 = scrollModInclusive.scrollTop();
+
+        if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
+            scrollModInclusive.addClass("learn-remove").delay(1000).queue(function(){
+                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
+                console.log("all reset");
+
+                scrollModAccess.addClass("learn-open").delay(500).queue(function(){
+                    $(this).addClass("learn-init").dequeue();
+                });
+                console.log("open-acess");
+            });
+        }
+    });
+    scrollModAccess.scroll(function () {
+        // Position
+        let posEndModAccess = scrollEndModAccess.position().top;
+
+        //learning section
+        var modScroll03 = scrollModAccess.scrollTop();
+
+        if (modScroll03 >= posEndModAccess - windowH * startTrans) {
+            scrollModAccess.addClass("learn-remove").delay(1000).queue(function(){
+                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
+                console.log("all reset");
+
+                scrollModAcademic.addClass("learn-open").delay(500).queue(function(){
+                    $(this).addClass("learn-init").dequeue();
+                });
+                console.log("open-academic");
+            });
+        }
+    });
+    scrollModAcademic.scroll(function () {
+        // Position
+        let posEndModAcademic = scrollEndModAcademic.position().top;
+        let posInvolved = scrollInvolved.offset().top;
+
+        //learning section
+        var modScroll03 = scrollModAcademic.scrollTop();
+
+        if (modScroll03 >= posEndModAcademic - windowH * startTrans) {
+            scrollModAcademic.addClass("learn-remove").delay(1000).queue(function(){
+                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
+                console.log("all reset");
+
+                $('html,body').animate({scrollTop: posInvolved},'slow');
+                console.log("open-involved");
+            });
+        }
+    });
+
 }
 function highChart(){
     Highcharts.setOptions({
