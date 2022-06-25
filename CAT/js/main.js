@@ -414,7 +414,7 @@ function highChart(){
                 enabled: false
             }
         });
-        var categories = [
+        const categories = [
             "The campus mental health services I used were high quality ",
             "The campus mental health services I used were accessible when I needed them",
             "The campus mental health services  I used met my needs",	
@@ -579,18 +579,18 @@ function mapClick() {
     mapArea.on("click", function(event){
         if($(event.target).closest(".cat-chapter-button").length){
             console.log("click on button");
-            $(this).each(function(){
-                $(this).siblings(".cat-chapter-button").css({
-                    "background-color":"#2D2522",
-                    "color":"#F4F2EF"
-                });
-                $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
-                    "display":"none"
-                });
-                $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
-                    "display":"none"
-                })
-            });
+            // $(this).each(function(){
+            //     $(this).siblings(".cat-chapter-button").css({
+            //         "background-color":"#2D2522",
+            //         "color":"#F4F2EF"
+            //     });
+            //     $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            //         "display":"none"
+            //     });
+            //     $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            //         "display":"none"
+            //     })
+            // });
         } else {
             chapter.each(function(){
                 $(this).css({
@@ -646,6 +646,16 @@ function mapClick() {
             "height":"200vw",
             "width":"200vw"
         })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
+        })
     })
     camosunButton.click(function(){
         catMap.css({
@@ -655,6 +665,16 @@ function mapClick() {
             "top":"auto",
             "height":"200vw",
             "width":"200vw"
+        })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
         })
     })
     dalhousieButton.click(function(){
@@ -666,6 +686,16 @@ function mapClick() {
             "height":"200vw",
             "width":"200vw"
         })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
+        })
     })
     lakeheadButton.click(function(){
         catMap.css({
@@ -675,6 +705,16 @@ function mapClick() {
             "top":"auto",
             "height":"200vw",
             "width":"200vw"
+        })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
         })
     })
     tmuButton.click(function(){
@@ -686,6 +726,16 @@ function mapClick() {
             "height":"200vw",
             "width":"200vw"
         })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
+        })
     })
     trentButton.click(function(){
         catMap.css({
@@ -695,6 +745,16 @@ function mapClick() {
             "top":"auto",
             "height":"200vw",
             "width":"200vw"
+        })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
         })
     })
     guelphButton.click(function(){
@@ -706,6 +766,16 @@ function mapClick() {
             "height":"200vw",
             "width":"200vw"
         })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
+        })
     })
     brunButton.click(function(){
         catMap.css({
@@ -715,6 +785,16 @@ function mapClick() {
             "top":"auto",
             "height":"200vw",
             "width":"200vw"
+        })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
         })
     })
     torontoButton.click(function(){
@@ -726,6 +806,16 @@ function mapClick() {
             "height":"200vw",
             "width":"200vw"
         })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
+        })
     })
     windsorButton.click(function(){
         catMap.css({
@@ -735,6 +825,16 @@ function mapClick() {
             "top":"auto",
             "height":"200vw",
             "width":"200vw"
+        })
+        $(this).siblings(".cat-chapter-button").css({
+            "background-color":"#2D2522",
+            "color":"#F4F2EF"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display":"none"
+        });
+        $(this).siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display":"none"
         })
     })
 

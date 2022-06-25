@@ -74,7 +74,7 @@ body::-webkit-scrollbar-thumb {
     display: grid;
     transition: opacity 0ms ease, transform 900ms ease, -webkit-transform 900ms ease, clip-path 500ms ease;
 }
-.cat-learning-module.learn-open.learn-remove {
+.cat-learning-module.learn-open.learn-init.learn-remove {
     transform:translate3d(0%, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 }
 .cat-learning-module.learn-open.learn-init {
