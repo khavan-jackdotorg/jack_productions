@@ -337,14 +337,18 @@ function moduleScroll() {
         var modScroll01 = scrollModStruggle.scrollTop();
 
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
-            scrollModStruggle.addClass("learn-remove").delay(1000).queue(function(){
+            scrollModStruggle.addClass("learn-remove").delay(400).queue(function(){
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
 
                 scrollModInclusive.addClass("learn-open").delay(500).queue(function(){
                     $(this).addClass("learn-init").dequeue();
+                    scrollModStruggle.scrollTo(0);
+                    scrollModInclusive.scrollTo(0);
                 });
                 console.log("open-inclusive");
+
+                
             });
         }
     });
@@ -356,14 +360,18 @@ function moduleScroll() {
         var modScroll02 = scrollModInclusive.scrollTop();
 
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
-            scrollModInclusive.addClass("learn-remove").delay(1000).queue(function(){
+            scrollModInclusive.addClass("learn-remove").delay(400).queue(function(){
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
 
                 scrollModAccess.addClass("learn-open").delay(500).queue(function(){
                     $(this).addClass("learn-init").dequeue();
+                    scrollModInclusive.scrollTo(0);
+                    scrollModAccess.scrollTo(0);
                 });
                 console.log("open-acess");
+
+                
             });
         }
     });
@@ -375,14 +383,18 @@ function moduleScroll() {
         var modScroll03 = scrollModAccess.scrollTop();
 
         if (modScroll03 >= posEndModAccess - windowH * startTrans) {
-            scrollModAccess.addClass("learn-remove").delay(1000).queue(function(){
+            scrollModAccess.addClass("learn-remove").delay(400).queue(function(){
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
 
                 scrollModAcademic.addClass("learn-open").delay(500).queue(function(){
                     $(this).addClass("learn-init").dequeue();
+                    scrollModInclusive.scrollTo(0);
+                    scrollModAccess.scrollTo(0);
                 });
                 console.log("open-academic");
+
+                
             });
         }
     });
@@ -395,12 +407,15 @@ function moduleScroll() {
         var modScroll03 = scrollModAcademic.scrollTop();
 
         if (modScroll03 >= posEndModAcademic - windowH * startTrans) {
-            scrollModAcademic.addClass("learn-remove").delay(1000).queue(function(){
+            scrollModAcademic.addClass("learn-remove").delay(400).queue(function(){
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
 
                 $('html,body').animate({scrollTop: posInvolved},'slow');
                 console.log("open-involved");
+
+                scrollModInclusive.scrollTo(0);
+                scrollModAccess.scrollTo(0);
             });
         }
     });
