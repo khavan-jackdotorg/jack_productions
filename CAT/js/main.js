@@ -4,6 +4,7 @@ var map = $('.map');
 var hover = $('.hover');
 var link = $('a');
 var scroller = $('.scroller');
+let closeButt = $(".close-button");
 
 function windowScroll() {
     // Main Body and Window Height
@@ -233,70 +234,70 @@ function moduleClick() {
 
     // click
     struggleTile.click(function () {
-        scrollModStruggle.addClass("learn-open").delay(500).queue(function(){
+        scrollModStruggle.addClass("learn-open").delay(500).queue(function () {
             $(this).addClass("learn-init").dequeue();
         });
         console.log("open-struggle");
     });
     inclusiveTile.click(function () {
-        scrollModInclusive.addClass("learn-open").delay(500).queue(function(){
+        scrollModInclusive.addClass("learn-open").delay(500).queue(function () {
             $(this).addClass("learn-init").dequeue();
         });
         console.log("open-inclusive");
     });
     accessTile.click(function () {
-        scrollModAccess.addClass("learn-open").delay(500).queue(function(){
+        scrollModAccess.addClass("learn-open").delay(500).queue(function () {
             $(this).addClass("learn-init").dequeue();
         });
         console.log("open-access");
     });
     academicTile.click(function () {
-        scrollModAcademic.addClass("learn-open").delay(500).queue(function(){
+        scrollModAcademic.addClass("learn-open").delay(500).queue(function () {
             $(this).addClass("learn-init").dequeue();
         });
         console.log("open-academic");
     });
 
-    learnTile.mouseenter(function(){  
-        
+    learnTile.mouseenter(function () {
+
         function functionX(x) {
             var pad = $(this).children(".learning").css("padding-right");
 
             if (x.matches) {
-                $(this).each(function(){
-                    $(this).children(".learning").css("padding-right", pad+64 + "px");
+                $(this).each(function () {
+                    $(this).children(".learning").css("padding-right", pad + 64 + "px");
                 });
             } else {
-                $(this).each(function(){
-                    $(this).children(".learning").css("padding-right", pad+16 + "px");
+                $(this).each(function () {
+                    $(this).children(".learning").css("padding-right", pad + 16 + "px");
                 });
             }
         }
         var x = window.matchMedia("(min-width: 478px)");
         functionX(x);
-        x.addEventListener("mouseenter",functionX);      
-    }).mouseleave(function(){
+        x.addEventListener("mouseenter", functionX);
+    }).mouseleave(function () {
         function functionX(x) {
             var pad = $(this).children(".learning").css("padding-right");
 
             if (x.matches) {
-                $(this).each(function(){
-                    $(this).children(".learning").css("padding-right", pad-64 + "px");
+                $(this).each(function () {
+                    $(this).children(".learning").css("padding-right", pad - 64 + "px");
                 });
             } else {
-                $(this).each(function(){
-                    $(this).children(".learning").css("padding-right", pad-16 + "px");
+                $(this).each(function () {
+                    $(this).children(".learning").css("padding-right", pad - 16 + "px");
                 });
             }
         }
         var x = window.matchMedia("(min-width: 478px)");
         functionX(x);
-        x.addEventListener("mouseleave",functionX);  
+        x.addEventListener("mouseleave", functionX);
     })
-    
+
     moduleClose.click(function () {
         $(this).each(function () {
-            $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function(){
+            $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function () {
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("reset");
             });
@@ -310,7 +311,7 @@ function moduleScroll() {
     let scrollModStruggle = $('#learning-struggle');
     let scrollModInclusive = $('#learning-inclusive');
     let scrollModAccess = $('#learning-access');
-    let scrollModAcademic = $('#learning-academic'); 
+    let scrollModAcademic = $('#learning-academic');
 
     let scrollEndModStruggle = $('#learning-struggle .scrolling-space');
     let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
@@ -337,18 +338,16 @@ function moduleScroll() {
         var modScroll01 = scrollModStruggle.scrollTop();
 
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
-            scrollModStruggle.addClass("learn-remove").delay(400).queue(function(){
+            scrollModStruggle.addClass("learn-remove").delay(400).queue(function () {
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
 
-                scrollModInclusive.addClass("learn-open").delay(500).queue(function(){
+                scrollModInclusive.addClass("learn-open").delay(500).queue(function () {
                     $(this).addClass("learn-init").dequeue();
                     scrollModStruggle.scrollTo(0);
                     scrollModInclusive.scrollTo(0);
                 });
                 console.log("open-inclusive");
-
-                
             });
         }
     });
@@ -360,18 +359,16 @@ function moduleScroll() {
         var modScroll02 = scrollModInclusive.scrollTop();
 
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
-            scrollModInclusive.addClass("learn-remove").delay(400).queue(function(){
+            scrollModInclusive.addClass("learn-remove").delay(400).queue(function () {
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
 
-                scrollModAccess.addClass("learn-open").delay(500).queue(function(){
+                scrollModAccess.addClass("learn-open").delay(500).queue(function () {
                     $(this).addClass("learn-init").dequeue();
                     scrollModInclusive.scrollTo(0);
                     scrollModAccess.scrollTo(0);
                 });
                 console.log("open-acess");
-
-                
             });
         }
     });
@@ -383,18 +380,16 @@ function moduleScroll() {
         var modScroll03 = scrollModAccess.scrollTop();
 
         if (modScroll03 >= posEndModAccess - windowH * startTrans) {
-            scrollModAccess.addClass("learn-remove").delay(400).queue(function(){
+            scrollModAccess.addClass("learn-remove").delay(400).queue(function () {
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
 
-                scrollModAcademic.addClass("learn-open").delay(500).queue(function(){
+                scrollModAcademic.addClass("learn-open").delay(500).queue(function () {
                     $(this).addClass("learn-init").dequeue();
                     scrollModInclusive.scrollTo(0);
                     scrollModAccess.scrollTo(0);
                 });
                 console.log("open-academic");
-
-                
             });
         }
     });
@@ -407,11 +402,11 @@ function moduleScroll() {
         var modScroll03 = scrollModAcademic.scrollTop();
 
         if (modScroll03 >= posEndModAcademic - windowH * startTrans) {
-            scrollModAcademic.addClass("learn-remove").delay(400).queue(function(){
+            scrollModAcademic.addClass("learn-remove").delay(400).queue(function () {
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
                 console.log("all reset");
 
-                $('html,body').animate({scrollTop: posInvolved},'slow');
+                $('html,body').animate({ scrollTop: posInvolved }, 'slow');
                 console.log("open-involved");
 
                 scrollModInclusive.scrollTo(0);
@@ -419,26 +414,30 @@ function moduleScroll() {
             });
         }
     });
-
 }
-
+function closeNav(link) {
+    link.click(function () {
+        navMenu.css({
+            "transform": "translate3d(0, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 90%)"
+        }).delay(550).queue(function () {
+            $(this).removeClass("opened").dequeue();
+        });
+        console.log("close-menu")
+    });
+}
+function prepClick(item) {
+    if (item.attr('html') !== 'undefined' || $(this).attr('html') !== false) {
+        item.removeAttr("href");
+    }
+}
 function navLink() {
     let navHam = $(".nav-hamburger");
     let navLink = $(".nav-link");
     let navClose = $(".cat-navmenu-item .close-button");
     let navMenu = $(".cat-navmenu-pop");
-    let closeButt = $(".close-button");
 
-    navHam.each(function () {
-        if ($(this).attr('html') !== 'undefined' || $(this).attr('html') !== false) {
-            $(this).removeAttr("href");
-        }
-    })
-    closeButt.each(function () {
-        if ($(this).attr('html') !== 'undefined' || $(this).attr('html') !== false) {
-            $(this).removeAttr("href");
-        }
-    })
+    prepClick(navHam);
     navHam.click(function () {
         navMenu.addClass("opened").delay(30).queue(function () {
             $(this).css({
@@ -448,26 +447,9 @@ function navLink() {
         });
         console.log("open-menu")
     });
-    navLink.click(function () {
-        navMenu.css({
-            "transform": "translate3d(0, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-            "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 90%)"
-        }).delay(550).queue(function () {
-            $(this).removeClass("opened").dequeue();
-        });
-        console.log("close-menu")
-    });
-    navClose.click(function () {
-        navMenu.css({
-            "transform": "translate3d(0%, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-            "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 90%)"
-        }).delay(550).queue(function () {
-            $(this).removeClass("opened").dequeue();
-        });
-        console.log("close-menu")
-    });
+    closeNav(navLink); 
+    closeNav(navClose); 
 }
-
 function smoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -489,14 +471,14 @@ function animateType() {
 }
 function siblingEffector(button) {
     button.siblings(".cat-chapter-button").css({
-        "background-color":"#2D2522",
-        "color":"#F4F2EF"
+        "background-color": "#2D2522",
+        "color": "#F4F2EF"
     });
     button.siblings(".cat-chapter-button").children(".chapter-content-p").css({
-        "display":"none"
+        "display": "none"
     });
     button.siblings(".cat-chapter-button").children(".chapter-box").css({
-        "display":"none"
+        "display": "none"
     });
 };
 function mapClick() {
@@ -514,147 +496,147 @@ function mapClick() {
     let windsorButton = $("#chapter-windsor");
     let catMap = $(".cat-map-object");
 
-    mapArea.on("click", function(event){
-        if ($(event.target).closest("#chapter-bishop").length){
+    mapArea.on("click", function (event) {
+        if ($(event.target).closest("#chapter-bishop").length) {
             console.log("bishop");
             catMap.css({
-                "bottom":"27.3112807464vw",
-                "right":"24.2578456319vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "27.3112807464vw",
+                "right": "24.2578456319vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(bishopButton);
-        } else if ($(event.target).closest("#chapter-camosun").length){
+        } else if ($(event.target).closest("#chapter-camosun").length) {
             console.log("camosun");
             catMap.css({
-                "bottom":"19.1687871077vw",
-                "right":"auto",
-                "left":"39.8642917727vw",
-                "top":"auto",
+                "bottom": "19.1687871077vw",
+                "right": "auto",
+                "left": "39.8642917727vw",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(camosunButton);
-        } else if ($(event.target).closest("#chapter-dalhousie").length){
+        } else if ($(event.target).closest("#chapter-dalhousie").length) {
             console.log("dalhousie");
             catMap.css({
-                "bottom":"22.9007633588vw",
-                "right":"35.4537743851vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "22.9007633588vw",
+                "right": "35.4537743851vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(dalhousieButton);
-        } else if ($(event.target).closest("#chapter-lakehead").length){
+        } else if ($(event.target).closest("#chapter-lakehead").length) {
             console.log("lakehouse");
             catMap.css({
-                "bottom":"27.0568278202vw",
-                "right":"1.69635284139vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "27.0568278202vw",
+                "right": "1.69635284139vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(lakeheadButton);
-        } else if ($(event.target).closest("#chapter-tmu").length){
+        } else if ($(event.target).closest("#chapter-tmu").length) {
             console.log("tmu");
             catMap.css({
-                "bottom":"33.0788804071vw",
-                "right":"16.6242578456vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "33.0788804071vw",
+                "right": "16.6242578456vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(tmuButton);
-        } else if ($(event.target).closest("#chapter-trent").length){
+        } else if ($(event.target).closest("#chapter-trent").length) {
             console.log("trent");
             catMap.css({
-                "bottom":"31.5521628499vw",
-                "right":"17.3876166243vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "31.5521628499vw",
+                "right": "17.3876166243vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(trentButton);
-        } else if ($(event.target).closest("#chapter-guelph").length){
+        } else if ($(event.target).closest("#chapter-guelph").length) {
             console.log("guelph");
             catMap.css({
-                "bottom":"33.8422391858vw",
-                "right":"14.588634436vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "33.8422391858vw",
+                "right": "14.588634436vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(guelphButton);
-        } else if ($(event.target).closest("#chapter-brunswick").length){
+        } else if ($(event.target).closest("#chapter-brunswick").length) {
             console.log("brunswick");
             catMap.css({
-                "bottom":"24.5971162002vw",
-                "right":"31.6369804919vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "24.5971162002vw",
+                "right": "31.6369804919vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(brunButton);
-        } else if ($(event.target).closest("#chapter-toronto").length){
+        } else if ($(event.target).closest("#chapter-toronto").length) {
             console.log("toronto");
             catMap.css({
-                "bottom":"33.3333333333vw",
-                "right":"16.2849872774vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "33.3333333333vw",
+                "right": "16.2849872774vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(torontoButton);
-        } else if ($(event.target).closest("#chapter-toronto").length){
+        } else if ($(event.target).closest("#chapter-toronto").length) {
             console.log("toronto");
             catMap.css({
-                "bottom":"33.3333333333vw",
-                "right":"16.2849872774vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "33.3333333333vw",
+                "right": "16.2849872774vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(torontoButton);
-        } else if ($(event.target).closest("#chapter-windsor").length){
+        } else if ($(event.target).closest("#chapter-windsor").length) {
             console.log("windsor");
             catMap.css({
-                "bottom":"37.4893977947vw",
-                "right":"11.5351993215vw",
-                "left":"auto",
-                "top":"auto",
+                "bottom": "37.4893977947vw",
+                "right": "11.5351993215vw",
+                "left": "auto",
+                "top": "auto",
                 // "height":"200vw",
                 // "width":"200vw"
             });
             siblingEffector(windsorButton);
         } else {
-            chapter.each(function(){
+            chapter.each(function () {
                 $(this).css({
-                    "background-color":"#2D2522",
-                    "color":"#F4F2EF"
+                    "background-color": "#2D2522",
+                    "color": "#F4F2EF"
                 });
                 $(this).children(".chapter-content-p").css({
-                    "display":"none"
+                    "display": "none"
                 });
                 $(this).children(".chapter-box").css({
-                    "display":"none"
+                    "display": "none"
                 });
                 catMap.css({
-                    "bottom":"auto",
-                    "right":"auto",
-                    "left":"auto",
-                    "top":"auto",
-                    "width":"100vw",
-                    "height":"100vw"
+                    "bottom": "auto",
+                    "right": "auto",
+                    "left": "auto",
+                    "top": "auto",
+                    "width": "100vw",
+                    "height": "100vw"
                 });
             });
         }
@@ -670,6 +652,7 @@ function mapClick() {
     moduleClick();
     moduleScroll();
     mapClick();
+    prepClick(closeButt);
     $(window).on('resize', function () {
         windowScroll();
         moduleScroll();
