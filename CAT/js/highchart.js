@@ -2,7 +2,7 @@ Highcharts.setOptions({
     chart: {
         backgroundColor: "#3990DC",
         borderWidth: 2,
-        plotBackgroundColor: '#2D2522',
+        plotBackgroundColor: '#3990DC',
         plotShadow: true,
         plotBorderWidth: 1,
         style: {
@@ -132,16 +132,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 -27.15, -25.83,	-27.81,	-27.15
             ]
         }, {
-            name: 'Agree',
-            data: [
-                37.75,	28.15,	28.81,	26.49
-            ]
-        }, {
             name: 'Strongly Agree',
             data: [
                 23.51,	20.86,	17.88,	27.48
             ]
-        }]
+        }, {
+            name: 'Agree',
+            data: [
+                37.75,	28.15,	28.81,	26.49
+            ]
+        } ]
     });
     const chartdiv03 = Highcharts.chart('chartdiv03', {
         chart: {

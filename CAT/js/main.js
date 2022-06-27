@@ -1,5 +1,6 @@
 // #
 let startTrans = 0.75;
+let body = $("body");
 var scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
 var windowH = $(window).innerHeight(); //the total height of the visible window
 
@@ -261,6 +262,7 @@ function moduleClick() {
                 next();
             });
             console.log("open"+mod);
+            body.addClass("modal-open");
         });
     };
     moduleOpenAnimate(struggleTile, scrollModStruggle);
@@ -307,6 +309,7 @@ function moduleClick() {
             console.log("close-module");
         
         });
+        body.removeClass("modal-open");
         event.preventDefault();
     });
 }
@@ -328,6 +331,11 @@ function moduleScroll() {
             next();
             console.log("open "+second);
         });
+        if (learnMod.css("display")=="grid") {
+            body.addClass("modal-open");
+        } else {
+            body.removeClass("modal-open");
+        }
     }
 
     scrollModStruggle.scroll(function () {
@@ -369,7 +377,6 @@ function moduleScroll() {
                 $('html,body').animate({ scrollTop: posInvolved }, 'slow');
                 console.log("open-involved");
 
-                scrollModAccess.scrollTop(0);
                 $(this).scrollTop(0);
                 next();
             });

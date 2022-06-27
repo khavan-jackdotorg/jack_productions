@@ -35,6 +35,10 @@
 .nav-hamburger:hover .nav-ham-icon-line.short {
     width: 36px;
 }
+body.modal-open {
+overflow:hidden;
+
+}
 /* Scrollbars */
 body::-webkit-scrollbar {
     width: 8px;
@@ -48,15 +52,15 @@ body::-webkit-scrollbar-thumb {
     background-color: #3990DC;
     width:100%;
 }
-.cat-learning-Module::-webkit-scrollbar {
+.cat-learning-module::-webkit-scrollbar {
     width: 8px;
     cursor: pointer;
 }
-.cat-learning-Module::-webkit-scrollbar-track {
+.cat-learning-module::-webkit-scrollbar-track {
     background-color: #F4F2EF;
     width:100%;
 }  
-.cat-learning-Module::-webkit-scrollbar-thumb {
+.cat-learning-module::-webkit-scrollbar-thumb {
     background-color: #3990DC;
     width:100%;
 }
@@ -67,7 +71,11 @@ body::-webkit-scrollbar-thumb {
     display: flex;
 }
 /* module */
-.cat-learn-module {
+.cat-learning-scroll, .cat-learning-module {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.cat-learning-module {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
 }
 .cat-learning-module.learn-open {
@@ -81,6 +89,7 @@ body::-webkit-scrollbar-thumb {
     transform:translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
+
 
 /* Element Fix */
 .learning-tile .learning {
