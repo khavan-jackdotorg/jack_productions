@@ -314,51 +314,41 @@ function moduleScroll() {
         first.addClass("learn-remove").delay(400).queue(function () {
             learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
             console.log("all reset");
-            first.scrollTo(0);
+            first.scrollTop(0);
 
             second.addClass("learn-open").delay(500).queue(function () {
                 $(this).addClass("learn-init").dequeue();               
-                $(this).scrollTo(0);
+                $(this).scrollTop(0);
             });
             console.log("open-inclusive");
         });
     }
 
     scrollModStruggle.scroll(function () {
-        // Position
         let posEndModStruggle = scrollEndModStruggle.position().top;
-
         //learning section
         var modScroll01 = scrollModStruggle.scrollTop();
-
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
             modTransition(scrollModStruggle,scrollModInclusive);
         }
     });
     scrollModInclusive.scroll(function () {
-        // Position
         let posEndModInclusive = scrollEndModInclusive.position().top;
-
         //learning section
         var modScroll02 = scrollModInclusive.scrollTop();
-
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
             modTransition(scrollModInclusive,scrollModAccess);
         }
     });
     scrollModAccess.scroll(function () {
-        // Position
         let posEndModAccess = scrollEndModAccess.position().top;
-
         //learning section
         var modScroll03 = scrollModAccess.scrollTop();
-
         if (modScroll03 >= posEndModAccess - windowH * startTrans) {
             modTransition(scrollModAccess,scrollModAcademic);
         }
     });
     scrollModAcademic.scroll(function () {
-        // Position
         let posEndModAcademic = scrollEndModAcademic.position().top;
         let posInvolved = scrollInvolved.offset().top;
 
@@ -373,8 +363,8 @@ function moduleScroll() {
                 $('html,body').animate({ scrollTop: posInvolved }, 'slow');
                 console.log("open-involved");
 
-                scrollModAccess.scrollTo(0);
-                $(this).scrollTo(0);
+                scrollModAccess.scrollTop(0);
+                $(this).scrollTop(0);
             });
         }
     });
