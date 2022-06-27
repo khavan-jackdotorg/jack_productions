@@ -5,97 +5,115 @@ var hover = $('.hover');
 var link = $('a');
 var scroller = $('.scroller');
 let closeButt = $(".close-button");
+let startTrans = 0.75;
+
+// Objects
+let sectionIndicator = $(".sectionindicator");
+
+// Sections
+let scrollIntro = $("#intro");
+let scrollIntroContent = $('#intro-content');
+let scrollIntroImage = $('#intro-image');
+let scrollMap = $('#map');
+let scrollMapImage = $('#map-image');
+let scrollWhy = $('#why');
+
+let scrollOffers = $('#offers');
+let scrollOffersImage = $('#offers-image');
+
+let scrollTimeline = $('#timeline');
+let scrollTimelineImage = $('#timeline-image');
+let scrollTimeOne = $("#time-one");
+let scrollTimeTwo = $("#time-two");
+let scrollTimeThree = $("#time-three");
+let scrollTimeFour = $("#time-four");
+let scrollTimeFive = $("#time-five");
+let animTimeOne = $("#time-one .project-timeline");
+let animTimeTwo = $("#time-two .project-timeline");
+let animTimeThree = $("#time-three .project-timeline");
+let animTimeFour = $("#time-four .project-timeline");
+let animTimeFive = $("#time-five .project-timeline");
+
+let scrollIndicator = $('#indicator');
+let scrollIndicatorContent = $('#indicator-content');
+let scrollIndicatorImage = $('#indicator-image');
+
+let scrollLearn = $('#learning');
+let scrollLearnContent = $('#learning-content');
+let scrollLearnImage = $('#learning-image');
+
+let scrollInvolved = $('#involved');
+let scrollInvolvedContent = $('#involved-content');
+let scrollInvolvedImage = $('#involved-image');
+
+let scrollAcknow = $('#acknowledge');
+let scrollFooter = $('.footer');
+
+let learnTile = $(".learning-tile");
+
+//module
+let scrollModStruggle = $('#learning-struggle');
+let scrollModInclusive = $('#learning-inclusive');
+let scrollModAccess = $('#learning-access');
+let scrollModAcademic = $('#learning-academic');
+
+let scrollEndModStruggle = $('#learning-struggle .scrolling-space');
+let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
+let scrollEndModAccess = $('#learning-access .scrolling-space');
+let scrollEndModAcademic = $('#learning-academic .scrolling-space');
+
+let learnMod = $(".cat-learning-module");
+
+let moduleClose = $(".cat-learning-module .close-button");
+let struggleTile = $(".learning-tile.struggle");
+let inclusiveTile = $(".learning-tile.inclusivity");
+let accessTile = $(".learning-tile.access");
+let academicTile = $(".learning-tile.academic");
+
+
+// Heights 
+let lengthIntro = scrollIntro.innerHeight();
+let lengthIntroContent = scrollIntroContent.innerHeight();
+let lengthIntroImage = scrollIntroImage.innerHeight();
+let lengthMap = scrollMap.innerHeight();
+let lengthMapImage = scrollMapImage.innerHeight();
+let lengthWhy = scrollWhy.innerHeight();
+
+let lengthOffers = scrollOffers.innerHeight();
+let lengthOffersImage = scrollOffersImage.innerHeight();
+
+let lengthTimeline = scrollTimeline.innerHeight();
+let lengthTimelineImage = scrollTimelineImage.innerHeight();
+let lengthtimeone = scrollTimeOne.innerHeight();
+let lengthtimetwo = scrollTimeTwo.innerHeight();
+let lengthtimethree = scrollTimeThree.innerHeight();
+let lengthtimefour = scrollTimeFour.innerHeight();
+let lengthtimefive = scrollTimeFive.innerHeight();
+
+let lengthIndicator = scrollIndicator.innerHeight();
+let lengthIndicatorContent = scrollIndicatorContent.innerHeight();
+let lengthIndicatorImage = scrollIndicatorImage.innerHeight();
+
+let lengthLearn = scrollLearn.innerHeight();
+let lengthLearnContent = scrollLearnContent.innerHeight();
+let lengthLearnImage = scrollLearnImage.innerHeight();
+
+let lengthInvolved = scrollInvolved.innerHeight();
+let lengthInvolvedContent = scrollInvolvedContent.innerHeight();
+let lengthInvolvedImage = scrollInvolvedImage.innerHeight();
+
+let lengthAcknow = scrollAcknow.innerHeight();
+let lengthFooter = scrollFooter.innerHeight();
+
+//(for section indicator)
+let lengthIntroSI = lengthIntro + lengthIntroContent + lengthIntroImage + lengthMap + lengthMapImage + lengthWhy + lengthOffers + lengthOffersImage + lengthTimeline + lengthTimelineImage + lengthIndicator + lengthIndicatorContent + lengthIndicatorImage;
+let lengthLearningsSI = lengthLearn + lengthLearnContent + lengthLearnImage;
+let lengthInvolvedSI = lengthInvolved + lengthInvolvedContent + lengthInvolvedImage;
 
 function windowScroll() {
     // Main Body and Window Height
     let scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
     let windowH = $(window).innerHeight(); //the total height of the visible window
-    let startTrans = 0.75;
-
-    // Objects
-    let sectionIndicator = $(".sectionindicator");
-
-    // Sections
-    let scrollIntro = $("#intro");
-    let scrollIntroContent = $('#intro-content');
-    let scrollIntroImage = $('#intro-image');
-    let scrollMap = $('#map');
-    let scrollMapImage = $('#map-image');
-    let scrollWhy = $('#why');
-
-    let scrollOffers = $('#offers');
-    let scrollOffersImage = $('#offers-image');
-
-    let scrollTimeline = $('#timeline');
-    let scrollTimelineImage = $('#timeline-image');
-    let scrollTimeOne = $("#time-one");
-    let scrollTimeTwo = $("#time-two");
-    let scrollTimeThree = $("#time-three");
-    let scrollTimeFour = $("#time-four");
-    let scrollTimeFive = $("#time-five");
-    let animTimeOne = $("#time-one .project-timeline");
-    let animTimeTwo = $("#time-two .project-timeline");
-    let animTimeThree = $("#time-three .project-timeline");
-    let animTimeFour = $("#time-four .project-timeline");
-    let animTimeFive = $("#time-five .project-timeline");
-
-    let scrollIndicator = $('#indicator');
-    let scrollIndicatorContent = $('#indicator-content');
-    let scrollIndicatorImage = $('#indicator-image');
-
-    let scrollLearn = $('#learning');
-    let scrollLearnContent = $('#learning-content');
-    let scrollLearnImage = $('#learning-image');
-
-    let scrollInvolved = $('#involved');
-    let scrollInvolvedContent = $('#involved-content');
-    let scrollInvolvedImage = $('#involved-image');
-
-    let scrollAcknow = $('#acknowledge');
-    let scrollFooter = $('.footer');
-
-    // Heights 
-    let lengthIntro = scrollIntro.innerHeight();
-    let lengthIntroContent = scrollIntroContent.innerHeight();
-    let lengthIntroImage = scrollIntroImage.innerHeight();
-    let lengthMap = scrollMap.innerHeight();
-    let lengthMapImage = scrollMapImage.innerHeight();
-    let lengthWhy = scrollWhy.innerHeight();
-
-    let lengthOffers = scrollOffers.innerHeight();
-    let lengthOffersImage = scrollOffersImage.innerHeight();
-
-    let lengthTimeline = scrollTimeline.innerHeight();
-    let lengthTimelineImage = scrollTimelineImage.innerHeight();
-    let lengthtimeone = scrollTimeOne.innerHeight();
-    let lengthtimetwo = scrollTimeTwo.innerHeight();
-    let lengthtimethree = scrollTimeThree.innerHeight();
-    let lengthtimefour = scrollTimeFour.innerHeight();
-    let lengthtimefive = scrollTimeFive.innerHeight();
-
-    let lengthIndicator = scrollIndicator.innerHeight();
-    let lengthIndicatorContent = scrollIndicatorContent.innerHeight();
-    let lengthIndicatorImage = scrollIndicatorImage.innerHeight();
-
-    let lengthLearn = scrollLearn.innerHeight();
-    let lengthLearnContent = scrollLearnContent.innerHeight();
-    let lengthLearnImage = scrollLearnImage.innerHeight();
-
-    let lengthInvolved = scrollInvolved.innerHeight();
-    let lengthInvolvedContent = scrollInvolvedContent.innerHeight();
-    let lengthInvolvedImage = scrollInvolvedImage.innerHeight();
-
-    let lengthAcknow = scrollAcknow.innerHeight();
-    let lengthFooter = scrollFooter.innerHeight();
-
-
-
-
-    //(for section indicator)
-    let lengthIntroSI = lengthIntro + lengthIntroContent + lengthIntroImage + lengthMap + lengthMapImage + lengthWhy + lengthOffers + lengthOffersImage + lengthTimeline + lengthTimelineImage + lengthIndicator + lengthIndicatorContent + lengthIndicatorImage;
-    let lengthLearningsSI = lengthLearn + lengthLearnContent + lengthLearnImage;
-    let lengthInvolvedSI = lengthInvolved + lengthInvolvedContent + lengthInvolvedImage;
-
 
     $(window).scroll(function () {
         //changing scroller value
@@ -208,29 +226,10 @@ function windowScroll() {
                 animTimeFive.css("margin-left", 0 + "%");
             }
         }
-
         //indicator section
-
     });
-
-
 }
 function moduleClick() {
-    //   // Modules
-    let learnTile = $(".learning-tile");
-
-    let scrollModStruggle = $('#learning-struggle');
-    let scrollModInclusive = $('#learning-inclusive');
-    let scrollModAccess = $('#learning-access');
-    let scrollModAcademic = $('#learning-academic');
-
-    let moduleClose = $(".cat-learning-module .close-button");
-    let struggleTile = $(".learning-tile.struggle");
-    let inclusiveTile = $(".learning-tile.inclusivity");
-    let accessTile = $(".learning-tile.access");
-    let academicTile = $(".learning-tile.academic");
-
-    let learnMod = $(".cat-learning-module");
 
     // click
     struggleTile.click(function () {
@@ -307,18 +306,7 @@ function moduleClick() {
 }
 function moduleScroll() {
     let windowH = $(window).innerHeight(); //the total height of the visible window
-    let startTrans = 0.75;
-    let scrollModStruggle = $('#learning-struggle');
-    let scrollModInclusive = $('#learning-inclusive');
-    let scrollModAccess = $('#learning-access');
-    let scrollModAcademic = $('#learning-academic');
 
-    let scrollEndModStruggle = $('#learning-struggle .scrolling-space');
-    let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
-    let scrollEndModAccess = $('#learning-access .scrolling-space');
-    let scrollEndModAcademic = $('#learning-academic .scrolling-space');
-
-    let learnMod = $(".cat-learning-module");
     // Modules
     let lengthModStruggle = scrollModStruggle.innerHeight();
     let lengthModInclusive = scrollModInclusive.innerHeight();
@@ -329,6 +317,21 @@ function moduleScroll() {
     let lengthEndModInclusive = scrollEndModInclusive.innerHeight();
     let lengthEndModAccess = scrollEndModAccess.innerHeight();
     let lengthEndModAcademic = scrollEndModAcademic.innerHeight();
+
+    modTransition(first,second) {
+        first.addClass("learn-remove").delay(400).queue(function () {
+            learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
+            console.log("all reset");
+            first.scrollTo(0);
+
+            second.addClass("learn-open").delay(500).queue(function () {
+                $(this).addClass("learn-init").dequeue();
+                
+                $(this).scrollTo(0);
+            });
+            console.log("open-inclusive");
+        });
+    }
 
     scrollModStruggle.scroll(function () {
         // Position
