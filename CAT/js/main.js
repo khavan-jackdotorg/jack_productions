@@ -61,6 +61,7 @@ let brunButton = $("#chapter-brunswick");
 let torontoButton = $("#chapter-toronto");
 let windsorButton = $("#chapter-windsor");
 
+let mapDot = $(".map-dot");
 let bishopDot = $(".map-dot.bishop");
 let camosunDot = $(".map-dot.camosun");
 let dalhousieDot = $(".map-dot.dalhousie");
@@ -449,9 +450,17 @@ function mapClick() {
     function mapdot(location){
         location.css({
             "border-color":"#DF693D",
-            "border-width":3,
-            "width":"20px",
-            "height":"20px"
+            "border-width":"4px",
+            "width":"25px",
+            "height":"25px"
+        })
+        location.each(function (){
+            $(this).siblings().css({
+                "border-color":"#2d2522",
+                "border-width":"6px",
+                "width":"5px",
+                "height":"5px"
+            })
         })
     }
 
@@ -464,7 +473,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(bishopButton);
             mapdot(bishopDot);
@@ -476,7 +486,8 @@ function mapClick() {
                 "left": "39.8642917727%",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(camosunButton);
             mapdot(camosunDot);
@@ -488,7 +499,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(dalhousieButton);
             mapdot(dalhousieDot);
@@ -500,7 +512,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(lakeheadButton);
             mapdot(lakeheadDot);
@@ -512,7 +525,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(tmuButton);
             mapdot(tmuDot);
@@ -524,7 +538,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(trentButton);
             mapdot(trentDot);
@@ -536,7 +551,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(guelphButton);
             mapdot(guelphDot);
@@ -548,7 +564,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(brunButton);
             mapdot(brunDot);
@@ -560,7 +577,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(torontoButton);
             mapdot(torontoDot);
@@ -572,7 +590,8 @@ function mapClick() {
                 "left": "auto",
                 "top": "auto",
                 "height":"200vw",
-                "width":"200vw"
+                "width":"200vw",
+                "padding":"10vw"
             });
             siblingEffector(windsorButton);
             mapdot(windsorDot);
@@ -594,7 +613,16 @@ function mapClick() {
                     "left": "auto",
                     "top": "auto",
                     "width": "100vw",
-                    "height": "100vw"
+                    "height": "100vw",
+                    "padding":"5vw"
+                });
+                mapDot.each(function(){
+                    $(this).css({
+                        "border-color":"#2d2522",
+                        "border-width":"6px",
+                        "width":"5px",
+                        "height":"5px"
+                    })
                 });
             });
         }
