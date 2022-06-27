@@ -448,7 +448,7 @@ function mapClick() {
     };
     function mapdot(location){
         location.css({
-            "background-color":"#DF693D",
+            "border-color":"#DF693D",
             "border-width":3,
             "width":"20px",
             "height":"20px"
