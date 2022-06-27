@@ -453,7 +453,7 @@ function mapClick() {
             "height":"25px"
         })
         location.each(function (){
-            $(this).siblings().css({
+            $(this).siblings(".map-dot").css({
                 "border-color":"#2d2522",
                 "border-width":"6px",
                 "width":"5px",
