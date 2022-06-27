@@ -1,14 +1,7 @@
-// Objects
-var Cursor = $('#cursor');
-var map = $('.map');
-var hover = $('.hover');
-var link = $('a');
-var scroller = $('.scroller');
-let closeButt = $(".close-button");
+// #
 let startTrans = 0.75;
-
-// Objects
-let sectionIndicator = $(".sectionindicator");
+var scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
+var windowH = $(window).innerHeight(); //the total height of the visible window
 
 // Sections
 let scrollIntro = $("#intro");
@@ -17,10 +10,8 @@ let scrollIntroImage = $('#intro-image');
 let scrollMap = $('#map');
 let scrollMapImage = $('#map-image');
 let scrollWhy = $('#why');
-
 let scrollOffers = $('#offers');
 let scrollOffersImage = $('#offers-image');
-
 let scrollTimeline = $('#timeline');
 let scrollTimelineImage = $('#timeline-image');
 let scrollTimeOne = $("#time-one");
@@ -33,25 +24,54 @@ let animTimeTwo = $("#time-two .project-timeline");
 let animTimeThree = $("#time-three .project-timeline");
 let animTimeFour = $("#time-four .project-timeline");
 let animTimeFive = $("#time-five .project-timeline");
-
 let scrollIndicator = $('#indicator');
 let scrollIndicatorContent = $('#indicator-content');
 let scrollIndicatorImage = $('#indicator-image');
-
 let scrollLearn = $('#learning');
 let scrollLearnContent = $('#learning-content');
 let scrollLearnImage = $('#learning-image');
-
 let scrollInvolved = $('#involved');
 let scrollInvolvedContent = $('#involved-content');
 let scrollInvolvedImage = $('#involved-image');
-
 let scrollAcknow = $('#acknowledge');
 let scrollFooter = $('.footer');
 
-let learnTile = $(".learning-tile");
+// Objects
+var Cursor = $('#cursor');
+let closeButt = $(".close-button");
+let sectionIndicator = $(".sectionindicator");
+
+// navigation
+let navHam = $(".nav-hamburger");
+let navLinkItem = $(".nav-link");
+let navClose = $(".cat-navmenu-item .close-button");
+let navMenu = $(".cat-navmenu-pop");
+
+// map
+let chapter = $(".cat-chapter-button");
+let mapArea = $(".cat-sec-container.map");
+let bishopButton = $("#chapter-bishop");
+let camosunButton = $("#chapter-camosun");
+let dalhousieButton = $("#chapter-dalhousie");
+let lakeheadButton = $("#chapter-lakehead");
+let tmuButton = $("#chapter-tmu");
+let trentButton = $("#chapter-trent");
+let guelphButton = $("#chapter-guelph");
+let brunButton = $("#chapter-brunswick");
+let torontoButton = $("#chapter-toronto");
+let windsorButton = $("#chapter-windsor");
+let catMap = $(".cat-map-object");
 
 //module
+let learnTile = $(".learning-tile");
+let struggleTile = $(".learning-tile.struggle");
+let inclusiveTile = $(".learning-tile.inclusivity");
+let accessTile = $(".learning-tile.access");
+let academicTile = $(".learning-tile.academic");
+
+let learnMod = $(".cat-learning-module");
+let moduleClose = $(".cat-learning-module .close-button");
+
 let scrollModStruggle = $('#learning-struggle');
 let scrollModInclusive = $('#learning-inclusive');
 let scrollModAccess = $('#learning-access');
@@ -61,15 +81,6 @@ let scrollEndModStruggle = $('#learning-struggle .scrolling-space');
 let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
 let scrollEndModAccess = $('#learning-access .scrolling-space');
 let scrollEndModAcademic = $('#learning-academic .scrolling-space');
-
-let learnMod = $(".cat-learning-module");
-
-let moduleClose = $(".cat-learning-module .close-button");
-let struggleTile = $(".learning-tile.struggle");
-let inclusiveTile = $(".learning-tile.inclusivity");
-let accessTile = $(".learning-tile.access");
-let academicTile = $(".learning-tile.academic");
-
 
 // Heights 
 let lengthIntro = scrollIntro.innerHeight();
@@ -112,8 +123,7 @@ let lengthInvolvedSI = lengthInvolved + lengthInvolvedContent + lengthInvolvedIm
 
 function windowScroll() {
     // Main Body and Window Height
-    let scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
-    let windowH = $(window).innerHeight(); //the total height of the visible window
+
 
     $(window).scroll(function () {
         //changing scroller value
@@ -229,72 +239,51 @@ function windowScroll() {
         //indicator section
     });
 }
+
 function moduleClick() {
+    function moduleOpenAnimate(tile, mod) {
+        tile.click(function () {
+            mod.addClass("learn-open").delay(500).queue(function () {
+                $(this).addClass("learn-init").dequeue();
+            });
+            console.log("open"+mod);
+        });
+    };
+    moduleOpenAnimate(struggleTile, scrollModStruggle);
+    moduleOpenAnimate(inclusiveTile, scrollModInclusive);
+    moduleOpenAnimate(accessTile, scrollModAccess);
+    moduleOpenAnimate(academicTile, scrollModAcademic);
 
-    // click
-    struggleTile.click(function () {
-        scrollModStruggle.addClass("learn-open").delay(500).queue(function () {
-            $(this).addClass("learn-init").dequeue();
+    var media = window.matchMedia("(min-width: 478px)");
+    function paddingHoverOn(x, y) {
+        var pad = $(this).children(".learning").css("padding-right");      
+        y.each(function () {
+            if (x.matches) {
+                $(this).children(".learning").css("padding-right", pad + 64 + "px");
+            } else {
+                $(this).children(".learning").css("padding-right", pad + 16 + "px");
+            }
         });
-        console.log("open-struggle");
-    });
-    inclusiveTile.click(function () {
-        scrollModInclusive.addClass("learn-open").delay(500).queue(function () {
-            $(this).addClass("learn-init").dequeue();
+    }
+    function paddingHoverOff(x,y) {
+        var pad = $(this).children(".learning").css("padding-right");
+        y.each(function () {
+            if (x.matches) {
+                $(this).children(".learning").css("padding-right", pad - 64 + "px");
+            } else {
+                $(this).children(".learning").css("padding-right", pad - 16 + "px");
+            }
         });
-        console.log("open-inclusive");
-    });
-    accessTile.click(function () {
-        scrollModAccess.addClass("learn-open").delay(500).queue(function () {
-            $(this).addClass("learn-init").dequeue();
-        });
-        console.log("open-access");
-    });
-    academicTile.click(function () {
-        scrollModAcademic.addClass("learn-open").delay(500).queue(function () {
-            $(this).addClass("learn-init").dequeue();
-        });
-        console.log("open-academic");
-    });
-
+    }
     learnTile.mouseenter(function () {
-
-        function functionX(x) {
-            var pad = $(this).children(".learning").css("padding-right");
-
-            if (x.matches) {
-                $(this).each(function () {
-                    $(this).children(".learning").css("padding-right", pad + 64 + "px");
-                });
-            } else {
-                $(this).each(function () {
-                    $(this).children(".learning").css("padding-right", pad + 16 + "px");
-                });
-            }
-        }
-        var x = window.matchMedia("(min-width: 478px)");
-        functionX(x);
-        x.addEventListener("mouseenter", functionX);
-    }).mouseleave(function () {
-        function functionX(x) {
-            var pad = $(this).children(".learning").css("padding-right");
-
-            if (x.matches) {
-                $(this).each(function () {
-                    $(this).children(".learning").css("padding-right", pad - 64 + "px");
-                });
-            } else {
-                $(this).each(function () {
-                    $(this).children(".learning").css("padding-right", pad - 16 + "px");
-                });
-            }
-        }
-        var x = window.matchMedia("(min-width: 478px)");
-        functionX(x);
-        x.addEventListener("mouseleave", functionX);
+        paddingHoverOn(media, learnTile);
+        media.addEventListener("mouseenter", paddingHoverOn);
+    }).mouseleave(function () {     
+        paddingHoverOff(media, learnTile);
+        media.addEventListener("mouseleave", paddingHoverOff);
     })
 
-    moduleClose.click(function () {
+    moduleClose.click(function (event) {
         $(this).each(function () {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function () {
                 learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
@@ -302,31 +291,20 @@ function moduleClick() {
             });
             console.log("close-module");
         });
+        event.preventDefault();
     });
 }
 function moduleScroll() {
     let windowH = $(window).innerHeight(); //the total height of the visible window
 
-    // Modules
-    let lengthModStruggle = scrollModStruggle.innerHeight();
-    let lengthModInclusive = scrollModInclusive.innerHeight();
-    let lengthModAccess = scrollModAccess.innerHeight();
-    let lengthModAcademic = scrollModAcademic.innerHeight();
-
-    let lengthEndModStruggle = scrollEndModStruggle.innerHeight();
-    let lengthEndModInclusive = scrollEndModInclusive.innerHeight();
-    let lengthEndModAccess = scrollEndModAccess.innerHeight();
-    let lengthEndModAcademic = scrollEndModAcademic.innerHeight();
-
-    modTransition(first,second) {
+    function modTransition(first,second) {
         first.addClass("learn-remove").delay(400).queue(function () {
             learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
             console.log("all reset");
             first.scrollTo(0);
 
             second.addClass("learn-open").delay(500).queue(function () {
-                $(this).addClass("learn-init").dequeue();
-                
+                $(this).addClass("learn-init").dequeue();               
                 $(this).scrollTo(0);
             });
             console.log("open-inclusive");
@@ -341,17 +319,7 @@ function moduleScroll() {
         var modScroll01 = scrollModStruggle.scrollTop();
 
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
-            scrollModStruggle.addClass("learn-remove").delay(400).queue(function () {
-                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
-                console.log("all reset");
-
-                scrollModInclusive.addClass("learn-open").delay(500).queue(function () {
-                    $(this).addClass("learn-init").dequeue();
-                    scrollModStruggle.scrollTo(0);
-                    scrollModInclusive.scrollTo(0);
-                });
-                console.log("open-inclusive");
-            });
+            modTransition(scrollModStruggle,scrollModInclusive);
         }
     });
     scrollModInclusive.scroll(function () {
@@ -362,17 +330,7 @@ function moduleScroll() {
         var modScroll02 = scrollModInclusive.scrollTop();
 
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
-            scrollModInclusive.addClass("learn-remove").delay(400).queue(function () {
-                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
-                console.log("all reset");
-
-                scrollModAccess.addClass("learn-open").delay(500).queue(function () {
-                    $(this).addClass("learn-init").dequeue();
-                    scrollModInclusive.scrollTo(0);
-                    scrollModAccess.scrollTo(0);
-                });
-                console.log("open-acess");
-            });
+            modTransition(scrollModInclusive,scrollModAccess);
         }
     });
     scrollModAccess.scroll(function () {
@@ -383,17 +341,7 @@ function moduleScroll() {
         var modScroll03 = scrollModAccess.scrollTop();
 
         if (modScroll03 >= posEndModAccess - windowH * startTrans) {
-            scrollModAccess.addClass("learn-remove").delay(400).queue(function () {
-                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
-                console.log("all reset");
-
-                scrollModAcademic.addClass("learn-open").delay(500).queue(function () {
-                    $(this).addClass("learn-init").dequeue();
-                    scrollModInclusive.scrollTo(0);
-                    scrollModAccess.scrollTo(0);
-                });
-                console.log("open-academic");
-            });
+            modTransition(scrollModAccess,scrollModAcademic);
         }
     });
     scrollModAcademic.scroll(function () {
@@ -412,36 +360,37 @@ function moduleScroll() {
                 $('html,body').animate({ scrollTop: posInvolved }, 'slow');
                 console.log("open-involved");
 
-                scrollModInclusive.scrollTo(0);
                 scrollModAccess.scrollTo(0);
+                $(this).scrollTo(0);
             });
         }
     });
 }
-function closeNav(link) {
-    link.click(function () {
-        navMenu.css({
-            "transform": "translate3d(0, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-            "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 90%)"
-        }).delay(550).queue(function () {
-            $(this).removeClass("opened").dequeue();
-        });
-        console.log("close-menu")
-    });
-}
-function prepClick(item) {
-    if (item.attr('html') !== 'undefined' || $(this).attr('html') !== false) {
-        item.removeAttr("href");
-    }
-}
+
 function navLink() {
-    let navHam = $(".nav-hamburger");
-    let navLink = $(".nav-link");
-    let navClose = $(".cat-navmenu-item .close-button");
-    let navMenu = $(".cat-navmenu-pop");
+    function closeNav(link) {
+        link.click(function (event) {
+            navMenu.css({
+                "transform": "translate3d(0, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 90%)"
+            }).delay(550).queue(function () {
+                $(this).removeClass("opened").dequeue();
+            });
+            console.log("close-menu")
+            event.preventDefault();
+        });
+    }
+    function prepClick(item) { 
+        if (item.attr('html') !== 'undefined' || $(this).attr('html') !== false) {
+            item.removeAttr("href");
+        }
+    }
 
     prepClick(navHam);
-    navHam.click(function () {
+    prepClick(closeButt);
+    closeNav(navLinkItem); 
+    closeNav(navClose);
+    navHam.click(function (event) {
         navMenu.addClass("opened").delay(30).queue(function () {
             $(this).css({
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
@@ -449,9 +398,9 @@ function navLink() {
             }).dequeue();
         });
         console.log("open-menu")
+        event.preventDefault();
     });
-    closeNav(navLink); 
-    closeNav(navClose); 
+
 }
 function smoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -485,19 +434,7 @@ function siblingEffector(button) {
     });
 };
 function mapClick() {
-    let chapter = $(".cat-chapter-button");
-    let mapArea = $(".cat-sec-container.map");
-    let bishopButton = $("#chapter-bishop");
-    let camosunButton = $("#chapter-camosun");
-    let dalhousieButton = $("#chapter-dalhousie");
-    let lakeheadButton = $("#chapter-lakehead");
-    let tmuButton = $("#chapter-tmu");
-    let trentButton = $("#chapter-trent");
-    let guelphButton = $("#chapter-guelph");
-    let brunButton = $("#chapter-brunswick");
-    let torontoButton = $("#chapter-toronto");
-    let windsorButton = $("#chapter-windsor");
-    let catMap = $(".cat-map-object");
+
 
     mapArea.on("click", function (event) {
         if ($(event.target).closest("#chapter-bishop").length) {
@@ -648,6 +585,10 @@ function mapClick() {
 }
 
 (function ($) {
+    $(window).on('resize', function () {
+        var scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
+        var windowH = $(window).innerHeight(); 
+    });
     animateType();
     navLink();
     smoothScroll();
@@ -655,11 +596,8 @@ function mapClick() {
     moduleClick();
     moduleScroll();
     mapClick();
-    prepClick(closeButt);
-    $(window).on('resize', function () {
-        windowScroll();
-        moduleScroll();
-    });
+    
+    
 
 
 }(jQuery));
