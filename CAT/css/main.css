@@ -95,9 +95,3 @@ body::-webkit-scrollbar-thumb {
 .learning-tile .learning {
 	transition: margin-right .8s, padding-right .8s;
 }
-
-@media screen and (max-width: 479px) {
-    .learning-tile:hover > .cat-h1, .learning-tile:hover > .cat-h2, .learning-tile:hover > .cat-h3 {
-        margin-right: 16px;
-    }
-}
