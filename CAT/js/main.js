@@ -459,7 +459,7 @@ function mapClick() {
         if ($(event.target).closest("#chapter-bishop").length) {
             console.log("bishop");
             catMap.css({
-                "bottom": "27.3112807464%",
+                "bottom": 27.3112807464/2+"%",
                 "right": "24.2578456319%",
                 "left": "auto",
                 "top": "auto",
@@ -471,7 +471,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-camosun").length) {
             console.log("camosun");
             catMap.css({
-                "bottom": "19.1687871077%",
+                "bottom": 19.1687871077/2+"%",
                 "right": "auto",
                 "left": "39.8642917727%",
                 "top": "auto",
@@ -483,7 +483,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-dalhousie").length) {
             console.log("dalhousie");
             catMap.css({
-                "bottom": "22.9007633588%",
+                "bottom": 22.9007633588/2+"%",
                 "right": "35.4537743851%",
                 "left": "auto",
                 "top": "auto",
@@ -495,7 +495,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-lakehead").length) {
             console.log("lakehouse");
             catMap.css({
-                "bottom": "27.0568278202%",
+                "bottom": 27.0568278202/2+"%",
                 "right": "1.69635284139%",
                 "left": "auto",
                 "top": "auto",
@@ -507,7 +507,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-tmu").length) {
             console.log("tmu");
             catMap.css({
-                "bottom": "33.0788804071%",
+                "bottom": 33.0788804071/2+"%",
                 "right": "16.6242578456%",
                 "left": "auto",
                 "top": "auto",
@@ -519,7 +519,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-trent").length) {
             console.log("trent");
             catMap.css({
-                "bottom": "31.5521628499%",
+                "bottom": 31.5521628499/2+"%",
                 "right": "17.3876166243%",
                 "left": "auto",
                 "top": "auto",
@@ -531,7 +531,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-guelph").length) {
             console.log("guelph");
             catMap.css({
-                "bottom": "33.8422391858%",
+                "bottom": 33.8422391858/2+"%",
                 "right": "14.588634436%",
                 "left": "auto",
                 "top": "auto",
@@ -543,7 +543,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-brunswick").length) {
             console.log("brunswick");
             catMap.css({
-                "bottom": "24.5971162002%",
+                "bottom": 24.5971162002/2+"%",
                 "right": "31.6369804919%",
                 "left": "auto",
                 "top": "auto",
@@ -555,7 +555,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-toronto").length) {
             console.log("toronto");
             catMap.css({
-                "bottom": "33.3333333333%",
+                "bottom": 33.3333333333/2+"%",
                 "right": "16.2849872774%",
                 "left": "auto",
                 "top": "auto",
@@ -567,7 +567,7 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-windsor").length) {
             console.log("windsor");
             catMap.css({
-                "bottom": "37.4893977947%",
+                "bottom": 37.4893977947/2+"%",
                 "right": "11.5351993215%",
                 "left": "auto",
                 "top": "auto",
