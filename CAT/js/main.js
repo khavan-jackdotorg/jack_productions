@@ -311,6 +311,7 @@ function moduleScroll() {
         });
     }
 
+    
     scrollModStruggle.scroll(function () {
         // Position
         let posEndModStruggle = scrollEndModStruggle.position().top;
