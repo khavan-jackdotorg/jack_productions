@@ -60,6 +60,18 @@ let guelphButton = $("#chapter-guelph");
 let brunButton = $("#chapter-brunswick");
 let torontoButton = $("#chapter-toronto");
 let windsorButton = $("#chapter-windsor");
+
+let bishopDot = $(".map-dot.bishop");
+let camosunDot = $(".map-dot.camosun");
+let dalhousieDot = $(".map-dot.dalhousie");
+let lakeheadDot = $(".map-dot.lakehead");
+let tmuDot = $(".map-dot.tmu");
+let trentDot = $(".map-dot.trent");
+let guelphDot = $(".map-dot.guelph");
+let brunDot = $(".map-dot.brunswick");
+let torontoDot = $(".map-dot.toronto");
+let windsorDot = $(".map-dot.windsor");
+
 let catMap = $(".cat-map-object");
 
 //module
@@ -122,9 +134,6 @@ let lengthLearningsSI = lengthLearn + lengthLearnContent + lengthLearnImage;
 let lengthInvolvedSI = lengthInvolved + lengthInvolvedContent + lengthInvolvedImage;
 
 function windowScroll() {
-    // Main Body and Window Height
-
-
     $(window).scroll(function () {
         //changing scroller value
         var wScroll = $(window).scrollTop();
@@ -236,7 +245,9 @@ function windowScroll() {
                 animTimeFive.css("margin-left", 0 + "%");
             }
         }
+
         //indicator section
+        // the images parallax a bit and stay fixed 
     });
 }
 
@@ -311,7 +322,6 @@ function moduleScroll() {
         });
     }
 
-    
     scrollModStruggle.scroll(function () {
         // Position
         let posEndModStruggle = scrollEndModStruggle.position().top;
@@ -422,143 +432,150 @@ function animateType() {
     animateWord.lettering('words');
     animateLine.lettering('lines');
 }
-function siblingEffector(button) {
-    button.siblings(".cat-chapter-button").css({
-        "background-color": "#2D2522",
-        "color": "#F4F2EF"
-    });
-    button.siblings(".cat-chapter-button").children(".chapter-content-p").css({
-        "display": "none"
-    });
-    button.siblings(".cat-chapter-button").children(".chapter-box").css({
-        "display": "none"
-    });
-};
-function mapClick() {
 
+function mapClick() {
+    function siblingEffector(button) {
+        button.siblings(".cat-chapter-button").css({
+            "background-color": "#2D2522",
+            "color": "#F4F2EF"
+        });
+        button.siblings(".cat-chapter-button").children(".chapter-content-p").css({
+            "display": "none"
+        });
+        button.siblings(".cat-chapter-button").children(".chapter-box").css({
+            "display": "none"
+        });
+    };
+    function mapdot(location){
+        location.css({
+            "background-color":"#DF693D",
+            "border-width":3,
+            "width":"20px",
+            "height":"20px"
+        })
+    }
 
     mapArea.on("click", function (event) {
         if ($(event.target).closest("#chapter-bishop").length) {
             console.log("bishop");
             catMap.css({
-                "bottom": "27.3112807464vw",
-                "right": "24.2578456319vw",
+                "bottom": "27.3112807464%",
+                "right": "24.2578456319%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(bishopButton);
+            mapdot(bishopDot);
         } else if ($(event.target).closest("#chapter-camosun").length) {
             console.log("camosun");
             catMap.css({
-                "bottom": "19.1687871077vw",
+                "bottom": "19.1687871077%",
                 "right": "auto",
-                "left": "39.8642917727vw",
+                "left": "39.8642917727%",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(camosunButton);
+            mapdot(camosunDot);
         } else if ($(event.target).closest("#chapter-dalhousie").length) {
             console.log("dalhousie");
             catMap.css({
-                "bottom": "22.9007633588vw",
-                "right": "35.4537743851vw",
+                "bottom": "22.9007633588%",
+                "right": "35.4537743851%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(dalhousieButton);
+            mapdot(dalhousieDot);
         } else if ($(event.target).closest("#chapter-lakehead").length) {
             console.log("lakehouse");
             catMap.css({
-                "bottom": "27.0568278202vw",
-                "right": "1.69635284139vw",
+                "bottom": "27.0568278202%",
+                "right": "1.69635284139%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(lakeheadButton);
+            mapdot(lakeheadDot);
         } else if ($(event.target).closest("#chapter-tmu").length) {
             console.log("tmu");
             catMap.css({
-                "bottom": "33.0788804071vw",
-                "right": "16.6242578456vw",
+                "bottom": "33.0788804071%",
+                "right": "16.6242578456%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(tmuButton);
+            mapdot(tmuDot);
         } else if ($(event.target).closest("#chapter-trent").length) {
             console.log("trent");
             catMap.css({
-                "bottom": "31.5521628499vw",
-                "right": "17.3876166243vw",
+                "bottom": "31.5521628499%",
+                "right": "17.3876166243%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(trentButton);
+            mapdot(trentDot);
         } else if ($(event.target).closest("#chapter-guelph").length) {
             console.log("guelph");
             catMap.css({
-                "bottom": "33.8422391858vw",
-                "right": "14.588634436vw",
+                "bottom": "33.8422391858%",
+                "right": "14.588634436%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(guelphButton);
+            mapdot(guelphDot);
         } else if ($(event.target).closest("#chapter-brunswick").length) {
             console.log("brunswick");
             catMap.css({
-                "bottom": "24.5971162002vw",
-                "right": "31.6369804919vw",
+                "bottom": "24.5971162002%",
+                "right": "31.6369804919%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(brunButton);
+            mapdot(brunDot);
         } else if ($(event.target).closest("#chapter-toronto").length) {
             console.log("toronto");
             catMap.css({
-                "bottom": "33.3333333333vw",
-                "right": "16.2849872774vw",
+                "bottom": "33.3333333333%",
+                "right": "16.2849872774%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(torontoButton);
-        } else if ($(event.target).closest("#chapter-toronto").length) {
-            console.log("toronto");
-            catMap.css({
-                "bottom": "33.3333333333vw",
-                "right": "16.2849872774vw",
-                "left": "auto",
-                "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
-            });
-            siblingEffector(torontoButton);
+            mapdot(torontoDot);
         } else if ($(event.target).closest("#chapter-windsor").length) {
             console.log("windsor");
             catMap.css({
-                "bottom": "37.4893977947vw",
-                "right": "11.5351993215vw",
+                "bottom": "37.4893977947%",
+                "right": "11.5351993215%",
                 "left": "auto",
                 "top": "auto",
-                // "height":"200vw",
-                // "width":"200vw"
+                "height":"200vw",
+                "width":"200vw"
             });
             siblingEffector(windsorButton);
+            mapdot(windsorDot);
         } else {
             chapter.each(function () {
                 $(this).css({
@@ -597,9 +614,5 @@ function mapClick() {
     moduleClick();
     moduleScroll();
     mapClick();
-    
-    
-
-
 }(jQuery));
 
