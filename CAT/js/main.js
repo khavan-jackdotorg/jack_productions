@@ -256,8 +256,9 @@ function windowScroll() {
 function moduleClick() {
     function moduleOpenAnimate(tile, mod) {
         tile.click(function () {
-            mod.addClass("learn-open").delay(500).queue(function () {
-                $(this).addClass("learn-init").dequeue();
+            mod.addClass("learn-open").delay(500).queue(function (next) {
+                $(this).addClass("learn-init");
+                next();
             });
             console.log("open"+mod);
         });
@@ -298,11 +299,13 @@ function moduleClick() {
 
     moduleClose.click(function (event) {
         $(this).each(function () {
-            $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function () {
-                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
+            $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function (next) {
+                learnMod.removeClass("learn-open learn-remove learn-init");
                 console.log("reset");
+                next();
             });
             console.log("close-module");
+        
         });
         event.preventDefault();
     });
@@ -311,16 +314,19 @@ function moduleScroll() {
     let windowH = $(window).innerHeight(); //the total height of the visible window
 
     function modTransition(first,second) {
-        first.addClass("learn-remove").delay(400).queue(function () {
-            learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
+        first.addClass("learn-remove").delay(400).queue(function (next) {
+            learnMod.removeClass("learn-open learn-remove learn-init");
             console.log("all reset");
             first.scrollTop(0);
-
-            second.addClass("learn-open").delay(500).queue(function () {
-                $(this).addClass("learn-init").dequeue();               
-                $(this).scrollTop(0);
-            });
-            console.log("open-inclusive");
+            next();
+            
+            console.log("close "+first);
+        });
+        second.addClass("learn-open").delay(500).queue(function (next) {
+            $(this).addClass("learn-init");               
+            $(this).scrollTop(0);
+            next();
+            console.log("open "+second);
         });
     }
 
@@ -356,8 +362,8 @@ function moduleScroll() {
         var modScroll03 = scrollModAcademic.scrollTop();
 
         if (modScroll03 >= posEndModAcademic - windowH * startTrans) {
-            scrollModAcademic.addClass("learn-remove").delay(400).queue(function () {
-                learnMod.removeClass("learn-open learn-remove learn-init").dequeue();
+            scrollModAcademic.addClass("learn-remove").delay(400).queue(function (next) {
+                learnMod.removeClass("learn-open learn-remove learn-init");
                 console.log("all reset");
 
                 $('html,body').animate({ scrollTop: posInvolved }, 'slow');
@@ -365,6 +371,7 @@ function moduleScroll() {
 
                 scrollModAccess.scrollTop(0);
                 $(this).scrollTop(0);
+                next();
             });
         }
     });
