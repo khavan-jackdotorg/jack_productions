@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, { // mirror axis on right side
             opposite: true,
             reversed: false,
-            categories: categories,
+            categories: categories03,
             linkedTo: 0,
             labels: {
                 step: 1

@@ -344,6 +344,7 @@ function moduleScroll() {
         var modScroll01 = scrollModStruggle.scrollTop();
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
             modTransition(scrollModStruggle,scrollModInclusive);
+            console.log("scroll-next");
         }
     });
     scrollModInclusive.scroll(function () {
@@ -352,6 +353,7 @@ function moduleScroll() {
         var modScroll02 = scrollModInclusive.scrollTop();
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
             modTransition(scrollModInclusive,scrollModAccess);
+            console.log("scroll-next");
         }
     });
     scrollModAccess.scroll(function () {
@@ -360,6 +362,7 @@ function moduleScroll() {
         var modScroll03 = scrollModAccess.scrollTop();
         if (modScroll03 >= posEndModAccess - windowH * startTrans) {
             modTransition(scrollModAccess,scrollModAcademic);
+            console.log("scroll-next");
         }
     });
     scrollModAcademic.scroll(function () {
