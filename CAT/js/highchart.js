@@ -13,7 +13,13 @@ Highcharts.setOptions({
     }
 });
 
-const data = [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05];
+const data01 = [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05];
+const categories02 = [
+    "The campus mental health services I used were high quality ",
+    "The campus mental health services I used were accessible when I needed them",
+    "The campus mental health services  I used met my needs",	
+    "The campus mental health services I used were responsive to my background and experiences"
+];
 
 document.addEventListener('DOMContentLoaded', function () {
     const chart = Highcharts.chart('barchart', {
@@ -44,28 +50,26 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         series: [{
             name:'Percent (%) of students',
-            data: data
+            data: data01
         }],
         legend: {
             enabled: false
         }
     });
-    const categories = [
-        "The campus mental health services I used were high quality ",
-        "The campus mental health services I used were accessible when I needed them",
-        "The campus mental health services  I used met my needs",	
-        "The campus mental health services I used were responsive to my background and experiences"
-    ];
+    
 
     const chartdiv02 = Highcharts.chart('chartdiv02', {
         chart: {
             type: 'bar'
         },
+        credits: {
+            enabled: false
+        },
         title: {
             text: 'Service User Perceptions'
         },
         xAxis: [{
-            categories: categories,
+            categories: categories02,
             reversed: false,
             labels: {
                 step: 1
