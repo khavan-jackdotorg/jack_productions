@@ -395,6 +395,7 @@ function modScroll() {
     // back button
     scrollBackModStruggle.click(function(){
         let posLearn = scrollLearn.offset().top;
+        body.removeClass("modal-open");
         scrollModStruggle.addClass("learn-remove").delay(200).queue(function (next) {
             learnMod.removeClass("learn-open learn-remove learn-init");
             console.log("all reset");
