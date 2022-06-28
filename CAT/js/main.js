@@ -345,6 +345,7 @@ function modScroll() {
         console.log(modScroll01);
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
             modTransition(scrollModStruggle, scrollModInclusive);
+            modScroll01 = 0;
             console.log("scroll-next");
         }
     });
@@ -355,6 +356,7 @@ function modScroll() {
         var modScroll02 = scrollModInclusive.scrollTop();
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
             modTransition(scrollModInclusive, scrollModAccess);
+            modScroll02 = 0;
             console.log("scroll-next");
         }
     });
@@ -365,6 +367,7 @@ function modScroll() {
         var modScroll03 = scrollModAccess.scrollTop();
         if (modScroll03 >= posEndModAccess - windowH * startTrans) {
             modTransition(scrollModAccess, scrollModAcademic);
+            modScroll03 = 0;
             console.log("scroll-next");
         }
     });
@@ -380,12 +383,13 @@ function modScroll() {
             scrollModAcademic.addClass("learn-remove").delay(200).queue(function (next) {
                 learnMod.removeClass("learn-open learn-remove learn-init");
                 console.log("all reset");
-
+                modScroll04 = 0;
                 $(this).scrollTop(0);
                 next();
             });
             $('html,body').animate({ scrollTop: posInvolved }, 'medium');
-                console.log("open-involved");
+            body.removeClass("modal-open");
+            console.log("open-involved");
         }
     });
     // back button
