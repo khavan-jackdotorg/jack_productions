@@ -270,23 +270,31 @@ function moduleClick() {
     moduleOpenAnimate(accessTile, scrollModAccess);
     moduleOpenAnimate(academicTile, scrollModAcademic);
 
-    var media = window.matchMedia("(min-width: 478px)");
-    function paddingHoverOn(x, y) {
+    // needs fixing its not working
+    
+    function paddingHoverOn(y) {
         var pad = $(this).children(".learning").css("padding-right");      
         y.each(function () {
-            if (x.matches) {
+            var media = window.matchMedia("(min-width: 478px)");
+            if (media.matches) {
+                console.log("adding big padding");
                 $(this).children(".learning").css("padding-right", pad + 64 + "px");
             } else {
+                console.log("adding small padding");
                 $(this).children(".learning").css("padding-right", pad + 16 + "px");
             }
         });
     }
-    function paddingHoverOff(x,y) {
+    function paddingHoverOff(y) {
+        
         var pad = $(this).children(".learning").css("padding-right");
+        var media = window.matchMedia("(min-width: 478px)");
         y.each(function () {
-            if (x.matches) {
+            if (media.matches) {
+                console.log("remove big padding");
                 $(this).children(".learning").css("padding-right", pad - 64 + "px");
             } else {
+                console.log("remove small padding");
                 $(this).children(".learning").css("padding-right", pad - 16 + "px");
             }
         });
@@ -314,20 +322,20 @@ function moduleClick() {
     });
 }
 function moduleScroll() {
-    let windowH = $(window).innerHeight(); //the total height of the visible window
 
     function modTransition(first,second) {
         first.addClass("learn-remove").delay(400).queue(function (next) {
-            first.removeClass("learn-open learn-remove learn-init");
+            $(this).removeClass("learn-open learn-remove learn-init");
             console.log("all reset");
             first.scrollTop(0);
             next();
             
             console.log("close "+first);
         });
+        second.scrollTop(0);
         second.addClass("learn-open").delay(400).queue(function (next) {
             $(this).addClass("learn-init");               
-            $(this).scrollTop(0);
+            
             next();
             console.log("open "+second);
         });
@@ -339,9 +347,12 @@ function moduleScroll() {
     }
 
     scrollModStruggle.scroll(function () {
+
         let posEndModStruggle = scrollEndModStruggle.position().top;
         //learning section
         var modScroll01 = scrollModStruggle.scrollTop();
+
+        console.log(modScroll01);
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
             modTransition(scrollModStruggle,scrollModInclusive);
             console.log("scroll-next");
@@ -350,6 +361,7 @@ function moduleScroll() {
     scrollModInclusive.scroll(function () {
         let posEndModInclusive = scrollEndModInclusive.position().top;
         //learning section
+        console.log(modScroll02);
         var modScroll02 = scrollModInclusive.scrollTop();
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
             modTransition(scrollModInclusive,scrollModAccess);
@@ -357,6 +369,7 @@ function moduleScroll() {
         }
     });
     scrollModAccess.scroll(function () {
+        console.log(modScroll03);
         let posEndModAccess = scrollEndModAccess.position().top;
         //learning section
         var modScroll03 = scrollModAccess.scrollTop();
@@ -366,13 +379,14 @@ function moduleScroll() {
         }
     });
     scrollModAcademic.scroll(function () {
+        console.log(modScroll04);
         let posEndModAcademic = scrollEndModAcademic.position().top;
         let posInvolved = scrollInvolved.offset().top;
 
         //learning section
-        var modScroll03 = scrollModAcademic.scrollTop();
+        var modScroll04 = scrollModAcademic.scrollTop();
 
-        if (modScroll03 >= posEndModAcademic - windowH * startTrans) {
+        if (modScroll04 >= posEndModAcademic - windowH * startTrans) {
             scrollModAcademic.addClass("learn-remove").delay(400).queue(function (next) {
                 learnMod.removeClass("learn-open learn-remove learn-init");
                 console.log("all reset");
@@ -396,7 +410,8 @@ function navLink() {
             }).delay(550).queue(function () {
                 $(this).removeClass("opened").dequeue();
             });
-            console.log("close-menu")
+            console.log("close-menu");
+            body.removeClass("modal-open");
             event.preventDefault();
         });
     }
@@ -419,6 +434,7 @@ function navLink() {
         });
         console.log("open-menu")
         event.preventDefault();
+        body.addClass("modal-open");
     });
 
 }
