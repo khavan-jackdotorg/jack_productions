@@ -70,21 +70,16 @@ body::-webkit-scrollbar-thumb {
     display: flex;
 }
 /* module */
-.cat-learning-scroll, .cat-learning-module {
-    overflow-x: hidden;
-    overflow-y: auto;
-}
 .cat-learning-module {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    transition: opacity 0ms ease, transform 900ms ease, -webkit-transform 900ms ease, clip-path 500ms ease;
 }
 .cat-learning-module.learn-open,.cat-learning-module.learn-init {
     display: flex;
-    transition: opacity 0ms ease, transform 900ms ease, -webkit-transform 900ms ease, clip-path 500ms ease;
 }
 .cat-learning-module.learn-open.learn-init.learn-remove {
     transform:translate3d(0%, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
     
 }
 .cat-learning-module.learn-open.learn-init {

@@ -41,6 +41,7 @@ let scrollFooter = $('.footer');
 var Cursor = $('#cursor');
 let closeButt = $(".close-button");
 let sectionIndicator = $(".sectionindicator");
+let loader = $(".cat-loader");
 
 // navigation
 let navHam = $(".nav-hamburger");
@@ -96,6 +97,12 @@ let scrollEndModStruggle = $('#learning-struggle .scrolling-space');
 let scrollEndModInclusive = $('#learning-inclusive .scrolling-space');
 let scrollEndModAccess = $('#learning-access .scrolling-space');
 let scrollEndModAcademic = $('#learning-academic .scrolling-space');
+
+let scrollBackModStruggle = $('#learning-struggle .close-button.back');
+let scrollBackModInclusive = $('#learning-inclusive .close-button.back');
+let scrollBackModAccess = $('#learning-access .close-button.back');
+let scrollBackModAcademic = $('#learning-academic .close-button.back');
+
 
 // Heights 
 let lengthIntro = scrollIntro.innerHeight();
@@ -251,6 +258,11 @@ function windowScroll() {
 
         //indicator section
         // the images parallax a bit and stay fixed 
+        if (loader.css("display") == "flex") {
+            body.addClass("modal-open");
+        } else {
+            body.removeClass("modal-open");
+        }
     });
 }
 
@@ -266,6 +278,7 @@ function moduleClick() {
             // close siblings
             mod.siblings(".cat-learning-module").removeClass("learn-open learn-remove learn-init");
             console.log("reset");
+            mod.scrollTop(0);
         });
     };
     moduleOpenAnimate(struggleTile, scrollModStruggle);
@@ -299,11 +312,11 @@ function moduleClick() {
         });
         body.removeClass("modal-open");
         event.preventDefault();
+        mod.scrollTop(0);
     });
 }
 
 function modScroll() {
-    
     function modTransition(first, second) {
         first.addClass("learn-remove").delay(400).queue(function (next) {
             $(this).removeClass("learn-open learn-remove learn-init");
@@ -314,7 +327,7 @@ function modScroll() {
             console.log("close " + first);
         });
         second.scrollTop(0);
-        second.addClass("learn-open").delay(400).queue(function (next) {
+        second.addClass("learn-open").delay(200).queue(function (next) {
             $(this).addClass("learn-init");
     
             next();
@@ -326,9 +339,31 @@ function modScroll() {
             body.removeClass("modal-open");
         }
     }
-    
-    scrollModStruggle.scroll(function () {
+    scrollBackModStruggle.click(function(){
+        let posLearn = scrollLearn.offset().top;
+        scrollModStruggle.addClass("learn-remove").delay(200).queue(function (next) {
+            learnMod.removeClass("learn-open learn-remove learn-init");
+            console.log("all reset");
 
+            $(this).scrollTop(0);
+            next();
+        });
+        $('html,body').animate({ scrollTop: posLearn }, 'medium');
+            console.log("open-learn");
+    })
+    scrollBackModInclusive.click(function(){
+        modTransition(scrollModInclusive,scrollModStruggle);
+        console.log("scroll-back");
+    })
+    scrollBackModAccess.click(function(){
+        modTransition(scrollModAccess,scrollModInclusive);
+        console.log("scroll-back");
+    })
+    scrollBackModAcademic.click(function(){
+        modTransition(scrollModAcademic,scrollModAccess);
+        console.log("scroll-back");
+    })
+    scrollModStruggle.scroll(function () {
         let posEndModStruggle = scrollEndModStruggle.position().top;
         //learning section
         var modScroll01 = scrollModStruggle.scrollTop();
@@ -368,16 +403,15 @@ function modScroll() {
         var modScroll04 = scrollModAcademic.scrollTop();
 
         if (modScroll04 >= posEndModAcademic - windowH * startTrans) {
-            scrollModAcademic.addClass("learn-remove").delay(400).queue(function (next) {
+            scrollModAcademic.addClass("learn-remove").delay(200).queue(function (next) {
                 learnMod.removeClass("learn-open learn-remove learn-init");
                 console.log("all reset");
-
-                $('html,body').animate({ scrollTop: posInvolved }, 'medium');
-                console.log("open-involved");
 
                 $(this).scrollTop(0);
                 next();
             });
+            $('html,body').animate({ scrollTop: posInvolved }, 'medium');
+                console.log("open-involved");
         }
     });
 }
