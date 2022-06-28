@@ -132,13 +132,26 @@ document.addEventListener('DOMContentLoaded', function () {
         colors: color01,
         xAxis: {
             categories: categories01,
-            lineColor: "#2d2522"
+            labels: {
+                style: {
+                    color: "#2d2522",
+                    fontSize: "16px"
+                }
+            }
         },
         yAxis: {
             title: {
-                text: 'Percent (%) of students'
+                text: 'Percent (%) of students',
+                style: {
+                    fontColor: '#2d2522'
+                }
             },
-            lineColor: "#2d2522"
+            labels: {
+                style: {
+                    color: "#f4f2ef",
+                    fontSize: "21px"
+                }
+            }
         },
         tooltip: {
             pointFormat: '{point.category}: {point.y}',
@@ -147,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 fontSize: "18px"
             },
             backgroundColor: "#2D2522"
-
         },
         series: [{
             name: 'Percent (%) of students',
@@ -166,14 +178,16 @@ document.addEventListener('DOMContentLoaded', function () {
             enabled: false
         },
         colors: color02,
-        title: {
-            text: 'Service User Perceptions'
-        },
         xAxis: [{
             categories: categories02,
             reversed: false,
             labels: {
-                step: 1
+                step: 1,
+                style: {
+                    fontColor: "#f4f2ef",
+                    fontSize: "16px"
+                },
+                autoRotation: [-45]
             },
             accessibility: {
                 description: 'Agree'
@@ -185,7 +199,13 @@ document.addEventListener('DOMContentLoaded', function () {
             linkedTo: 0,
             labels: {
                 step: 1,
-                enabled: false
+                enabled: false,
+                style: {
+                    fontColor: "#f4f2ef",
+                    fontSize: "16px"
+                },
+                autoRotation: [-45]
+
             },
             accessibility: {
                 description: 'Disagree'
@@ -198,6 +218,9 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: {
                 formatter: function () {
                     return Math.abs(this.value) + '%';
+                },
+                style: {
+                    color: "#2d2522"
                 }
             },
             accessibility: {
@@ -215,7 +238,12 @@ document.addEventListener('DOMContentLoaded', function () {
             formatter: function () {
                 return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
                     'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 1) + '%';
-            }
+            },
+            style: {
+                color: '#F4F2EF',
+                fontSize: "18px"
+            },
+            backgroundColor: "#2D2522"
         },
 
         series: data02
@@ -227,15 +255,13 @@ document.addEventListener('DOMContentLoaded', function () {
         credits: {
             enabled: false
         },
-        title: {
-            text: 'Service User Perceptions'
-        },
         colors: color02,
         xAxis: [{
             categories: categories03,
             reversed: false,
             labels: {
-                step: 1
+                step: 1,
+                autoRotation: [-45]
             },
             accessibility: {
                 description: 'Agree'

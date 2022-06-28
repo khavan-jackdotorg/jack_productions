@@ -36,8 +36,7 @@
     width: 36px;
 }
 body.modal-open {
-overflow:hidden;
-
+    overflow:hidden;
 }
 /* Scrollbars */
 body::-webkit-scrollbar {
@@ -76,22 +75,30 @@ body::-webkit-scrollbar-thumb {
     overflow-y: auto;
 }
 .cat-learning-module {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
 }
 .cat-learning-module.learn-open {
-    display: grid;
+    display: flex;
     transition: opacity 0ms ease, transform 900ms ease, -webkit-transform 900ms ease, clip-path 500ms ease;
 }
 .cat-learning-module.learn-open.learn-init.learn-remove {
     transform:translate3d(0%, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    
 }
 .cat-learning-module.learn-open.learn-init {
     transform:translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-
+}   
 /* Element Fix */
 .learning-tile .learning {
 	transition: margin-right .8s, padding-right .8s;
+}
+/* roots */
+.highcharts-root {
+    fill: transparent;
+}
+.highcharts-axis-labels text{
+    color: #2D2522;
 }

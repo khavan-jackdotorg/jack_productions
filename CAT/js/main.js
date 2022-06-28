@@ -278,8 +278,7 @@ function moduleClick() {
         var element = 64;
     } else {
         var element = 16;
-    }
-
+    };
     learnTile.mouseenter(function () {
         var pad = learnTile.children(".learning").css("padding-right");      
         learnTile.each(function () {
@@ -290,8 +289,7 @@ function moduleClick() {
         learnTile.each(function () {
             $(this).children(".learning").css("padding-right", pad - element + "px");
         });
-    })
-    
+    });  
     moduleClose.click(function (event) {
         $(this).each(function () {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function (next) {
@@ -300,14 +298,12 @@ function moduleClick() {
                 next();
             });
             console.log("close-module");
-        
         });
         body.removeClass("modal-open");
         event.preventDefault();
     });
 }
 function moduleScroll() {
-
     function modTransition(first,second) {
         first.addClass("learn-remove").delay(400).queue(function (next) {
             $(this).removeClass("learn-open learn-remove learn-init");
