@@ -101,3 +101,6 @@ body::-webkit-scrollbar-thumb {
 .cat-main-p > span {
 	display:block;
 }
+.cat-scrollfix {
+    overflow-x: hidden;
+}

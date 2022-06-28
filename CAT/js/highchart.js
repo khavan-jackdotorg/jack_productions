@@ -127,13 +127,22 @@ document.addEventListener('DOMContentLoaded', function () {
         chart: {
             type: 'bar',
         },
+        title: {
+            style: {
+                display: "none"
+            }
+        },
+        credits: {
+            enabled: false
+        },
         colors: color01,
         xAxis: {
             categories: categories01,
             labels: {
                 style: {
                     color: "#f4f2ef",
-                    fontSize: "16px"
+                    fontSize: "16px",
+                    maxWidth: "80px"
                 }
             }
         },
@@ -177,6 +186,11 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         credits: {
             enabled: false
+        },
+        title: {
+            style: {
+                display: "none"
+            }
         },
         colors: color02,
         xAxis: [{
@@ -255,6 +269,11 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         credits: {
             enabled: false
+        },
+        title: {
+            style: {
+                display: "none"
+            }
         },
         colors: color02,
         xAxis: [{
