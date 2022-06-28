@@ -10,12 +10,12 @@ Highcharts.setOptions({
         style: {
             fontFamily: 'Helvetica',
             fontSize: 21,
-            fontColor: "#2D2522"
+            color: "#f4f2ef"
         },
         xAxis: {
             title: {
                 style: {
-                    fontColor: "#2D2522"
+                    color: "#f4f2ef"
                 }
             }
         },

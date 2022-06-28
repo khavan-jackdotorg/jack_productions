@@ -256,13 +256,6 @@ function windowScroll() {
             }
         }
 
-        //indicator section
-        // the images parallax a bit and stay fixed 
-        if (loader.css("display") == "flex") {
-            body.addClass("modal-open");
-        } else {
-            body.removeClass("modal-open");
-        }
     });
 }
 
