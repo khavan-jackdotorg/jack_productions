@@ -684,6 +684,7 @@ function mapClick() {
         var scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
         var windowH = $(window).innerHeight();
         moduleClick();  
+        chart.reflow();
     });
     animateType();
     navLink();

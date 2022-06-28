@@ -281,7 +281,11 @@ document.addEventListener('DOMContentLoaded', function () {
             reversed: false,
             labels: {
                 step: 1,
-                autoRotation: [-45]
+                autoRotation: [-45],
+                style: {
+                    color: "#f4f2ef",
+                    fontSize: "16px"
+                },
             },
             accessibility: {
                 description: 'Agree'
@@ -306,6 +310,10 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: {
                 formatter: function () {
                     return Math.abs(this.value) + '%';
+                },
+                style: {
+                    color: "#f4f2ef",
+                    fontSize: "16px"
                 }
             },
             accessibility: {
