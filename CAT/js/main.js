@@ -263,6 +263,9 @@ function moduleClick() {
             });
             console.log("open"+mod);
             body.addClass("modal-open");
+            // close siblings
+            mod.siblings(".cat-learning-module").removeClass("learn-open learn-remove learn-init");
+            console.log("reset");
         });
     };
     moduleOpenAnimate(struggleTile, scrollModStruggle);
@@ -270,43 +273,25 @@ function moduleClick() {
     moduleOpenAnimate(accessTile, scrollModAccess);
     moduleOpenAnimate(academicTile, scrollModAcademic);
 
-    // needs fixing its not working
-    
-    function paddingHoverOn(y) {
-        var pad = $(this).children(".learning").css("padding-right");      
-        y.each(function () {
-            var media = window.matchMedia("(min-width: 478px)");
-            if (media.matches) {
-                console.log("adding big padding");
-                $(this).children(".learning").css("padding-right", pad + 64 + "px");
-            } else {
-                console.log("adding small padding");
-                $(this).children(".learning").css("padding-right", pad + 16 + "px");
-            }
-        });
+    var media = window.matchMedia("(min-width: 478px)");
+    if (media.matches) {
+        var element = 64;
+    } else {
+        var element = 16;
     }
-    function paddingHoverOff(y) {
-        
-        var pad = $(this).children(".learning").css("padding-right");
-        var media = window.matchMedia("(min-width: 478px)");
-        y.each(function () {
-            if (media.matches) {
-                console.log("remove big padding");
-                $(this).children(".learning").css("padding-right", pad - 64 + "px");
-            } else {
-                console.log("remove small padding");
-                $(this).children(".learning").css("padding-right", pad - 16 + "px");
-            }
-        });
-    }
-    learnTile.mouseenter(function () {
-        paddingHoverOn(media, learnTile);
-        media.addEventListener("mouseenter", paddingHoverOn);
-    }).mouseleave(function () {     
-        paddingHoverOff(media, learnTile);
-        media.addEventListener("mouseleave", paddingHoverOff);
-    })
 
+    learnTile.mouseenter(function () {
+        var pad = learnTile.children(".learning").css("padding-right");      
+        learnTile.each(function () {
+            $(this).children(".learning").css("padding-right", pad + element + "px");
+        });
+    }).mouseleave(function () {     
+        var pad = learnTile.children(".learning").css("padding-right");      
+        learnTile.each(function () {
+            $(this).children(".learning").css("padding-right", pad - element + "px");
+        });
+    })
+    
     moduleClose.click(function (event) {
         $(this).each(function () {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function (next) {

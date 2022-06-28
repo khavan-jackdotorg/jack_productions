@@ -1,21 +1,34 @@
 Highcharts.setOptions({
     chart: {
         backgroundColor: "background: rgba(244, 242, 239, 0)",
-        borderWidth: 2,
+        borderWidth: 0,
         plotBackgroundColor: 'background: rgba(244, 242, 239, 0)',
-        plotShadow: true,
-        plotBorderWidth: 1,
+        plotShadow: false,
+        plotBorderWidth: 0,
+        styleMode: true,
         style: {
             fontFamily: 'Helvetica',
             fontSize: 21,
-            color: "#2D2522"
+            fontColor: "#2D2522"
         },
         xAxis: {
             title: {
                 style: {
-                    color: "#2D2522"
+                    fontColor: "#2D2522"
                 }
             }
+        },
+        responsive: {
+            rules: [{
+                condition: {
+                    width: "100%"
+                },
+                chartOptions: {
+                    legend: {
+                        enabled: false
+                    }
+                }
+            }]
         }
     }
 });
@@ -55,7 +68,7 @@ const data03 = [{
 }, {
     name: 'Disagree',
     data: [
-        -16.64, -21.80, -18.59, 17.88
+        -16.64, -21.80, -18.59, -17.88
     ]
 }, {
     name: 'Neutral',
@@ -104,6 +117,9 @@ const categories03 = [
     "I believe my campus mental health services would meet my needs ",
     "I believe my campus mental health services would be responsive to my background and experience "
 ];
+const color01 = ['#F4F2EF'];
+const color02 = ['#2D2522','#43637E','#A5CCEE','#F4F2EF','#CAE7FC'];
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const chartdiv01 = Highcharts.chart('chartdiv01', {
@@ -113,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         title: {
             text: 'Causes of Struggle Survey'
         },
+        colors: color01,
         xAxis: {
             categories: categories01,
             lineColor: "#2d2522"
@@ -148,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
         credits: {
             enabled: false
         },
+        colors: color02,
         title: {
             text: 'Service User Perceptions'
         },
@@ -212,6 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
         title: {
             text: 'Service User Perceptions'
         },
+        colors: color02,
         xAxis: [{
             categories: categories03,
             reversed: false,
@@ -227,7 +246,8 @@ document.addEventListener('DOMContentLoaded', function () {
             categories: categories03,
             linkedTo: 0,
             labels: {
-                step: 1
+                step: 1,
+                enabled: false
             },
             accessibility: {
                 description: 'Disagree'
