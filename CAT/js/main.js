@@ -339,30 +339,7 @@ function modScroll() {
             body.removeClass("modal-open");
         }
     }
-    scrollBackModStruggle.click(function(){
-        let posLearn = scrollLearn.offset().top;
-        scrollModStruggle.addClass("learn-remove").delay(200).queue(function (next) {
-            learnMod.removeClass("learn-open learn-remove learn-init");
-            console.log("all reset");
-
-            $(this).scrollTop(0);
-            next();
-        });
-        $('html,body').animate({ scrollTop: posLearn }, 'medium');
-            console.log("open-learn");
-    })
-    scrollBackModInclusive.click(function(){
-        modTransition(scrollModInclusive,scrollModStruggle);
-        console.log("scroll-back");
-    })
-    scrollBackModAccess.click(function(){
-        modTransition(scrollModAccess,scrollModInclusive);
-        console.log("scroll-back");
-    })
-    scrollBackModAcademic.click(function(){
-        modTransition(scrollModAcademic,scrollModAccess);
-        console.log("scroll-back");
-    })
+    
     scrollModStruggle.scroll(function () {
         let posEndModStruggle = scrollEndModStruggle.position().top;
         //learning section
@@ -414,6 +391,31 @@ function modScroll() {
                 console.log("open-involved");
         }
     });
+    // back button
+    scrollBackModStruggle.click(function(){
+        let posLearn = scrollLearn.offset().top;
+        scrollModStruggle.addClass("learn-remove").delay(200).queue(function (next) {
+            learnMod.removeClass("learn-open learn-remove learn-init");
+            console.log("all reset");
+
+            $(this).scrollTop(0);
+            next();
+        });
+        $('html,body').animate({ scrollTop: posLearn }, 'medium');
+            console.log("open-learn");
+    })
+    scrollBackModInclusive.click(function(){
+        modTransition(scrollModInclusive,scrollModStruggle);
+        console.log("scroll-back");
+    })
+    scrollBackModAccess.click(function(){
+        modTransition(scrollModAccess,scrollModInclusive);
+        console.log("scroll-back");
+    })
+    scrollBackModAcademic.click(function(){
+        modTransition(scrollModAcademic,scrollModAccess);
+        console.log("scroll-back");
+    })
 }
 
 function navLink() {
