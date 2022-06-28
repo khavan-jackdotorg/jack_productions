@@ -86,7 +86,7 @@ let accessTile = $(".learning-tile.access");
 let academicTile = $(".learning-tile.academic");
 
 let learnMod = $(".cat-learning-module");
-let moduleClose = $(".cat-learning-module .close-button");
+let moduleClose = $(".cat-learning-module .close-button.mod-close");
 
 let scrollModStruggle = $('#learning-struggle');
 let scrollModInclusive = $('#learning-inclusive');
@@ -299,26 +299,30 @@ function moduleClick() {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function (next) {
                 learnMod.removeClass("learn-open learn-remove learn-init");
                 console.log("reset");
+                $(this).scrollTop(0);
                 next();
             });
             console.log("close-module");
         });
         body.removeClass("modal-open");
         event.preventDefault();
-        mod.scrollTop(0);
+        
     });
 }
 
 function modScroll() {
     function modTransition(first, second) {
-        first.addClass("learn-remove").delay(400).queue(function (next) {
-            $(this).removeClass("learn-open learn-remove learn-init");
-            console.log("all reset");
-            first.scrollTop(0);
+        first.delay(300).queue(function(next){
+            $(this).addClass("learn-remove").delay(400).queue(function (next) {
+                $(this).removeClass("learn-open learn-remove learn-init");
+                console.log("all reset");
+                first.scrollTop(0);
+                next();
+        
+                console.log("close " + first);
+            });
             next();
-    
-            console.log("close " + first);
-        });
+        })
         second.scrollTop(0);
         second.addClass("learn-open").delay(200).queue(function (next) {
             $(this).addClass("learn-init");
