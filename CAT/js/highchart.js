@@ -4,6 +4,7 @@ Highcharts.setOptions({
         borderWidth: 0,
         plotBackgroundColor: 'background: rgba(244, 242, 239, 0)',
         plotShadow: false,
+
         plotBorderWidth: 0,
         styleMode: true,
         style: {
@@ -126,15 +127,12 @@ document.addEventListener('DOMContentLoaded', function () {
         chart: {
             type: 'bar',
         },
-        title: {
-            text: 'Causes of Struggle Survey'
-        },
         colors: color01,
         xAxis: {
             categories: categories01,
             labels: {
                 style: {
-                    color: "#2d2522",
+                    color: "#f4f2ef",
                     fontSize: "16px"
                 }
             }
@@ -143,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: {
                 text: 'Percent (%) of students',
                 style: {
-                    fontColor: '#2d2522'
+                    color: "#f4f2ef"
                 }
             },
             labels: {
@@ -163,7 +161,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         series: [{
             name: 'Percent (%) of students',
-            data: data01
+            data: data01,
+            column: {
+                borderWidth: 0
+            }
         }],
         legend: {
             enabled: false
@@ -184,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: {
                 step: 1,
                 style: {
-                    fontColor: "#f4f2ef",
+                    color: "#f4f2ef",
                     fontSize: "16px"
                 },
                 autoRotation: [-45]
@@ -201,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 step: 1,
                 enabled: false,
                 style: {
-                    fontColor: "#f4f2ef",
+                    color: "#f4f2ef",
                     fontSize: "16px"
                 },
                 autoRotation: [-45]
@@ -220,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     return Math.abs(this.value) + '%';
                 },
                 style: {
-                    color: "#2d2522"
+                    color: "#f4f2ef"
                 }
             },
             accessibility: {

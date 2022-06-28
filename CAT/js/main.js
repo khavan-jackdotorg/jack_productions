@@ -261,7 +261,7 @@ function moduleClick() {
                 $(this).addClass("learn-init");
                 next();
             });
-            console.log("open"+mod);
+            console.log("open" + mod);
             body.addClass("modal-open");
             // close siblings
             mod.siblings(".cat-learning-module").removeClass("learn-open learn-remove learn-init");
@@ -280,16 +280,14 @@ function moduleClick() {
         var element = 16;
     };
     learnTile.mouseenter(function () {
-        var pad = learnTile.children(".learning").css("padding-right");      
         learnTile.each(function () {
-            $(this).children(".learning").css("padding-right", pad + element + "px");
+            $(this).children(".learning").css("padding-right", $(this).children(".learning").css("padding-right") + element + "px");
         });
-    }).mouseleave(function () {     
-        var pad = learnTile.children(".learning").css("padding-right");      
+    }).mouseleave(function () {
         learnTile.each(function () {
-            $(this).children(".learning").css("padding-right", pad - element + "px");
+            $(this).children(".learning").css("padding-right",$(this).children(".learning").css("padding-right")  - element + "px");
         });
-    });  
+    });
     moduleClose.click(function (event) {
         $(this).each(function () {
             $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function (next) {
@@ -303,30 +301,32 @@ function moduleClick() {
         event.preventDefault();
     });
 }
-function moduleScroll() {
-    function modTransition(first,second) {
+
+function modScroll() {
+    
+    function modTransition(first, second) {
         first.addClass("learn-remove").delay(400).queue(function (next) {
             $(this).removeClass("learn-open learn-remove learn-init");
             console.log("all reset");
             first.scrollTop(0);
             next();
-            
-            console.log("close "+first);
+    
+            console.log("close " + first);
         });
         second.scrollTop(0);
         second.addClass("learn-open").delay(400).queue(function (next) {
-            $(this).addClass("learn-init");               
-            
+            $(this).addClass("learn-init");
+    
             next();
-            console.log("open "+second);
+            console.log("open " + second);
         });
-        if (learnMod.css("display")=="grid") {
+        if (learnMod.css("display") == "flex") {
             body.addClass("modal-open");
         } else {
             body.removeClass("modal-open");
         }
     }
-
+    
     scrollModStruggle.scroll(function () {
 
         let posEndModStruggle = scrollEndModStruggle.position().top;
@@ -335,7 +335,7 @@ function moduleScroll() {
 
         console.log(modScroll01);
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
-            modTransition(scrollModStruggle,scrollModInclusive);
+            modTransition(scrollModStruggle, scrollModInclusive);
             console.log("scroll-next");
         }
     });
@@ -345,7 +345,7 @@ function moduleScroll() {
         console.log(modScroll02);
         var modScroll02 = scrollModInclusive.scrollTop();
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
-            modTransition(scrollModInclusive,scrollModAccess);
+            modTransition(scrollModInclusive, scrollModAccess);
             console.log("scroll-next");
         }
     });
@@ -355,7 +355,7 @@ function moduleScroll() {
         //learning section
         var modScroll03 = scrollModAccess.scrollTop();
         if (modScroll03 >= posEndModAccess - windowH * startTrans) {
-            modTransition(scrollModAccess,scrollModAcademic);
+            modTransition(scrollModAccess, scrollModAcademic);
             console.log("scroll-next");
         }
     });
@@ -372,7 +372,7 @@ function moduleScroll() {
                 learnMod.removeClass("learn-open learn-remove learn-init");
                 console.log("all reset");
 
-                $('html,body').animate({ scrollTop: posInvolved }, 'slow');
+                $('html,body').animate({ scrollTop: posInvolved }, 'medium');
                 console.log("open-involved");
 
                 $(this).scrollTop(0);
@@ -396,7 +396,7 @@ function navLink() {
             event.preventDefault();
         });
     }
-    function prepClick(item) { 
+    function prepClick(item) {
         if (item.attr('html') !== 'undefined' || $(this).attr('html') !== false) {
             item.removeAttr("href");
         }
@@ -404,7 +404,7 @@ function navLink() {
 
     prepClick(navHam);
     prepClick(closeButt);
-    closeNav(navLinkItem); 
+    closeNav(navLinkItem);
     closeNav(navClose);
     navHam.click(function (event) {
         navMenu.addClass("opened").delay(30).queue(function () {
@@ -452,39 +452,39 @@ function mapClick() {
             "display": "none"
         });
     };
-    function mapdot(location){
+    function mapdot(location) {
         location.css({
-            "border-color":"#DF693D",
-            "border-width":"4px",
-            "width":"25px",
-            "height":"25px"
+            "border-color": "#DF693D",
+            "border-width": "4px",
+            "width": "25px",
+            "height": "25px"
         })
-        location.each(function (){
+        location.each(function () {
             $(this).siblings(".map-dot").css({
-                "border-color":"#2d2522",
-                "border-width":"6px",
-                "width":"5px",
-                "height":"5px"
+                "border-color": "#2d2522",
+                "border-width": "6px",
+                "width": "5px",
+                "height": "5px"
             })
         })
     }
-    function mapZoom(){
+    function mapZoom() {
         mapPosition.css({
-            "height":"200vw",
-            "width":"200vw"
+            "height": "200vw",
+            "width": "200vw"
         })
     }
 
     mapArea.on("click", function (event) {
         if ($(event.target).closest("#chapter-bishop").length) {
-            console.log("bishop");  
+            console.log("bishop");
             catMap.css({
-                "bottom": 27.3112807464+"%",
+                "bottom": 27.3112807464 + "%",
                 "right": "24.2578456319%",
                 "left": "auto",
                 "top": "auto",
-                
-                "padding":"10vw"
+
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(bishopButton);
@@ -492,11 +492,11 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-camosun").length) {
             console.log("camosun");
             catMap.css({
-                "bottom": 19.1687871077+"%",
+                "bottom": 19.1687871077 + "%",
                 "right": "auto",
                 "left": "39.8642917727%",
                 "top": "auto",
-                "padding":"10vw"
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(camosunButton);
@@ -504,11 +504,11 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-dalhousie").length) {
             console.log("dalhousie");
             catMap.css({
-                "bottom": 22.9007633588+"%",
+                "bottom": 22.9007633588 + "%",
                 "right": "35.4537743851%",
                 "left": "auto",
                 "top": "auto",
-                "padding":"10vw"
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(dalhousieButton);
@@ -516,13 +516,13 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-lakehead").length) {
             console.log("lakehouse");
             catMap.css({
-                "bottom": 27.0568278202+"%",
+                "bottom": 27.0568278202 + "%",
                 "right": "1.69635284139%",
                 "left": "auto",
                 "top": "auto",
-                "height":"200vw",
-                "width":"200vw",
-                "padding":"10vw"
+                "height": "200vw",
+                "width": "200vw",
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(lakeheadButton);
@@ -530,13 +530,13 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-tmu").length) {
             console.log("tmu");
             catMap.css({
-                "bottom": 33.0788804071+"%",
+                "bottom": 33.0788804071 + "%",
                 "right": "16.6242578456%",
                 "left": "auto",
                 "top": "auto",
-                "height":"200vw",
-                "width":"200vw",
-                "padding":"10vw"
+                "height": "200vw",
+                "width": "200vw",
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(tmuButton);
@@ -544,13 +544,13 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-trent").length) {
             console.log("trent");
             catMap.css({
-                "bottom": 31.5521628499+"%",
+                "bottom": 31.5521628499 + "%",
                 "right": "17.3876166243%",
                 "left": "auto",
                 "top": "auto",
-                "height":"200vw",
-                "width":"200vw",
-                "padding":"10vw"
+                "height": "200vw",
+                "width": "200vw",
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(trentButton);
@@ -558,13 +558,13 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-guelph").length) {
             console.log("guelph");
             catMap.css({
-                "bottom": 33.8422391858+"%",
+                "bottom": 33.8422391858 + "%",
                 "right": "14.588634436%",
                 "left": "auto",
                 "top": "auto",
-                "height":"200vw",
-                "width":"200vw",
-                "padding":"10vw"
+                "height": "200vw",
+                "width": "200vw",
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(guelphButton);
@@ -572,22 +572,22 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-brunswick").length) {
             console.log("brunswick");
             catMap.css({
-                "bottom": 24.5971162002+"%",
+                "bottom": 24.5971162002 + "%",
                 "right": "31.6369804919%",
                 "left": "auto",
                 "top": "auto",
-                "padding":"10vw"
+                "padding": "10vw"
             });
             siblingEffector(brunButton);
             mapdot(brunDot);
         } else if ($(event.target).closest("#chapter-toronto").length) {
             console.log("toronto");
             catMap.css({
-                "bottom": 33.3333333333+"%",
+                "bottom": 33.3333333333 + "%",
                 "right": "16.2849872774%",
                 "left": "auto",
                 "top": "auto",
-                "padding":"10vw"
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(torontoButton);
@@ -595,11 +595,11 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-windsor").length) {
             console.log("windsor");
             catMap.css({
-                "bottom": 37.4893977947+"%",
+                "bottom": 37.4893977947 + "%",
                 "right": "11.5351993215%",
                 "left": "auto",
                 "top": "auto",
-                "padding":"10vw"
+                "padding": "10vw"
             });
             mapZoom();
             siblingEffector(windsorButton);
@@ -621,18 +621,18 @@ function mapClick() {
                     "right": "auto",
                     "left": "auto",
                     "top": "auto",
-                    "padding":"5vw"
+                    "padding": "5vw"
                 });
                 mapPosition.css({
                     "width": "100vw",
                     "height": "100vw"
                 });
-                mapDot.each(function(){
+                mapDot.each(function () {
                     $(this).css({
-                        "border-color":"#2d2522",
-                        "border-width":"6px",
-                        "width":"5px",
-                        "height":"5px"
+                        "border-color": "#2d2522",
+                        "border-width": "6px",
+                        "width": "5px",
+                        "height": "5px"
                     })
                 });
             });
@@ -644,14 +644,15 @@ function mapClick() {
 (function ($) {
     $(window).on('resize', function () {
         var scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
-        var windowH = $(window).innerHeight(); 
+        var windowH = $(window).innerHeight();
+        moduleClick();  
     });
     animateType();
     navLink();
     smoothScroll();
     windowScroll();
     moduleClick();
-    moduleScroll();
+    modScroll();
     mapClick();
 }(jQuery));
 

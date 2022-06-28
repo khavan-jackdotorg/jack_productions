@@ -78,7 +78,7 @@ body::-webkit-scrollbar-thumb {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
 }
-.cat-learning-module.learn-open {
+.cat-learning-module.learn-open,.cat-learning-module.learn-init {
     display: flex;
     transition: opacity 0ms ease, transform 900ms ease, -webkit-transform 900ms ease, clip-path 500ms ease;
 }
@@ -101,4 +101,8 @@ body::-webkit-scrollbar-thumb {
 }
 .highcharts-axis-labels text{
     color: #2D2522;
+}
+/* cat */
+.cat-main-p > span {
+	display:block;
 }
