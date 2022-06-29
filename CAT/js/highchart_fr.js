@@ -36,87 +36,89 @@ Highcharts.setOptions({
 
 const data01 = [63.14, 40.26, 20.17, 17.96, 14.34, 11.88, 9.60, 7.43, 6.96, 6.55, 4.39, 3.63, 2.75, 1.93, 1.35, 1.05, 1.05];
 const data02 = [{
-    name: 'Strongly Disagree',
+    name: 'Fortement en désaccord',
     data: [
         -4.97, -9.27, -10.26, -8.61
     ]
 }, {
-    name: 'Disagree',
+    name: 'En désaccord',
     data: [
         -6.62, -15.89, -15.23, -10.26
     ]
 }, {
-    name: 'Neutral',
+    name: 'Neutre',
     data: [
         -27.15, -25.83, -27.81, -27.15
     ]
 }, {
-    name: 'Strongly Agree',
+    name: 'Fortement en accord',
     data: [
         23.51, 20.86, 17.88, 27.48
     ]
 }, {
-    name: 'Agree',
+    name: 'En accord',
     data: [
         37.75, 28.15, 28.81, 26.49
     ]
 }]
 const data03 = [{
-    name: 'Strongly Disagree',
+    name: 'Fortement en désaccord',
     data: [
         -7.03, -12.63, -9.79, -8.72
     ]
 }, {
-    name: 'Disagree',
+    name: 'En désaccord',
     data: [
         -16.64, -21.80, -18.59, -17.88
     ]
 }, {
-    name: 'Neutral',
+    name: 'Neutre',
     data: [
         -52.58, -32.92, -40.39, -38.35
     ]
 }, {
-    name: 'Strongly Agree',
+    name: 'Fortement en accord',
     data: [
         5.34, 9.07, 7.12, 9.34
     ]
 }, {
-    name: 'Agree',
+    name: 'En accord',
     data: [
         18.42, 23.58, 24.11, 25.71
     ]
 }];
 const categories01 = [
-    'Academic stress',
-    'Financial stress',
-    'COVID-19 pandemic',
-    'Relationships with family',
-    'Finding a job',
-    'Work stress',
-    'Relationships with peers',
-    'Dating',
-    'Other health-related stress',
-    'Housing stress',
-    'Other - Write In',
-    'Social media',
-    'Climate change',
-    'Food insecurity',
-    'My own substance use',
-    'Substance use by friends or family',
-    'Experiences with the justice system'
+    'Stress scolaire',
+    'Stress financier',
+    'Pandémie de COVID-19',
+    'Relations familiales',
+    'Trouver un emploi',
+    'Stress professionnel',
+    'Relations avec les pairs',
+    'Relations intimes',
+    'Autre stress lié à la santé',
+    'Stress lié au logement',
+    'Autre – précisez',
+    'Médias sociaux',
+    'Changements climatiques',
+    'Insécurité alimentaire',
+    'Ma consommation d’alcool et de drogues',
+    'La consommation d’alcool et de drogues de mes amis ou des membres de ma famille',
+    'Expériences dans le système judiciaire'
+
+
 ];
 const categories02 = [
-    "The campus mental health services I used were high quality ",
-    "The campus mental health services I used were accessible when I needed them",
-    "The campus mental health services  I used met my needs",
-    "The campus mental health services I used were responsive to my background and experiences"
+    "Les services en santé mentale auxquels j’ai eu recours sur le campus étaient de grande qualité ",
+    "Les services en santé mentale auxquels j’ai eu recours sur le campus étaient accessibles quand j’en ai eu besoin",
+    "Les services en santé mentale auxquels j’ai eu recours sur le campus répondaient à mes besoins",
+    "Les services en santé mentale auxquels j’ai eu recours sur le campus étaient adaptés à mon vécu et à mes expériences"
 ];
 const categories03 = [
-    "I believe my campus mental health services are high quality ",
-    "I think my campus mental health services would be accessible in a timely manner, if I should ever need them ",
-    "I believe my campus mental health services would meet my needs ",
-    "I believe my campus mental health services would be responsive to my background and experience "
+    "Je crois que les services en santé mentale de mon campus sont de grande qualité",
+    "Je pense que les services en santé mentale de mon campus seraient rapidement accessibles si j’en avais besoin",
+    "Je crois que les services en santé mentale de mon campus répondraient à mes besoins",
+    "Je crois que les services en santé mentale de mon campus seraient adaptés à mon vécu et à mon expérience"
 ];
 const color01 = ['#F4F2EF'];
 const color02 = ['#2D2522','#43637E','#A5CCEE','#F4F2EF','#CAE7FC'];
@@ -205,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 autoRotation: [-45]
             },
             accessibility: {
-                description: 'Agree'
+                description: 'En accord'
             }
         }, { // mirror axis on right side
             opposite: true,
@@ -223,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             },
             accessibility: {
-                description: 'Disagree'
+                description: 'En désaccord'
             }
         }],
         yAxis: {
@@ -288,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
             },
             accessibility: {
-                description: 'Agree'
+                description: 'En accord'
             }
         }, { // mirror axis on right side
             opposite: true,
@@ -300,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 enabled: false
             },
             accessibility: {
-                description: 'Disagree'
+                description: 'En désaccord'
             }
         }],
         yAxis: {

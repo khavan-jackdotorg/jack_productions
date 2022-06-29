@@ -284,7 +284,7 @@ function moduleClick() {
         var element = 64;
     } else {
         var element = 16;
-    };
+    }
     learnTile.mouseenter(function () {
         learnTile.each(function () {
             $(this).children(".learning").css("padding-right", $(this).children(".learning").css("padding-right") + element + "px");
@@ -312,8 +312,8 @@ function moduleClick() {
 
 function modScroll() {
     function modTransition(first, second) {
-        first.delay(300).queue(function(next){
-            $(this).addClass("learn-remove").delay(400).queue(function (next) {
+        first.delay(100).queue(function(next){
+            $(this).addClass("learn-remove").delay(300).queue(function (next) {
                 $(this).removeClass("learn-open learn-remove learn-init");
                 console.log("all reset");
                 first.scrollTop(0);
@@ -322,9 +322,9 @@ function modScroll() {
                 console.log("close " + first);
             });
             next();
-        })
+        });
         second.scrollTop(0);
-        second.addClass("learn-open").delay(200).queue(function (next) {
+        second.addClass("learn-open").delay(100).queue(function (next) {
             $(this).addClass("learn-init");
     
             next();
@@ -380,7 +380,7 @@ function modScroll() {
         var modScroll04 = scrollModAcademic.scrollTop();
 
         if (modScroll04 >= posEndModAcademic - windowH * startTrans) {
-            scrollModAcademic.addClass("learn-remove").delay(200).queue(function (next) {
+            scrollModAcademic.addClass("learn-remove").delay(50).queue(function (next) {
                 learnMod.removeClass("learn-open learn-remove learn-init");
                 console.log("all reset");
                 modScroll04 = 0;
@@ -405,19 +405,19 @@ function modScroll() {
         });
         $('html,body').animate({ scrollTop: posLearn }, 'medium');
             console.log("open-learn");
-    })
+    });
     scrollBackModInclusive.click(function(){
         modTransition(scrollModInclusive,scrollModStruggle);
         console.log("scroll-back");
-    })
+    });
     scrollBackModAccess.click(function(){
         modTransition(scrollModAccess,scrollModInclusive);
         console.log("scroll-back");
-    })
+    });
     scrollBackModAcademic.click(function(){
         modTransition(scrollModAcademic,scrollModAccess);
         console.log("scroll-back");
-    })
+    });
 }
 
 function navLink() {
@@ -451,7 +451,7 @@ function navLink() {
                 "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
             }).dequeue();
         });
-        console.log("open-menu")
+        console.log("open-menu");
         event.preventDefault();
         body.addClass("modal-open");
     });
@@ -471,7 +471,7 @@ function smoothScroll() {
 function animateType() {
     let animateChar = $(".animatechar");
     let animateWord = $(".animateword");
-    let animateLine = $(".animateline")
+    let animateLine = $(".animateline");
     animateChar.lettering();
     animateWord.lettering('words');
     animateLine.lettering('lines');
@@ -489,28 +489,28 @@ function mapClick() {
         button.siblings(".cat-chapter-button").children(".chapter-box").css({
             "display": "none"
         });
-    };
+    }
     function mapdot(location) {
         location.css({
             "border-color": "#DF693D",
             "border-width": "4px",
             "width": "25px",
             "height": "25px"
-        })
+        });
         location.each(function () {
             $(this).siblings(".map-dot").css({
                 "border-color": "#2d2522",
                 "border-width": "6px",
                 "width": "5px",
                 "height": "5px"
-            })
-        })
+            });
+        });
     }
     function mapZoom() {
         mapPosition.css({
             "height": "200vw",
             "width": "200vw"
-        })
+        });
     }
 
     mapArea.on("click", function (event) {
@@ -671,7 +671,7 @@ function mapClick() {
                         "border-width": "6px",
                         "width": "5px",
                         "height": "5px"
-                    })
+                    });
                 });
             });
         }
