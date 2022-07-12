@@ -144,7 +144,7 @@ let lengthLearningsSI = lengthLearn + lengthLearnContent + lengthLearnImage;
 let lengthInvolvedSI = lengthInvolved + lengthInvolvedContent + lengthInvolvedImage;
 
 function windowScroll() {
-    $(window).scroll(function () {
+    
         //changing scroller value
         var wScroll = $(window).scrollTop();
         // CHECK console.log(wScroll + " scroll position");
@@ -256,7 +256,7 @@ function windowScroll() {
             }
         }
 
-    });
+    
 }
 
 function moduleClick() {
@@ -688,7 +688,7 @@ function mapClick() {
     animateType();
     navLink();
     smoothScroll();
-    windowScroll();
+    $(window).scroll($.throttle(30, windowScroll));
     moduleClick();
     modScroll();
     mapClick();
