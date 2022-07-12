@@ -137,7 +137,7 @@ let lengthInvolvedImage = scrollInvolvedImage.innerHeight();
 
 let lengthAcknow = scrollAcknow.innerHeight();
 let lengthFooter = scrollFooter.innerHeight();
-//  https://rawcdn.githack.com/cowboy/jquery-throttle-debounce/bb5bd71e405cd65ec8b750e17cf99dcdcf5cc5c9/jquery.ba-throttle-debounce.js
+
 //(for section indicator)
 let lengthIntroSI = lengthIntro + lengthIntroContent + lengthIntroImage + lengthMap + lengthMapImage + lengthWhy + lengthOffers + lengthOffersImage + lengthTimeline + lengthTimelineImage + lengthIndicator + lengthIndicatorContent + lengthIndicatorImage;
 let lengthLearningsSI = lengthLearn + lengthLearnContent + lengthLearnImage;
