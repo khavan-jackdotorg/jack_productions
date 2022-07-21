@@ -151,53 +151,44 @@ function windowScroll() {
 
         // Window Position Information
         let posIntro = scrollIntro.offset().top;
-        let posIntroContent = scrollIntroContent.offset().top;
-        let posIntroImage = scrollIntroImage.offset().top;
-        let posMap = scrollMap.offset().top;
-        let posMapImage = scrollMapImage.offset().top;
-        let posWhy = scrollWhy.offset().top;
-        let posOffers = scrollOffers.offset().top;
-        let posOffersImage = scrollOffersImage.offset().top;
+        // let posIntroContent = scrollIntroContent.offset().top;
+        // let posIntroImage = scrollIntroImage.offset().top;
+        // let posMap = scrollMap.offset().top;
+        // let posMapImage = scrollMapImage.offset().top;
+        // let posWhy = scrollWhy.offset().top;
+        // let posOffers = scrollOffers.offset().top;
+        // let posOffersImage = scrollOffersImage.offset().top;
         let posTimeline = scrollTimeline.offset().top;
-        let posTimelineImage = scrollTimelineImage.offset().top;
+        // let posTimelineImage = scrollTimelineImage.offset().top;
         let postimeone = scrollTimeOne.offset().top;
         let postimetwo = scrollTimeTwo.offset().top;
         let postimethree = scrollTimeThree.offset().top;
         let postimefour = scrollTimeFour.offset().top;
         let postimefive = scrollTimeFive.offset().top;
-        let posIndicator = scrollIndicator.offset().top;
-        let posIndicatorContent = scrollIndicatorContent.offset().top;
+        // let posIndicator = scrollIndicator.offset().top;
+        // let posIndicatorContent = scrollIndicatorContent.offset().top;
         let posIndicatorImage = scrollIndicatorImage.offset().top;
-        let posLearn = scrollLearn.offset().top;
-        let posLearnContent = scrollLearnContent.offset().top;
-        let posLearnImage = scrollLearnImage.offset().top;
+        // let posLearn = scrollLearn.offset().top;
+        // let posLearnContent = scrollLearnContent.offset().top;
+        // let posLearnImage = scrollLearnImage.offset().top;
         let posInvolved = scrollInvolved.offset().top;
-        let posInvolvedContent = scrollInvolvedContent.offset().top;
-        let posInvolvedImage = scrollInvolvedImage.offset().top;
+        // let posInvolvedContent = scrollInvolvedContent.offset().top;
+        // let posInvolvedImage = scrollInvolvedImage.offset().top;
         let posAcknow = scrollAcknow.offset().top;
-        let posFooter = scrollFooter.offset().top;
-
-        let mScrollPercent = (wScroll / (scrollHeight - windowH)) * 100;
-        // console.log(mScrollPercent);
+        // let posFooter = scrollFooter.offset().top;
 
         // Section indicator
         if (wScroll > 0 && wScroll < posIntro) {
-            // console.log("blank header section");
             sectionIndicator.html(" ");
         } else if (wScroll >= posIntro - windowH * startTrans && wScroll < posIndicatorImage - windowH * startTrans) {
-            // console.log(posIntro + "Intro");
             sectionIndicator.html("Introduction");
         } else if (wScroll >= posIndicatorImage - windowH * startTrans && wScroll < posInvolved - windowH * startTrans) {
-            // console.log(posLearn + "Learn");
             sectionIndicator.html("Learning");
         } else if (wScroll >= posInvolved - windowH * startTrans && wScroll < posAcknow - windowH * startTrans) {
-            // console.log(posInvolved + "Involved");
             sectionIndicator.html("Get Involved");
         } else if (wScroll >= posAcknow - windowH * startTrans) {
-            // console.log(posAcknow + "Acknow");
             sectionIndicator.html("Acknowledgements");
         } else {
-            // console.log("blank header section");
             sectionIndicator.html(" ");
         }
 
@@ -262,15 +253,12 @@ function windowScroll() {
 function moduleClick() {
     function moduleOpenAnimate(tile, mod) {
         tile.click(function () {
-            mod.addClass("learn-open").delay(500).queue(function (next) {
+            mod.addClass("learn-open").delay(300).queue(function (next) {
                 $(this).addClass("learn-init");
                 next();
             });
-            console.log("open" + mod);
             body.addClass("modal-open");
-            // close siblings
             mod.siblings(".cat-learning-module").removeClass("learn-open learn-remove learn-init");
-            console.log("reset");
             mod.scrollTop(0);
         });
     };
@@ -296,39 +284,31 @@ function moduleClick() {
     });
     moduleClose.click(function (event) {
         $(this).each(function () {
-            $(this).parents(".cat-learning-module").addClass("learn-remove").delay(1000).queue(function (next) {
+            $(this).parents(".cat-learning-module").addClass("learn-remove").delay(100).queue(function (next) {
                 learnMod.removeClass("learn-open learn-remove learn-init");
-                console.log("reset");
                 $(this).scrollTop(0);
                 next();
             });
-            console.log("close-module");
         });
         body.removeClass("modal-open");
         event.preventDefault();
-        
     });
 }
 
 function modScroll() {
     function modTransition(first, second) {
         first.delay(100).queue(function(next){
-            $(this).addClass("learn-remove").delay(300).queue(function (next) {
+            $(this).addClass("learn-remove").delay(200).queue(function (next) {
                 $(this).removeClass("learn-open learn-remove learn-init");
-                console.log("all reset");
                 first.scrollTop(0);
                 next();
-        
-                console.log("close " + first);
             });
             next();
         });
         second.scrollTop(0);
         second.addClass("learn-open").delay(100).queue(function (next) {
             $(this).addClass("learn-init");
-    
             next();
-            console.log("open " + second);
         });
         if (learnMod.css("display") == "flex") {
             body.addClass("modal-open");
@@ -346,7 +326,6 @@ function modScroll() {
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
             modTransition(scrollModStruggle, scrollModInclusive);
             modScroll01 = 0;
-            console.log("scroll-next");
         }
     });
     scrollModInclusive.scroll(function () {
@@ -357,7 +336,6 @@ function modScroll() {
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
             modTransition(scrollModInclusive, scrollModAccess);
             modScroll02 = 0;
-            console.log("scroll-next");
         }
     });
     scrollModAccess.scroll(function () {
@@ -368,28 +346,23 @@ function modScroll() {
         if (modScroll03 >= posEndModAccess - windowH * startTrans) {
             modTransition(scrollModAccess, scrollModAcademic);
             modScroll03 = 0;
-            console.log("scroll-next");
         }
     });
     scrollModAcademic.scroll(function () {
         console.log(modScroll04);
         let posEndModAcademic = scrollEndModAcademic.position().top;
         let posInvolved = scrollInvolved.offset().top;
-
         //learning section
         var modScroll04 = scrollModAcademic.scrollTop();
-
         if (modScroll04 >= posEndModAcademic - windowH * startTrans) {
             scrollModAcademic.addClass("learn-remove").delay(50).queue(function (next) {
                 learnMod.removeClass("learn-open learn-remove learn-init");
-                console.log("all reset");
                 modScroll04 = 0;
                 $(this).scrollTop(0);
                 next();
             });
             $('html,body').animate({ scrollTop: posInvolved }, 'medium');
             body.removeClass("modal-open");
-            console.log("open-involved");
         }
     });
     // back button
@@ -398,25 +371,20 @@ function modScroll() {
         body.removeClass("modal-open");
         scrollModStruggle.addClass("learn-remove").delay(200).queue(function (next) {
             learnMod.removeClass("learn-open learn-remove learn-init");
-            console.log("all reset");
 
             $(this).scrollTop(0);
             next();
         });
         $('html,body').animate({ scrollTop: posLearn }, 'medium');
-            console.log("open-learn");
     });
     scrollBackModInclusive.click(function(){
         modTransition(scrollModInclusive,scrollModStruggle);
-        console.log("scroll-back");
     });
     scrollBackModAccess.click(function(){
         modTransition(scrollModAccess,scrollModInclusive);
-        console.log("scroll-back");
     });
     scrollBackModAcademic.click(function(){
         modTransition(scrollModAcademic,scrollModAccess);
-        console.log("scroll-back");
     });
 }
 
@@ -429,7 +397,6 @@ function navLink() {
             }).delay(550).queue(function () {
                 $(this).removeClass("opened").dequeue();
             });
-            console.log("close-menu");
             body.removeClass("modal-open");
             event.preventDefault();
         });
@@ -451,7 +418,6 @@ function navLink() {
                 "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
             }).dequeue();
         });
-        console.log("open-menu");
         event.preventDefault();
         body.addClass("modal-open");
     });
