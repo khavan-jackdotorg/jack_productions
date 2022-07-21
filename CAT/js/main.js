@@ -481,7 +481,7 @@ function mapClick() {
                 "bottom": 27.3112807464 + "%",
                 "right": "24.2578456319%",
                 "left": "auto",
-                "top": "auto",
+                "top": "auto"
 
             });
             mapZoom();
@@ -493,7 +493,7 @@ function mapClick() {
                 "bottom": 19.1687871077 + "%",
                 "right": "auto",
                 "left": "39.8642917727%",
-                "top": "auto",
+                "top": "auto"
             });
             mapZoom();
             siblingEffector(camosunButton);
@@ -504,7 +504,7 @@ function mapClick() {
                 "bottom": 22.9007633588 + "%",
                 "right": "35.4537743851%",
                 "left": "auto",
-                "top": "auto",
+                "top": "auto"
             });
             mapZoom();
             siblingEffector(dalhousieButton);
@@ -515,7 +515,7 @@ function mapClick() {
                 "bottom": 27.0568278202 + "%",
                 "right": "1.69635284139%",
                 "left": "auto",
-                "top": "auto",
+                "top": "auto"
             });
             mapZoom();
             siblingEffector(lakeheadButton);
@@ -526,9 +526,9 @@ function mapClick() {
                 "bottom": 33.0788804071 + "%",
                 "right": "16.6242578456%",
                 "left": "auto",
-                "top": "auto",
-                "height": "200vw",
-                "width": "200vw",
+                "top": "auto"
+                // "height": "200vw",
+                // "width": "200vw",
             });
             mapZoom();
             siblingEffector(tmuButton);
@@ -539,9 +539,7 @@ function mapClick() {
                 "bottom": 31.5521628499 + "%",
                 "right": "17.3876166243%",
                 "left": "auto",
-                "top": "auto",
-                "height": "200vw",
-                "width": "200vw",
+                "top": "auto"
             });
             mapZoom();
             siblingEffector(trentButton);
@@ -552,9 +550,7 @@ function mapClick() {
                 "bottom": 33.8422391858 + "%",
                 "right": "14.588634436%",
                 "left": "auto",
-                "top": "auto",
-                "height": "200vw",
-                "width": "200vw",
+                "top": "auto"
             });
             mapZoom();
             siblingEffector(guelphButton);
@@ -565,7 +561,7 @@ function mapClick() {
                 "bottom": 24.5971162002 + "%",
                 "right": "31.6369804919%",
                 "left": "auto",
-                "top": "auto",
+                "top": "auto"
             });
             siblingEffector(brunButton);
             mapdot(brunDot);
@@ -575,7 +571,7 @@ function mapClick() {
                 "bottom": 33.3333333333 + "%",
                 "right": "16.2849872774%",
                 "left": "auto",
-                "top": "auto",
+                "top": "auto"
             });
             mapZoom();
             siblingEffector(torontoButton);
@@ -586,7 +582,7 @@ function mapClick() {
                 "bottom": 37.4893977947 + "%",
                 "right": "11.5351993215%",
                 "left": "auto",
-                "top": "auto",
+                "top": "auto"
             });
             mapZoom();
             siblingEffector(windsorButton);
@@ -607,11 +603,11 @@ function mapClick() {
                     "bottom": "auto",
                     "right": "auto",
                     "left": "auto",
-                    "top": "auto",
+                    "top": "auto"
                 });
                 mapPosition.css({
-                    "width": "100vw",
-                    "height": "100vw"
+                    "min-width": "100vw",
+                    "min-height": "100vw"
                 });
                 mapDot.each(function () {
                     $(this).css({
