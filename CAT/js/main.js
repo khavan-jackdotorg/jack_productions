@@ -478,8 +478,8 @@ function mapClick() {
         if ($(event.target).closest("#chapter-bishop").length) {
             console.log("bishop");
             catMap.css({
-                "bottom": 27.3112807464 + "%",
-                "right": "24.2578456319%",
+                "bottom": "19.96268656716418%",
+                "right": "23.22761194029851%",
                 "left": "auto",
                 "top": "auto",
 
@@ -491,9 +491,9 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-camosun").length) {
             console.log("camosun");
             catMap.css({
-                "bottom": 19.1687871077 + "%",
+                "bottom": "28.91791044776119%",
                 "right": "auto",
-                "left": "39.8642917727%",
+                "left": "6.25%",
                 "top": "auto",
                 "padding": "10vw"
             });
@@ -503,8 +503,8 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-dalhousie").length) {
             console.log("dalhousie");
             catMap.css({
-                "bottom": 22.9007633588 + "%",
-                "right": "35.4537743851%",
+                "bottom": "24.8134328358209%",
+                "right": "10.91417910447761%",
                 "left": "auto",
                 "top": "auto",
                 "padding": "10vw"
@@ -515,8 +515,8 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-lakehead").length) {
             console.log("lakehouse");
             catMap.css({
-                "bottom": 27.0568278202 + "%",
-                "right": "1.69635284139%",
+                "bottom": "20.52238805970149%",
+                "right": "48.0410447761194%",
                 "left": "auto",
                 "top": "auto",
                 "height": "200vw",
@@ -529,8 +529,8 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-tmu").length) {
             console.log("tmu");
             catMap.css({
-                "bottom": 33.0788804071 + "%",
-                "right": "16.6242578456%",
+                "bottom": "13.61940298507463%",
+                "right": "31.71641791044776%",
                 "left": "auto",
                 "top": "auto",
                 "height": "200vw",
@@ -543,8 +543,8 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-trent").length) {
             console.log("trent");
             catMap.css({
-                "bottom": 31.5521628499 + "%",
-                "right": "17.3876166243%",
+                "bottom": "15.29850746268657%",
+                "right": "30.78358208955224%",
                 "left": "auto",
                 "top": "auto",
                 "height": "200vw",
@@ -557,8 +557,8 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-guelph").length) {
             console.log("guelph");
             catMap.css({
-                "bottom": 33.8422391858 + "%",
-                "right": "14.588634436%",
+                "bottom": "12.77985074626866%",
+                "right": "33.95522388059701%",
                 "left": "auto",
                 "top": "auto",
                 "height": "200vw",
@@ -571,8 +571,8 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-brunswick").length) {
             console.log("brunswick");
             catMap.css({
-                "bottom": 24.5971162002 + "%",
-                "right": "31.6369804919%",
+                "bottom": "22.94776119402985%",
+                "right": "15.11194029850746%",
                 "left": "auto",
                 "top": "auto",
                 "padding": "10vw"
@@ -582,8 +582,8 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-toronto").length) {
             console.log("toronto");
             catMap.css({
-                "bottom": 33.3333333333 + "%",
-                "right": "16.2849872774%",
+                "bottom": "13.33955223880597%",
+                "right": "31.99626865671642%",
                 "left": "auto",
                 "top": "auto",
                 "padding": "10vw"
@@ -594,8 +594,8 @@ function mapClick() {
         } else if ($(event.target).closest("#chapter-windsor").length) {
             console.log("windsor");
             catMap.css({
-                "bottom": 37.4893977947 + "%",
-                "right": "11.5351993215%",
+                "bottom": "8.76865671641791%",
+                "right": "37.22014925373134%",
                 "left": "auto",
                 "top": "auto",
                 "padding": "10vw"
