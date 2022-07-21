@@ -103,7 +103,6 @@ let scrollBackModInclusive = $('#learning-inclusive .close-button.back');
 let scrollBackModAccess = $('#learning-access .close-button.back');
 let scrollBackModAcademic = $('#learning-academic .close-button.back');
 
-
 // Heights 
 let lengthIntro = scrollIntro.innerHeight();
 let lengthIntroContent = scrollIntroContent.innerHeight();
@@ -322,7 +321,6 @@ function modScroll() {
         //learning section
         var modScroll01 = scrollModStruggle.scrollTop();
 
-        console.log(modScroll01);
         if (modScroll01 >= posEndModStruggle - windowH * startTrans) {
             modTransition(scrollModStruggle, scrollModInclusive);
             modScroll01 = 0;
@@ -331,7 +329,6 @@ function modScroll() {
     scrollModInclusive.scroll(function () {
         let posEndModInclusive = scrollEndModInclusive.position().top;
         //learning section
-        console.log(modScroll02);
         var modScroll02 = scrollModInclusive.scrollTop();
         if (modScroll02 >= posEndModInclusive - windowH * startTrans) {
             modTransition(scrollModInclusive, scrollModAccess);
@@ -339,7 +336,6 @@ function modScroll() {
         }
     });
     scrollModAccess.scroll(function () {
-        console.log(modScroll03);
         let posEndModAccess = scrollEndModAccess.position().top;
         //learning section
         var modScroll03 = scrollModAccess.scrollTop();
@@ -349,7 +345,6 @@ function modScroll() {
         }
     });
     scrollModAcademic.scroll(function () {
-        console.log(modScroll04);
         let posEndModAcademic = scrollEndModAcademic.position().top;
         let posInvolved = scrollInvolved.offset().top;
         //learning section
