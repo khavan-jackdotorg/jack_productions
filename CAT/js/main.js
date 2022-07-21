@@ -469,8 +469,8 @@ function mapClick() {
     }
     function mapZoom() {
         mapPosition.css({
-            "height": "200vw",
-            "width": "200vw"
+            "min-height": "200vw",
+            "min-width": "200vw"
         });
     }
 
@@ -516,8 +516,6 @@ function mapClick() {
                 "right": "1.69635284139%",
                 "left": "auto",
                 "top": "auto",
-                "height": "200vw",
-                "width": "200vw",
             });
             mapZoom();
             siblingEffector(lakeheadButton);
