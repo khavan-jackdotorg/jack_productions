@@ -197,6 +197,7 @@ function windowScroll() {
             var countTimeOne = wScroll - (postimeone - windowH);
             var visibleTimeOne = (windowH + lengthtimeone) * 0.4;
             var percentTimeOne = (visibleTimeOne - countTimeOne) / visibleTimeOne * 100;
+
             if (countTimeOne >= 0 && countTimeOne <= visibleTimeOne) {
                 animTimeOne.css("margin-left", percentTimeOne + "%");
             } else if (countTimeOne < 0) {
@@ -243,7 +244,13 @@ function windowScroll() {
                 animTimeFive.css("margin-left", 100 + "%");
             } else {
                 animTimeFive.css("margin-left", 0 + "%");
-            }
+            } 
+        } else {
+            animTimeFive.css("margin-left", 0 + "%");
+            animTimeFour.css("margin-left", 0 + "%");
+            animTimeThree.css("margin-left", 0 + "%");
+            animTimeTwo.css("margin-left", 0 + "%");
+            animTimeOne.css("margin-left", 0 + "%");
         }
 
     
