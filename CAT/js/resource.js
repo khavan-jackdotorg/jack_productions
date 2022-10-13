@@ -56,6 +56,7 @@ function fewButtonClick() {
             $(this).siblings().removeClass("button-selected");
             $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
         });
+        console.log(768);
 
     } else if (resizer < 992 && resizer >= 768) {
         tileCont.each(function () {
@@ -72,6 +73,7 @@ function fewButtonClick() {
             $(this).siblings().removeClass("button-selected");
             $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
         });
+        console.log(992);
 
     } else if (resizer < 1440 && resizer >= 992) {
         tileCont.each(function () {
@@ -88,6 +90,7 @@ function fewButtonClick() {
             $(this).siblings().removeClass("button-selected");
             $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
         });
+        console.log(1440);
     } else if (resizer < 1920 && resizer >= 1440) {
         console.log("1440");
         tileCont.each(function () {
@@ -104,8 +107,9 @@ function fewButtonClick() {
             $(this).siblings().removeClass("button-selected");
             $(this).parent().parent().parent().find(".resource-collection").removeClass("tile-hidden");
         });
+        console.log(1920);
     } else {
-        console.log("1920");
+        console.log("1920 large");
         tileCont.each(function () {
             //hide the elements that are not there
             $(this).children().slice(5).addClass("tile-hidden");
