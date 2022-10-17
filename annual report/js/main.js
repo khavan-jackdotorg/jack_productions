@@ -24,15 +24,20 @@ function windowScroll() {
     }
 }
 function dropDown() {
-    let $droplink = $('.annual-tile > .cat-button');
+    let $droplink = $('.annual-tile > .annual-button');
+    // let $dropTile = $('.annual-tile');
     // let $dropHidden = $('.drop-hidden');
-    let $dropContent = $('.annual-drop-content');
+    // let $dropContent = $('.annual-drop-content');
     let $dropClose = $('.annual-drop-close');
     $droplink.click(function (event){
-        $dropContent.addClass("drop-reveal").removeClass("drop-hidden");
+        $(this).children('.drop-hidden').addClass("drop-reveal");
+        $(this).parent().addClass("drop-reveal");
+        $(this).text("Hide Content");
     });
     $dropClose.click(function (){
-        $dropHidden.removeClass("drop-reveal");
+        $(this).children('.drop-hidden').removeClass("drop-reveal");
+        $(this).parent().removeClass("drop-reveal");
+        $(this).text("Learn More");
     });
 }
 function smoothScroll() {
@@ -320,7 +325,7 @@ function mapClick() {
     });
     mapClick();
     animateType();
-    navLink();
+    // navLink();
     smoothScroll();
-    $(window).scroll($.throttle(30, windowScroll));
+    // $(window).scroll($.throttle(30, windowScroll));
 }(jQuery));
