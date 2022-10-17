@@ -326,6 +326,7 @@ function mapClick() {
         moduleClick();  
     });
     mapClick();
+    dropDown();
     animateType();
     // navLink();
     smoothScroll();
