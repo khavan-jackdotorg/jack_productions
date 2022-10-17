@@ -5,6 +5,11 @@ var $scrollHeight = $("body").innerHeight(); //the total height of the page that
 var $windowH = $(window).innerHeight(); //the total height of the visible window
 let $sectionIndicator = $(".sectionindicator");
 
+function prepClick(item) {
+    if (item.attr('html') !== 'undefined' || $(this).attr('html') !== false) {
+        item.removeAttr("href");
+    }
+}
 function windowScroll() {
     var $wScroll = $(window).scrollTop();
 
@@ -28,6 +33,7 @@ function dropDown() {
     // let $dropTile = $('.annual-tile');
     // let $dropHidden = $('.drop-hidden');
     // let $dropContent = $('.annual-drop-content');
+    prepClick($droplink);
     let $dropClose = $('.annual-drop-close');
     $droplink.click(function (event){
         $(this).children('.drop-hidden').addClass("drop-reveal");
@@ -80,11 +86,7 @@ function navLink() {
             event.preventDefault();
         });
     }
-    function prepClick(item) {
-        if (item.attr('html') !== 'undefined' || $(this).attr('html') !== false) {
-            item.removeAttr("href");
-        }
-    }
+
 
     prepClick($navHam);
     prepClick($closeButt);
