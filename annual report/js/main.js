@@ -30,22 +30,30 @@ function windowScroll() {
 }
 function dropDown() {
     let $droplink = $('.annual-tile > .annual-button');
-    // let $dropTile = $('.annual-tile');
+    let $dropTile = $('.annual-tile');
     // let $dropHidden = $('.drop-hidden');
     // let $dropContent = $('.annual-drop-content');
     
     let $dropClose = $('.annual-drop-close');
+    
     $droplink.click(function (){
-        $droplink.removeAttr("href");
-        $(this).children('.drop-hidden').addClass("drop-reveal");
-        $(this).parent().addClass("drop-reveal");
-        $(this).text("Hide Content");
+        if ($(this).parents().hasClass("drop-reveal")) {
+            $droplink.removeAttr("href");
+            $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
+            $(this).parent().addClass("drop-reveal");
+            $(this).children().text("Hide Content");
+        } else {
+            $droplink.removeAttr("href");
+            $(this).parents('.annual-drop-container').children('.drop-hidden').addClass("drop-reveal");
+            $(this).parent().addClass("drop-reveal");
+            $(this).children().text("Hide Content");
+        }
     });
     $dropClose.click(function (){
         $dropCloseitem.removeAttr("href");
-        $(this).children('.drop-hidden').removeClass("drop-reveal");
+        $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
         $(this).parent().removeClass("drop-reveal");
-        $(this).text("Learn More");
+        $(this).children().text("Learn More");
     });
 }
 function smoothScroll() {
