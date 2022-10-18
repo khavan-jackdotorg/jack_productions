@@ -33,14 +33,16 @@ function dropDown() {
     // let $dropTile = $('.annual-tile');
     // let $dropHidden = $('.drop-hidden');
     // let $dropContent = $('.annual-drop-content');
-    prepClick($droplink);
+    
     let $dropClose = $('.annual-drop-close');
-    $droplink.click(function (event){
+    $droplink.click(function (){
+        $droplink.removeAttr("href");
         $(this).children('.drop-hidden').addClass("drop-reveal");
         $(this).parent().addClass("drop-reveal");
         $(this).text("Hide Content");
     });
     $dropClose.click(function (){
+        $dropCloseitem.removeAttr("href");
         $(this).children('.drop-hidden').removeClass("drop-reveal");
         $(this).parent().removeClass("drop-reveal");
         $(this).text("Learn More");
