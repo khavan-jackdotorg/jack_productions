@@ -39,18 +39,22 @@ function dropDown() {
     $droplink.click(function (){
         if ($(this).parents().hasClass("drop-reveal")) {
             $droplink.removeAttr("href");
+            $(this).parent('.tile-sec').children('.annual-drop-content.drop-hidden').removeClass("drop-reveal");
             $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
             $(this).parent().addClass("drop-reveal");
-            $(this).children().text("Hide Content");
+            $(this).children().text("Learn More");
+            
         } else {
             $droplink.removeAttr("href");
+            $(this).parent('.tile-sec').children('.annual-drop-content.drop-hidden').removeClass("drop-reveal");
             $(this).parents('.annual-drop-container').children('.drop-hidden').addClass("drop-reveal");
             $(this).parent().addClass("drop-reveal");
             $(this).children().text("Hide Content");
         }
     });
     $dropClose.click(function (){
-        $dropCloseitem.removeAttr("href");
+        $dropClose.removeAttr("href");
+        $(this).parent('.tile-sec').children('.annual-drop-content.drop-hidden').removeClass("drop-reveal");
         $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
         $(this).parent().removeClass("drop-reveal");
         $(this).children().text("Learn More");
