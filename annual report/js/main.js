@@ -32,7 +32,7 @@ function dropDown() {
     let $droplink = $('.annual-tile > .annual-button');
     let $dropTile = $('.annual-tile');
     // let $dropHidden = $('.drop-hidden');
-    // let $dropContent = $('.annual-drop-content');
+    let $dropContent = $('.annual-drop-content');
     
     let $dropClose = $('.annual-drop-close');
     
@@ -40,10 +40,10 @@ function dropDown() {
         if ($(this).parent().hasClass("drop-reveal")) {
             console.log('close-dropdown');
             $droplink.removeAttr("href");
-            $(this).parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
+            $dropContent.removeClass("drop-reveal");
             $(this).parents('.annual-tile').removeClass("drop-reveal");
             $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
-            $(this).parent().addClass("drop-reveal");
+            $(this).parent().removeClass("drop-reveal");
             $(this).children().text("Learn More");
             
         } else {
@@ -58,7 +58,7 @@ function dropDown() {
     $dropClose.click(function (){
         console.log('close-dropdown');
         $dropClose.removeAttr("href");
-        $(this).parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
+        $dropContent.removeClass("drop-reveal");
         $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
         $(this).parent().removeClass("drop-reveal");
         $(this).children().text("Learn More");
