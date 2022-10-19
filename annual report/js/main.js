@@ -43,6 +43,7 @@ function dropDown() {
             $dropContent.removeClass("drop-reveal");
             $(this).parents('.annual-tile').removeClass("drop-reveal");
             $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
+            $(this).parents('.annual-tile').siblings().removeClass("drop-reveal");
             $(this).parent().removeClass("drop-reveal");
             $(this).children().text("Learn More");
             
@@ -51,6 +52,7 @@ function dropDown() {
             $droplink.removeAttr("href");
             $(this).parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
             $(this).parents('.annual-drop-container').children('.drop-hidden').addClass("drop-reveal");
+            $(this).parents('.annual-tile').siblings().removeClass("drop-reveal");
             $(this).parent().addClass("drop-reveal");
             $(this).children().text("Hide Content");
         }
@@ -60,6 +62,7 @@ function dropDown() {
         $dropClose.removeAttr("href");
         $dropContent.removeClass("drop-reveal");
         $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
+        $(this).parents('.annual-tile').siblings().removeClass("drop-reveal");
         $(this).parent().removeClass("drop-reveal");
         $(this).children().text("Learn More");
     });
