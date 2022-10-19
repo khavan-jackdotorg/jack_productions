@@ -41,6 +41,7 @@ function dropDown() {
             console.log('close-dropdown');
             $droplink.removeAttr("href");
             $(this).parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
+            $(this).parents('.annual-tile').removeClass("drop-reveal");
             $(this).parents('.annual-drop-container').children('.drop-hidden').removeClass("drop-reveal");
             $(this).parent().addClass("drop-reveal");
             $(this).children().text("Learn More");
@@ -346,6 +347,6 @@ function mapClick() {
     dropDown();
     animateType();
     // navLink();
-    smoothScroll();
+    // smoothScroll();
     // $(window).scroll($.throttle(30, windowScroll));
 }(jQuery));

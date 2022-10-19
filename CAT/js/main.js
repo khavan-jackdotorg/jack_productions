@@ -395,7 +395,7 @@ function navLink() {
         link.click(function (event) {
             navMenu.css({
                 "transform": "translate3d(0, -100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                "clip-path": "polygon(0 0, 100% 0, 100% 100%, 0% 90%)"
+                w
             }).delay(550).queue(function () {
                 $(this).removeClass("opened").dequeue();
             });
