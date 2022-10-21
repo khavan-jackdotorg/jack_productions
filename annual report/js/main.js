@@ -44,26 +44,26 @@ function windowScroll() {
     let $posRep = $("#rep").offset().top;
     let $posAdvisors = $("#advisors").offset().top;
     let $posEqual = $("#equal").offset().top;
-    let $scrollPrograms = $("#programs").offset().top;
-        let $scrollTalks = $("#talks").offset().top;
-        let $scrollChapters = $("#chapters").offset().top;
-        let $scrollSummits = $("#summits").offset().top;
-        let $scrollBethere = $("#bethere").offset().top;
-        let $scrollYVR = $("#yvr").offset().top;
-    let $scrollDev = $("#dev").offset().top;
-        let $scrollBrainfreeze = $("#brainfreeze").offset().top;
-        let $scrollRide = $("#ride").offset().top;
-        let $scrollInstitutional = $("#institutional").offset().top;
-        let $scrollCommunity = $("#community").offset().top;
-    let $scrollstory = $("#story").offset().top;
-        let $scrollDigital = $("#digital").offset().top;
-        let $scrollOriginals = $("#originals").offset().top;
-        let $scrollDemystified = $("#demystied").offset().top;
-        let $scrollAnthem = $("#anthemy").offset().top;
-    let $scrollFinance = $("#finance").offset().top;
-    let $scrollGrow = $("#grow").offset().top;
-    let $scrollFund = $("#fund").offset().top;
-    let $scrollFoot = $("#footer").offset().top;
+    let $posPrograms = $("#programs").offset().top;
+        let $posTalks = $("#talks").offset().top;
+        let $posChapters = $("#chapters").offset().top;
+        let $posSummits = $("#summits").offset().top;
+        let $posBethere = $("#bethere").offset().top;
+        let $posYVR = $("#yvr").offset().top;
+    let $posDev = $("#dev").offset().top;
+        let $posBrainfreeze = $("#brainfreeze").offset().top;
+        let $posRide = $("#ride").offset().top;
+        let $posInstitutional = $("#institutional").offset().top;
+        let $posCommunity = $("#community").offset().top;
+    let $posStory = $("#story").offset().top;
+        let $posDigital = $("#digital").offset().top;
+        let $posOriginals = $("#originals").offset().top;
+        let $posDemystified = $("#demystied").offset().top;
+        let $posAnthem = $("#anthemy").offset().top;
+    let $posFinance = $("#finance").offset().top;
+    let $posGrow = $("#grow").offset().top;
+    let $posFund = $("#fund").offset().top;
+    let $posFoot = $("#footer").offset().top;
 
     var $wScroll = $(window).scrollTop();
 
@@ -82,6 +82,46 @@ function windowScroll() {
         $sectionIndicator.html("Network Advisors");
     } else if ($wScroll >= $posEqual - windowH * startTrans && wScroll < $posPrograms - windowH * startTrans) {
         $sectionIndicator.html("The Path to Equal Opportunities");
+    } else if ($wScroll >= $posPrograms - windowH * startTrans && wScroll < $posTalks - windowH * startTrans) {
+        $sectionIndicator.html("Programs");
+    } else if ($wScroll >= $posTalks - windowH * startTrans && wScroll < $posChapters - windowH * startTrans) {
+        $sectionIndicator.html("Talks");
+    } else if ($wScroll >= $posChapters - windowH * startTrans && wScroll < $posSummits - windowH * startTrans) {
+        $sectionIndicator.html("Chapters");
+    } else if ($wScroll >= $posSummits - windowH * startTrans && wScroll < $posBethere - windowH * startTrans) {
+        $sectionIndicator.html("Summits");
+    } else if ($wScroll >= $posBethere - windowH * startTrans && wScroll < $posYVR - windowH * startTrans) {
+        $sectionIndicator.html("Be There");
+    } else if ($wScroll >= $posYVR - windowH * startTrans && wScroll < $posDev - windowH * startTrans) {
+        $sectionIndicator.html("Youth Voice Report");
+    } else if ($wScroll >= $posDev - windowH * startTrans && wScroll < $posBrainfreeze - windowH * startTrans) {
+        $sectionIndicator.html("Developement");
+    } else if ($wScroll >= $posBrainfreeze - windowH * startTrans && wScroll < $posRide - windowH * startTrans) {
+        $sectionIndicator.html("Brainfreeze");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
     } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
         $sectionIndicator.html("Network Representatives");
     
@@ -416,5 +456,5 @@ function mapClick() {
     animateType();
     navLink();
     // smoothScroll();
-    // $(window).scroll($.throttle(30, windowScroll));
+    $(window).scroll($.throttle(30, windowScroll));
 }(jQuery));
