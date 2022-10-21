@@ -11,19 +11,81 @@ function prepClick(item) {
     }
 }
 function windowScroll() {
+    // let $scrollHead = $("#header");
+    // let $scrollLand= $("#land");
+    // let $scrollLetter = $("#letter-img");
+    // let $scrollRep = $("#rep");
+    // let $scrollAdvisors = $("#advisors");
+    // let $scrollEqual = $("#equal");
+    // let $scrollPrograms = $("#programs");
+    //     let $scrollTalks = $("#talks");
+    //     let $scrollChapters = $("#chapters");
+    //     let $scrollSummits = $("#summits");
+    //     let $scrollBethere = $("#bethere");
+    //     let $scrollYVR = $("#yvr");
+    // let $scrollDev = $("#dev");
+    //     let $scrollBrainfreeze = $("#brainfreeze");
+    //     let $scrollRide = $("#ride");
+    //     let $scrollInstitutional = $("#institutional");
+    //     let $scrollCommunity = $("#community");
+    // let $scrollstory = $("#story");
+    //     let $scrollDigital = $("#digital");
+    //     let $scrollOriginals = $("#originals");
+    //     let $scrollDemystified = $("#demystied");
+    //     let $scrollAnthem = $("#anthemy");
+    // let $scrollFinance = $("#finance");
+    // let $scrollGrow = $("#grow");
+    // let $scrollFund = $("#fund");
+    // let $scrollFoot = $("#footer");
+
+    let $posHead = $("#header").offset().top;
+    let $posLand= $("#Land").offset().top;
+    let $posLetter = $("#letter-img").offset().top;
+    let $posRep = $("#rep").offset().top;
+    let $posAdvisors = $("#advisors").offset().top;
+    let $posEqual = $("#equal").offset().top;
+    let $scrollPrograms = $("#programs").offset().top;
+        let $scrollTalks = $("#talks").offset().top;
+        let $scrollChapters = $("#chapters").offset().top;
+        let $scrollSummits = $("#summits").offset().top;
+        let $scrollBethere = $("#bethere").offset().top;
+        let $scrollYVR = $("#yvr").offset().top;
+    let $scrollDev = $("#dev").offset().top;
+        let $scrollBrainfreeze = $("#brainfreeze").offset().top;
+        let $scrollRide = $("#ride").offset().top;
+        let $scrollInstitutional = $("#institutional").offset().top;
+        let $scrollCommunity = $("#community").offset().top;
+    let $scrollstory = $("#story").offset().top;
+        let $scrollDigital = $("#digital").offset().top;
+        let $scrollOriginals = $("#originals").offset().top;
+        let $scrollDemystified = $("#demystied").offset().top;
+        let $scrollAnthem = $("#anthemy").offset().top;
+    let $scrollFinance = $("#finance").offset().top;
+    let $scrollGrow = $("#grow").offset().top;
+    let $scrollFund = $("#fund").offset().top;
+    let $scrollFoot = $("#footer").offset().top;
+
     var $wScroll = $(window).scrollTop();
 
     // Section indicator
-    if ($wScroll > 0 && $wScroll < posIntro) {
+    if ($wScroll > 0 && $wScroll < $posHead) {
         $sectionIndicator.html(" ");
-    } else if ($wScroll >= posIntro - windowH * startTrans && wScroll < posIndicatorImage - windowH * startTrans) {
-        $sectionIndicator.html("Introduction");
-    } else if ($wScroll >= posIndicatorImage - windowH * startTrans && wScroll < posInvolved - windowH * startTrans) {
-        $sectionIndicator.html("Learning");
-    } else if ($wScroll >= posInvolved - windowH * startTrans && wScroll < posAcknow - windowH * startTrans) {
-        $sectionIndicator.html("Get Involved");
-    } else if ($wScroll >= posAcknow - windowH * startTrans) {
-        $sectionIndicator.html("Acknowledgements");
+    } else if ($wScroll >= $posHead - windowH * startTrans && wScroll < $posLand - windowH * startTrans) {
+        $sectionIndicator.html("Header");
+    } else if ($wScroll >= $posLand - windowH * startTrans && wScroll < $posLetter - windowH * startTrans) {
+        $sectionIndicator.html("Land Acknowledgement");
+    } else if ($wScroll >= $posLetter - windowH * startTrans && wScroll < $posRep - windowH * startTrans) {
+        $sectionIndicator.html("Messages");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    } else if ($wScroll >= $posAdvisors - windowH * startTrans && wScroll < $posEqual - windowH * startTrans) {
+        $sectionIndicator.html("Network Advisors");
+    } else if ($wScroll >= $posEqual - windowH * startTrans && wScroll < $posPrograms - windowH * startTrans) {
+        $sectionIndicator.html("The Path to Equal Opportunities");
+    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+        $sectionIndicator.html("Network Representatives");
+    
+    
     } else {
         $sectionIndicator.html(" ");
     }
@@ -92,8 +154,8 @@ function navLink() {
     let $navHam = $(".nav-hamburger");
     let $navLinkItem = $(".nav-link");
     let $closeButt = $(".close-button");
-    let $navClose = $(".cat-navmenu-item .close-button");
-    let $navMenu = $(".cat-navmenu-pop");
+    let $navClose = $(".annual-navmenu-top .close-button");
+    let $navMenu = $(".annual-navmenu-pop");
 
     function closeNav(link) {
         link.click(function (event) {
@@ -344,12 +406,11 @@ function mapClick() {
     $(window).on('resize', function () {
         var scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
         var windowH = $(window).innerHeight();
-        moduleClick();  
     });
     mapClick();
     dropDown();
     animateType();
-    // navLink();
+    navLink();
     // smoothScroll();
     // $(window).scroll($.throttle(30, windowScroll));
 }(jQuery));
