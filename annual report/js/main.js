@@ -67,6 +67,7 @@ function windowScroll() {
 
     var $wScroll = $(window).scrollTop();
 
+    
     // Lenths
     let $lengthFoot = $scrollFoot.innerHeight();
 
