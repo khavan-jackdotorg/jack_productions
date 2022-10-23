@@ -11,123 +11,183 @@ function prepClick(item) {
     }
 }
 function windowScroll() {
-    // let $scrollHead = $("#header");
-    // let $scrollLand= $("#land");
-    // let $scrollLetter = $("#letter-img");
-    // let $scrollRep = $("#rep");
-    // let $scrollAdvisors = $("#advisors");
-    // let $scrollEqual = $("#equal");
-    // let $scrollPrograms = $("#programs");
-    //     let $scrollTalks = $("#talks");
-    //     let $scrollChapters = $("#chapters");
-    //     let $scrollSummits = $("#summits");
-    //     let $scrollBethere = $("#bethere");
-    //     let $scrollYVR = $("#yvr");
-    // let $scrollDev = $("#dev");
-    //     let $scrollBrainfreeze = $("#brainfreeze");
-    //     let $scrollRide = $("#ride");
-    //     let $scrollInstitutional = $("#institutional");
-    //     let $scrollCommunity = $("#community");
-    // let $scrollstory = $("#story");
-    //     let $scrollDigital = $("#digital");
-    //     let $scrollOriginals = $("#originals");
-    //     let $scrollDemystified = $("#demystied");
-    //     let $scrollAnthem = $("#anthemy");
-    // let $scrollFinance = $("#finance");
-    // let $scrollGrow = $("#grow");
-    // let $scrollFund = $("#fund");
-    // let $scrollFoot = $("#footer");
+    let $scrollHead = $("#header");
+    let $scrollLand = $("#land");
+    let $scrollLetter = $("#letter-img");
+    let $scrollRep = $("#rep");
+    let $scrollAdvisors = $("#advisors");
+    let $scrollEqual = $("#equal");
+    let $scrollPrograms = $("#programs");
+        let $scrollTalks = $("#talks");
+        let $scrollChapters = $("#chapters");
+        let $scrollSummits = $("#summits");
+        let $scrollBethere = $("#bethere");
+        let $scrollYVR = $("#yvr");
+    let $scrollDev = $("#dev");
+        let $scrollBrainfreeze = $("#brainfreeze");
+        let $scrollRide = $("#ride");
+        let $scrollInstitutional = $("#institutional");
+        let $scrollCommunity = $("#community");
+    let $scrollstory = $("#story");
+        let $scrollDigital = $("#digital");
+        let $scrollOriginals = $("#originals");
+        let $scrollDemy = $("#demystied");
+        let $scrollAnthem = $("#anthemy");
+    let $scrollFinance = $("#finance");
+    let $scrollGrow = $("#grow");
+    let $scrollFund = $("#fund");
+    let $scrollFoot = $(".footer");
 
-    let $posHead = $("#header").offset().top;
-    let $posLand= $("#Land").offset().top;
-    let $posLetter = $("#letter-img").offset().top;
-    let $posRep = $("#rep").offset().top;
-    let $posAdvisors = $("#advisors").offset().top;
-    let $posEqual = $("#equal").offset().top;
-    let $posPrograms = $("#programs").offset().top;
-        let $posTalks = $("#talks").offset().top;
-        let $posChapters = $("#chapters").offset().top;
-        let $posSummits = $("#summits").offset().top;
-        let $posBethere = $("#bethere").offset().top;
-        let $posYVR = $("#yvr").offset().top;
-    let $posDev = $("#dev").offset().top;
-        let $posBrainfreeze = $("#brainfreeze").offset().top;
-        let $posRide = $("#ride").offset().top;
-        let $posInstitutional = $("#institutional").offset().top;
-        let $posCommunity = $("#community").offset().top;
-    let $posStory = $("#story").offset().top;
-        let $posDigital = $("#digital").offset().top;
-        let $posOriginals = $("#originals").offset().top;
-        let $posDemystified = $("#demystied").offset().top;
-        let $posAnthem = $("#anthemy").offset().top;
-    let $posFinance = $("#finance").offset().top;
-    let $posGrow = $("#grow").offset().top;
-    let $posFund = $("#fund").offset().top;
-    let $posFoot = $("#footer").offset().top;
+    let $posHead =$scrollHead.offset().top;
+    let $posLand= $scrollLand.offset().top;
+    let $posLetter = $scrollLetter.offset().top;
+    let $posRep = $scrollRep.offset().top;
+    let $posAdvisors = $scrollAdvisors.offset().top;
+    let $posEqual = $scrollEqual.offset().top;
+    let $posPrograms = $scrollPrograms.offset().top;
+        let $posTalks = $scrollTalks.offset().top;
+        let $posChapters = $scrollChapters.offset().top;
+        let $posSummits = $scrollSummits.offset().top;
+        let $posBethere = $scrollBethere.offset().top;
+        let $posYVR = $scrollYVR.offset().top;
+    let $posDev = $scrollDev.offset().top;
+        let $posBrainfreeze = $scrollBrainfreeze.offset().top;
+        let $posRide = $scrollRide.offset().top;
+        let $posInstitutional = $scrollInstitutional.offset().top;
+        let $posCommunity = $scrollCommunity.offset().top;
+    let $posStory = $scrollstory.offset().top;
+        let $posDigital = $scrollDigital.offset().top;
+        let $posOriginals = $scrollOriginals.offset().top;
+        let $posDemystified = $scrollDemy.offset().top;
+        let $posAnthem = $scrollAnthem .offset().top;
+    let $posFinance = $scrollFinance.offset().top;
+    let $posGrow = $scrollGrow.offset().top;
+    let $posFund = $scrollFund.offset().top;
+    let $posFoot = $scrollFoot.offset().top;
 
     var $wScroll = $(window).scrollTop();
 
+    // Lenths
+    let $lengthFoot = $scrollFoot.innerHeight();
+
+
     // Section indicator
-    if ($wScroll > 0 && $wScroll < $posHead) {
-        $sectionIndicator.html(" ");
-    } else if ($wScroll >= $posHead - windowH * startTrans && wScroll < $posLand - windowH * startTrans) {
-        $sectionIndicator.html("Header");
-    } else if ($wScroll >= $posLand - windowH * startTrans && wScroll < $posLetter - windowH * startTrans) {
-        $sectionIndicator.html("Land Acknowledgement");
-    } else if ($wScroll >= $posLetter - windowH * startTrans && wScroll < $posRep - windowH * startTrans) {
-        $sectionIndicator.html("Messages");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posAdvisors - windowH * startTrans && wScroll < $posEqual - windowH * startTrans) {
-        $sectionIndicator.html("Network Advisors");
-    } else if ($wScroll >= $posEqual - windowH * startTrans && wScroll < $posPrograms - windowH * startTrans) {
-        $sectionIndicator.html("The Path to Equal Opportunities");
-    } else if ($wScroll >= $posPrograms - windowH * startTrans && wScroll < $posTalks - windowH * startTrans) {
-        $sectionIndicator.html("Programs");
-    } else if ($wScroll >= $posTalks - windowH * startTrans && wScroll < $posChapters - windowH * startTrans) {
-        $sectionIndicator.html("Talks");
-    } else if ($wScroll >= $posChapters - windowH * startTrans && wScroll < $posSummits - windowH * startTrans) {
-        $sectionIndicator.html("Chapters");
-    } else if ($wScroll >= $posSummits - windowH * startTrans && wScroll < $posBethere - windowH * startTrans) {
-        $sectionIndicator.html("Summits");
-    } else if ($wScroll >= $posBethere - windowH * startTrans && wScroll < $posYVR - windowH * startTrans) {
-        $sectionIndicator.html("Be There");
-    } else if ($wScroll >= $posYVR - windowH * startTrans && wScroll < $posDev - windowH * startTrans) {
-        $sectionIndicator.html("Youth Voice Report");
-    } else if ($wScroll >= $posDev - windowH * startTrans && wScroll < $posBrainfreeze - windowH * startTrans) {
-        $sectionIndicator.html("Developement");
-    } else if ($wScroll >= $posBrainfreeze - windowH * startTrans && wScroll < $posRide - windowH * startTrans) {
-        $sectionIndicator.html("Brainfreeze");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
-        $sectionIndicator.html("Network Representatives");
-    
-    
-    } else {
-        $sectionIndicator.html(" ");
+    if ($sectionIndicator.hasClass("french")) { //french
+        if ($wScroll > 0 && $wScroll < $posHead) {
+            $sectionIndicator.html(" ");
+        } else if ($wScroll >= $posHead - windowH * startTrans && wScroll < $posLand - windowH * startTrans) {
+            $sectionIndicator.html(" ");
+        } else if ($wScroll >= $posLand - windowH * startTrans && wScroll < $posLetter - windowH * startTrans) {
+            $sectionIndicator.html("Reconnaissance des terre");
+        } else if ($wScroll >= $posLetter - windowH * startTrans && wScroll < $posRep - windowH * startTrans) {
+            $sectionIndicator.html("Messages");
+        } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+            $sectionIndicator.html("Représentant.e.s du réseau");
+        } else if ($wScroll >= $posAdvisors - windowH * startTrans && wScroll < $posEqual - windowH * startTrans) {
+            $sectionIndicator.html("Conseiller.ère.s de réseau");
+        } else if ($wScroll >= $posEqual - windowH * startTrans && wScroll < $posPrograms - windowH * startTrans) {
+            $sectionIndicator.html("La voie vers l’égalité des résultats");
+        } else if ($wScroll >= $posPrograms - windowH * startTrans && wScroll < $posTalks - windowH * startTrans) {
+            $sectionIndicator.html("Programmes");
+        } else if ($wScroll >= $posTalks - windowH * startTrans && wScroll < $posChapters - windowH * startTrans) {
+            $sectionIndicator.html("Présentations Jack");
+        } else if ($wScroll >= $posChapters - windowH * startTrans && wScroll < $posSummits - windowH * startTrans) {
+            $sectionIndicator.html("Sections Jack");
+        } else if ($wScroll >= $posSummits - windowH * startTrans && wScroll < $posBethere - windowH * startTrans) {
+            $sectionIndicator.html("Sommets Jack");
+        } else if ($wScroll >= $posBethere - windowH * startTrans && wScroll < $posYVR - windowH * startTrans) {
+            $sectionIndicator.html("Être là");
+        } else if ($wScroll >= $posYVR - windowH * startTrans && wScroll < $posDev - windowH * startTrans) {
+            $sectionIndicator.html("Rapport La voix des jeunes");
+        } else if ($wScroll >= $posDev - windowH * startTrans && wScroll < $posBrainfreeze - windowH * startTrans) {
+            $sectionIndicator.html("Développement");
+        } else if ($wScroll >= $posBrainfreeze - windowH * startTrans && wScroll < $posRide - windowH * startTrans) {
+            $sectionIndicator.html("Frissons");
+        } else if ($wScroll >= $posRide - windowH * startTrans && wScroll < $posInstitutional - windowH * startTrans) {
+            $sectionIndicator.html("Jack Ride");
+        } else if ($wScroll >= $posInstitutional - windowH * startTrans && wScroll < $posCommunity - windowH * startTrans) {
+            $sectionIndicator.html("Bailleurs de fonds institutionnels");
+        } else if ($wScroll >= $posCommunity - windowH * startTrans && wScroll < $posStory - windowH * startTrans) {
+            $sectionIndicator.html("Agent.e.s de changement dans la communauté");
+        } else if ($wScroll >= $posStory - windowH * startTrans && wScroll < $posDigital - windowH * startTrans) {
+            $sectionIndicator.html("Témoignages");
+        } else if ($wScroll >= $posDigital - windowH * startTrans && wScroll < $posOriginals - windowH * startTrans) {
+            $sectionIndicator.html("Communauté numérique");
+        } else if ($wScroll >= $posOriginals - windowH * startTrans && wScroll < $posDemystified - windowH * startTrans) {
+            $sectionIndicator.html("Jack Originals");
+        } else if ($wScroll >= $posDemystified - windowH * startTrans && wScroll < $posAnthem - windowH * startTrans) {
+            $sectionIndicator.html("Démystifié");
+        } else if ($wScroll >= $posAnthem - windowH * startTrans && wScroll < $posFinance - windowH * startTrans) {
+            $sectionIndicator.html("Prix Anthem");
+        } else if ($wScroll >= $posFinance - windowH * startTrans && wScroll < $posGrow - windowH * startTrans) {
+            $sectionIndicator.html("États financiers vérifiés");
+        } else if ($wScroll >= $posGrow - windowH * startTrans && wScroll < $posFund - windowH * startTrans) {
+            $sectionIndicator.html("Grandir avec nous");
+        } else if ($wScroll >= $posFund - windowH * startTrans && wScroll < $posFoot - windowH * startTrans) {
+            $sectionIndicator.html("Nos bailleurs de fonds");
+        } else if ($wScroll >= $posFoot- windowH * startTrans && wScroll < $lengthFoot - windowH * startTrans) {
+            $sectionIndicator.html(" ");    
+        } else {
+            $sectionIndicator.html(" ");
+        }
+    } else { //english
+        if ($wScroll > 0 && $wScroll < $posHead) {
+            $sectionIndicator.html(" ");
+        } else if ($wScroll >= $posHead - windowH * startTrans && wScroll < $posLand - windowH * startTrans) {
+            $sectionIndicator.html(" ");
+        } else if ($wScroll >= $posLand - windowH * startTrans && wScroll < $posLetter - windowH * startTrans) {
+            $sectionIndicator.html("Land Acknowledgement");
+        } else if ($wScroll >= $posLetter - windowH * startTrans && wScroll < $posRep - windowH * startTrans) {
+            $sectionIndicator.html("Messages");
+        } else if ($wScroll >= $posRep - windowH * startTrans && wScroll < $posAdvisors - windowH * startTrans) {
+            $sectionIndicator.html("Network Representatives");
+        } else if ($wScroll >= $posAdvisors - windowH * startTrans && wScroll < $posEqual - windowH * startTrans) {
+            $sectionIndicator.html("Network Advisors");
+        } else if ($wScroll >= $posEqual - windowH * startTrans && wScroll < $posPrograms - windowH * startTrans) {
+            $sectionIndicator.html("The Path to Equal Opportunities");
+        } else if ($wScroll >= $posPrograms - windowH * startTrans && wScroll < $posTalks - windowH * startTrans) {
+            $sectionIndicator.html("Programs");
+        } else if ($wScroll >= $posTalks - windowH * startTrans && wScroll < $posChapters - windowH * startTrans) {
+            $sectionIndicator.html("Jack Talks");
+        } else if ($wScroll >= $posChapters - windowH * startTrans && wScroll < $posSummits - windowH * startTrans) {
+            $sectionIndicator.html("Jack Chapters");
+        } else if ($wScroll >= $posSummits - windowH * startTrans && wScroll < $posBethere - windowH * startTrans) {
+            $sectionIndicator.html("Jack Summits");
+        } else if ($wScroll >= $posBethere - windowH * startTrans && wScroll < $posYVR - windowH * startTrans) {
+            $sectionIndicator.html("Be There");
+        } else if ($wScroll >= $posYVR - windowH * startTrans && wScroll < $posDev - windowH * startTrans) {
+            $sectionIndicator.html("Youth Voice Report");
+        } else if ($wScroll >= $posDev - windowH * startTrans && wScroll < $posBrainfreeze - windowH * startTrans) {
+            $sectionIndicator.html("Developement");
+        } else if ($wScroll >= $posBrainfreeze - windowH * startTrans && wScroll < $posRide - windowH * startTrans) {
+            $sectionIndicator.html("Brainfreeze");
+        } else if ($wScroll >= $posRide - windowH * startTrans && wScroll < $posInstitutional - windowH * startTrans) {
+            $sectionIndicator.html("Jack Ride");
+        } else if ($wScroll >= $posInstitutional - windowH * startTrans && wScroll < $posCommunity - windowH * startTrans) {
+            $sectionIndicator.html("Institutional Funders");
+        } else if ($wScroll >= $posCommunity - windowH * startTrans && wScroll < $posStory - windowH * startTrans) {
+            $sectionIndicator.html("Community Changemakers");
+        } else if ($wScroll >= $posStory - windowH * startTrans && wScroll < $posDigital - windowH * startTrans) {
+            $sectionIndicator.html("Storytelling");
+        } else if ($wScroll >= $posDigital - windowH * startTrans && wScroll < $posOriginals - windowH * startTrans) {
+            $sectionIndicator.html("Digital Community");
+        } else if ($wScroll >= $posOriginals - windowH * startTrans && wScroll < $posDemystified - windowH * startTrans) {
+            $sectionIndicator.html("Jack Originals");
+        } else if ($wScroll >= $posDemystified - windowH * startTrans && wScroll < $posAnthem - windowH * startTrans) {
+            $sectionIndicator.html("Demystified");
+        } else if ($wScroll >= $posAnthem - windowH * startTrans && wScroll < $posFinance - windowH * startTrans) {
+            $sectionIndicator.html("Anthem Awards");
+        } else if ($wScroll >= $posFinance - windowH * startTrans && wScroll < $posGrow - windowH * startTrans) {
+            $sectionIndicator.html("Audited Financial Statements");
+        } else if ($wScroll >= $posGrow - windowH * startTrans && wScroll < $posFund - windowH * startTrans) {
+            $sectionIndicator.html("Grow With Us");
+        } else if ($wScroll >= $posFund - windowH * startTrans && wScroll < $posFoot - windowH * startTrans) {
+            $sectionIndicator.html("Our Funders");
+        } else if ($wScroll >= $posFoot- windowH * startTrans && wScroll < $lengthFoot - windowH * startTrans) {
+            $sectionIndicator.html(" ");    
+        } else {
+            $sectionIndicator.html(" ");
+        }
     }
 }
 function dropDown() {
