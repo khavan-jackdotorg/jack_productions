@@ -66,9 +66,6 @@ function windowScroll() {
     let $posGrow = $scrollGrow.offset().top;
     let $posFund = $scrollFund.offset().top;
     let $posFoot = $scrollFoot.offset().top;
-
-    
-
     
     // Lenths
     let $lengthFoot = $scrollFoot.innerHeight();
