@@ -38,6 +38,8 @@ function windowScroll() {
     let $scrollFund = $("#fund");
     let $scrollFoot = $(".footer");
 
+    var $wScroll = $(window).scrollTop();
+
     let $posHead =$scrollHead.offset().top;
     let $posLand= $scrollLand.offset().top;
     let $posLetter = $scrollLetter.offset().top;
@@ -65,7 +67,7 @@ function windowScroll() {
     let $posFund = $scrollFund.offset().top;
     let $posFoot = $scrollFoot.offset().top;
 
-    var $wScroll = $(window).scrollTop();
+    
 
     
     // Lenths
