@@ -31,7 +31,7 @@ function windowScroll() {
     let $scrollstory = $("#story");
         let $scrollDigital = $("#digital");
         let $scrollOriginals = $("#originals");
-        let $scrollDemy = $("#demystied");
+        let $scrollDemy = $("#demystified");
         let $scrollAnthem = $("#anthemy");
     let $scrollFinance = $("#finance");
     let $scrollGrow = $("#grow");
