@@ -32,7 +32,7 @@ function windowScroll() {
         let $scrollDigital = $("#digital");
         let $scrollOriginals = $("#originals");
         let $scrollDemy = $("#demystified");
-        let $scrollAnthem = $("#anthemy");
+        let $scrollAnthem = $("#anthem");
     let $scrollFinance = $("#finance");
     let $scrollGrow = $("#grow");
     let $scrollFund = $("#fund");
