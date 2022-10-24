@@ -210,7 +210,12 @@ function dropDown() {
             $(this).parents('.annual-tile').removeClass("drop-reveal");
             $(this).parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");        
             $(this).parent().removeClass("drop-reveal");
-            $(this).children().text("Learn More");
+            if ($(this).hasClass("french")) { //french
+                $(this).children().text("En savoir plus");
+            } else {
+                $(this).children().text("Learn More");
+            }
+            
             console.log('close-dropdown');
         } else {
             
@@ -220,7 +225,11 @@ function dropDown() {
 
             $(this).parents('.annual-tile').siblings('.annual-drop-content').addClass("drop-reveal");
             $(this).parent().addClass("drop-reveal");
-            $(this).children().text("Hide Content");
+            if ($(this).hasClass("french")) { //french
+                $(this).children().text("Cacher");
+            } else {
+                $(this).children().text("Hide Content");
+            }
             console.log('open-dropdown');
         }
     });
@@ -232,7 +241,11 @@ function dropDown() {
 
         $(this).parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");
         $(this).parent().removeClass("drop-reveal");
-        $(this).children().text("Learn More");
+        if ($(this).hasClass("french")) { //french
+            $(this).children().text("En savoir plus");
+        } else {
+            $(this).children().text("Learn More");
+        }
         console.log('close-dropdown');
     });
 }
