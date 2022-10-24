@@ -194,6 +194,7 @@ function dropDown() {
     let $droplink = $('.annual-tile > .annual-button');
     let $dropTile = $('.annual-tile');
     // let $dropHidden = $('.drop-hidden');
+    let $dropContainer = ('.annual-drop-container');
     let $dropContent = $('.annual-drop-content');
     
     let $dropClose = $('.annual-drop-close');
@@ -237,9 +238,9 @@ function dropDown() {
         $(this).parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");
         $(this).parents('.annual-drop-container').children('.annual-tile').removeClass("drop-reveal");
         if ($(this).parents('.annual-drop-container').hasClass("french")) { //french
-            $(this).children().text("En savoir plus");
+            $droplink.children().text("En savoir plus");
         } else {
-            $(this).children().text("Learn More");
+            $droplink.children().text("Learn More");
         }
         console.log('close-dropdown');
     });
