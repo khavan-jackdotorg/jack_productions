@@ -207,7 +207,7 @@ function dropDown() {
             $(this).parents('.annual-tile').removeClass("drop-reveal");
             $(this).parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");        
             $(this).parent().removeClass("drop-reveal");
-            if ($(this).hasClass("french")) { //french
+            if ($(this).parents('.annual-drop-container').hasClass("french")) { //french
                 $(this).children().text("En savoir plus");
             } else {
                 $(this).children().text("Learn More");
@@ -222,7 +222,7 @@ function dropDown() {
 
             $(this).parents('.annual-tile').siblings('.annual-drop-content').addClass("drop-reveal");
             $(this).parent().addClass("drop-reveal");
-            if ($(this).hasClass("french")) { //french
+            if ($(this).parents('.annual-drop-container').hasClass("french")) { //french
                 $(this).children().text("Cacher");
             } else {
                 $(this).children().text("Hide Content");
@@ -231,14 +231,12 @@ function dropDown() {
         }
     });
     $dropClose.click(function (){
-        
-        $dropClose.removeAttr("href");
         $dropContent.removeClass("drop-reveal");
         $(this).parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
 
         $(this).parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");
-        $(this).parent().removeClass("drop-reveal");
-        if ($(this).hasClass("french")) { //french
+        $(this).parents('.annual-drop-container').children('.annual-tile').removeClass("drop-reveal");
+        if ($(this).parents('.annual-drop-container').hasClass("french")) { //french
             $(this).children().text("En savoir plus");
         } else {
             $(this).children().text("Learn More");
