@@ -1,7 +1,7 @@
 
 // Variables
 let $body = $("body");
-let $html = $(html);
+let $html = $('html');
 var $scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
 var $windowH = $(window).innerHeight(); //the total height of the visible window
 let $sectionIndicator = $(".sectionindicator");
@@ -293,6 +293,7 @@ function navLink() {
                 $(this).removeClass("opened").dequeue();
             });
             $body.removeClass("modal-open");
+            $html.removeClass("modal-open");
             event.preventDefault();
         });
     }
@@ -312,6 +313,7 @@ function navLink() {
         });
         event.preventDefault();
         $body.addClass("modal-open");
+        $html.addClass("modal-open");
     });
 
 }
