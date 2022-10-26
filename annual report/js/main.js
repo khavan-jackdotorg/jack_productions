@@ -1,6 +1,7 @@
 
 // Variables
 let $body = $("body");
+let $html = $(html);
 var $scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
 var $windowH = $(window).innerHeight(); //the total height of the visible window
 let $sectionIndicator = $(".sectionindicator");
@@ -138,7 +139,7 @@ function windowScroll() {
         } else if ($wScroll >= $posLand - $windowH * startTrans && wScroll < $posLetter - $windowH * startTrans) {
             $sectionIndicator.html("Land Acknowledgement");
         } else if ($wScroll >= $posLetter - $windowH * startTrans && wScroll < $posRep - $windowH * startTrans) {
-            $sectionIndicator.html("Messages");
+            $sectionIndicator.html("Executive Letters");
         } else if ($wScroll >= $posRep - $windowH * startTrans && wScroll < $posAdvisors - $windowH * startTrans) {
             $sectionIndicator.html("Network Representatives");
         } else if ($wScroll >= $posAdvisors - $windowH * startTrans && wScroll < $posEqual - $windowH * startTrans) {
@@ -210,6 +211,7 @@ function dropDown() {
             $main.parents('.annual-tile').removeClass("drop-reveal");
             $main.parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");
             $main.parent().removeClass("drop-reveal");
+            $main.parent().siblings('.margin-right.drop-hidden').removeClass('drop-reveal');
             if ($main.parents('.annual-drop-container').hasClass("french")) { //french
                 $main.children().text("En savoir plus");
             } else {
@@ -221,6 +223,7 @@ function dropDown() {
             event.preventDefault();
             $droplink.removeAttr("href");
             $dropContent.removeClass("drop-reveal");
+            $main.parent().siblings('.margin-right.drop-hidden').addClass('drop-reveal');
             $main.parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
 
             $main.parent().addClass("drop-reveal");
@@ -242,7 +245,7 @@ function dropDown() {
         let $main = $(this);
         $dropContent.removeClass("drop-reveal");
         $main.parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
-
+        $main.parent().siblings('.margin-right.drop-hidden').removeClass('drop-reveal');
         $main.parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");
         $main.parents('.annual-drop-container').children('.annual-tile').removeClass("drop-reveal");
         if ($main.parents('.annual-drop-container').hasClass("french")) { //french
@@ -300,6 +303,7 @@ function navLink() {
     closeNav($navLinkItem);
     closeNav($navClose);
     $navHam.click(function (event) {
+        $(this).removeAttr("href");
         $navMenu.addClass("opened").delay(30).queue(function () {
             $(this).css({
                 "transform": "translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
