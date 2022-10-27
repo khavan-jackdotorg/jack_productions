@@ -205,7 +205,6 @@ function dropDown() {
         let $main = $(this);
         if ($main.parent().hasClass("drop-reveal")) {
             
-            $droplink.removeAttr("href");
             $dropContent.removeClass("drop-reveal");
             event.preventDefault();
             $main.parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal"); //should do the same thing
@@ -221,8 +220,6 @@ function dropDown() {
             
             console.log('close-dropdown');
         } else {
-            event.preventDefault();
-            $droplink.removeAttr("href");
             $dropContent.removeClass("drop-reveal");
             $main.siblings('.margin-right.drop-hidden').addClass('drop-reveal');
             $main.parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
