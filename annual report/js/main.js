@@ -5,6 +5,7 @@ let $html = $('html');
 var $scrollHeight = $("body").innerHeight(); //the total height of the page that will scroll
 var $windowH = $(window).innerHeight(); //the total height of the visible window
 let $sectionIndicator = $(".sectionindicator");
+let startTrans = 0.75;
 
 function prepClick(item) {
     if (item.attr('html') !== 'undefined' || $(this).attr('html') !== false) {
