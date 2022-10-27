@@ -77,57 +77,57 @@ function windowScroll() {
     if ($sectionIndicator.hasClass("french")) { //french
         if ($wScroll > 0 && $wScroll < $posHead) {
             $sectionIndicator.html(" ");
-        } else if ($wScroll >= $posHead - $windowH * startTrans && wScroll < $posLand - $windowH * startTrans) {
+        } else if ($wScroll >= $posHead - $windowH * startTrans && $wScroll < $posLand - $windowH * startTrans) {
             $sectionIndicator.html(" ");
-        } else if ($wScroll >= $posLand - $windowH * startTrans && wScroll < $posLetter - $windowH * startTrans) {
+        } else if ($wScroll >= $posLand - $windowH * startTrans && $wScroll < $posLetter - $windowH * startTrans) {
             $sectionIndicator.html("Reconnaissance des terre");
-        } else if ($wScroll >= $posLetter - $windowH * startTrans && wScroll < $posRep - $windowH * startTrans) {
+        } else if ($wScroll >= $posLetter - $windowH * startTrans && $wScroll < $posRep - $windowH * startTrans) {
             $sectionIndicator.html("Messages");
-        } else if ($wScroll >= $posRep - $windowH * startTrans && wScroll < $posAdvisors - $windowH * startTrans) {
+        } else if ($wScroll >= $posRep - $windowH * startTrans && $wScroll < $posAdvisors - $windowH * startTrans) {
             $sectionIndicator.html("Représentant.e.s du réseau");
-        } else if ($wScroll >= $posAdvisors - $windowH * startTrans && wScroll < $posEqual - $windowH * startTrans) {
+        } else if ($wScroll >= $posAdvisors - $windowH * startTrans && $wScroll < $posEqual - $windowH * startTrans) {
             $sectionIndicator.html("Conseiller.ère.s de réseau");
-        } else if ($wScroll >= $posEqual - $windowH * startTrans && wScroll < $posPrograms - $windowH * startTrans) {
+        } else if ($wScroll >= $posEqual - $windowH * startTrans && $wScroll < $posPrograms - $windowH * startTrans) {
             $sectionIndicator.html("La voie vers l’égalité des résultats");
-        } else if ($wScroll >= $posPrograms - $windowH * startTrans && wScroll < $posTalks - $windowH * startTrans) {
+        } else if ($wScroll >= $posPrograms - $windowH * startTrans && $wScroll < $posTalks - $windowH * startTrans) {
             $sectionIndicator.html("Programmes");
-        } else if ($wScroll >= $posTalks - $windowH * startTrans && wScroll < $posChapters - $windowH * startTrans) {
+        } else if ($wScroll >= $posTalks - $windowH * startTrans && $wScroll < $posChapters - $windowH * startTrans) {
             $sectionIndicator.html("Présentations Jack");
-        } else if ($wScroll >= $posChapters - $windowH * startTrans && wScroll < $posSummits - $windowH * startTrans) {
+        } else if ($wScroll >= $posChapters - $windowH * startTrans && $wScroll < $posSummits - $windowH * startTrans) {
             $sectionIndicator.html("Sections Jack");
-        } else if ($wScroll >= $posSummits - $windowH * startTrans && wScroll < $posBethere - $windowH * startTrans) {
+        } else if ($wScroll >= $posSummits - $windowH * startTrans && $wScroll < $posBethere - $windowH * startTrans) {
             $sectionIndicator.html("Sommets Jack");
-        } else if ($wScroll >= $posBethere - $windowH * startTrans && wScroll < $posYVR - $windowH * startTrans) {
+        } else if ($wScroll >= $posBethere - $windowH * startTrans && $wScroll < $posYVR - $windowH * startTrans) {
             $sectionIndicator.html("Être là");
-        } else if ($wScroll >= $posYVR - $windowH * startTrans && wScroll < $posDev - $windowH * startTrans) {
+        } else if ($wScroll >= $posYVR - $windowH * startTrans && $wScroll < $posDev - $windowH * startTrans) {
             $sectionIndicator.html("Rapport La voix des jeunes");
-        } else if ($wScroll >= $posDev - $windowH * startTrans && wScroll < $posBrainfreeze - $windowH * startTrans) {
+        } else if ($wScroll >= $posDev - $windowH * startTrans && $wScroll < $posBrainfreeze - $windowH * startTrans) {
             $sectionIndicator.html("Développement");
-        } else if ($wScroll >= $posBrainfreeze - $windowH * startTrans && wScroll < $posRide - $windowH * startTrans) {
+        } else if ($wScroll >= $posBrainfreeze - $windowH * startTrans && $wScroll < $posRide - $windowH * startTrans) {
             $sectionIndicator.html("Frissons");
-        } else if ($wScroll >= $posRide - $windowH * startTrans && wScroll < $posInstitutional - $windowH * startTrans) {
+        } else if ($wScroll >= $posRide - $windowH * startTrans && $wScroll < $posInstitutional - $windowH * startTrans) {
             $sectionIndicator.html("Jack Ride");
-        } else if ($wScroll >= $posInstitutional - $windowH * startTrans && wScroll < $posCommunity - $windowH * startTrans) {
+        } else if ($wScroll >= $posInstitutional - $windowH * startTrans && $wScroll < $posCommunity - $windowH * startTrans) {
             $sectionIndicator.html("Bailleurs de fonds institutionnels");
-        } else if ($wScroll >= $posCommunity - $windowH * startTrans && wScroll < $posStory - $windowH * startTrans) {
+        } else if ($wScroll >= $posCommunity - $windowH * startTrans && $wScroll < $posStory - $windowH * startTrans) {
             $sectionIndicator.html("Agent.e.s de changement dans la communauté");
-        } else if ($wScroll >= $posStory - $windowH * startTrans && wScroll < $posDigital - $windowH * startTrans) {
+        } else if ($wScroll >= $posStory - $windowH * startTrans && $wScroll < $posDigital - $windowH * startTrans) {
             $sectionIndicator.html("Témoignages");
-        } else if ($wScroll >= $posDigital - $windowH * startTrans && wScroll < $posOriginals - $windowH * startTrans) {
+        } else if ($wScroll >= $posDigital - $windowH * startTrans && $wScroll < $posOriginals - $windowH * startTrans) {
             $sectionIndicator.html("Communauté numérique");
-        } else if ($wScroll >= $posOriginals - $windowH * startTrans && wScroll < $posDemystified - $windowH * startTrans) {
+        } else if ($wScroll >= $posOriginals - $windowH * startTrans && $wScroll < $posDemystified - $windowH * startTrans) {
             $sectionIndicator.html("Jack Originals");
-        } else if ($wScroll >= $posDemystified - $windowH * startTrans && wScroll < $posAnthem - $windowH * startTrans) {
+        } else if ($wScroll >= $posDemystified - $windowH * startTrans && $wScroll < $posAnthem - $windowH * startTrans) {
             $sectionIndicator.html("Démystifié");
-        } else if ($wScroll >= $posAnthem - $windowH * startTrans && wScroll < $posFinance - $windowH * startTrans) {
+        } else if ($wScroll >= $posAnthem - $windowH * startTrans && $wScroll < $posFinance - $windowH * startTrans) {
             $sectionIndicator.html("Prix Anthem");
-        } else if ($wScroll >= $posFinance - $windowH * startTrans && wScroll < $posGrow - $windowH * startTrans) {
+        } else if ($wScroll >= $posFinance - $windowH * startTrans && $wScroll < $posGrow - $windowH * startTrans) {
             $sectionIndicator.html("États financiers vérifiés");
-        } else if ($wScroll >= $posGrow - $windowH * startTrans && wScroll < $posFund - $windowH * startTrans) {
+        } else if ($wScroll >= $posGrow - $windowH * startTrans && $wScroll < $posFund - $windowH * startTrans) {
             $sectionIndicator.html("Grandir avec nous");
-        } else if ($wScroll >= $posFund - $windowH * startTrans && wScroll < $posFoot - $windowH * startTrans) {
+        } else if ($wScroll >= $posFund - $windowH * startTrans && $wScroll < $posFoot - $windowH * startTrans) {
             $sectionIndicator.html("Nos bailleurs de fonds");
-        } else if ($wScroll >= $posFoot- $windowH * startTrans && wScroll < $lengthFoot - $windowH * startTrans) {
+        } else if ($wScroll >= $posFoot- $windowH * startTrans && $wScroll < $lengthFoot - $windowH * startTrans) {
             $sectionIndicator.html(" ");    
         } else {
             $sectionIndicator.html(" ");
@@ -135,57 +135,57 @@ function windowScroll() {
     } else { //english
         if ($wScroll > 0 && $wScroll < $posHead) {
             $sectionIndicator.html(" ");
-        } else if ($wScroll >= $posHead - $windowH * startTrans && wScroll < $posLand - $windowH * startTrans) {
+        } else if ($wScroll >= $posHead - $windowH * startTrans && $wScroll < $posLand - $windowH * startTrans) {
             $sectionIndicator.html(" ");
-        } else if ($wScroll >= $posLand - $windowH * startTrans && wScroll < $posLetter - $windowH * startTrans) {
+        } else if ($wScroll >= $posLand - $windowH * startTrans && $wScroll < $posLetter - $windowH * startTrans) {
             $sectionIndicator.html("Land Acknowledgement");
-        } else if ($wScroll >= $posLetter - $windowH * startTrans && wScroll < $posRep - $windowH * startTrans) {
+        } else if ($wScroll >= $posLetter - $windowH * startTrans && $wScroll < $posRep - $windowH * startTrans) {
             $sectionIndicator.html("Executive Letters");
-        } else if ($wScroll >= $posRep - $windowH * startTrans && wScroll < $posAdvisors - $windowH * startTrans) {
+        } else if ($wScroll >= $posRep - $windowH * startTrans && $wScroll < $posAdvisors - $windowH * startTrans) {
             $sectionIndicator.html("Network Representatives");
-        } else if ($wScroll >= $posAdvisors - $windowH * startTrans && wScroll < $posEqual - $windowH * startTrans) {
+        } else if ($wScroll >= $posAdvisors - $windowH * startTrans && $wScroll < $posEqual - $windowH * startTrans) {
             $sectionIndicator.html("Network Advisors");
-        } else if ($wScroll >= $posEqual - $windowH * startTrans && wScroll < $posPrograms - $windowH * startTrans) {
+        } else if ($wScroll >= $posEqual - $windowH * startTrans && $wScroll < $posPrograms - $windowH * startTrans) {
             $sectionIndicator.html("The Path to Equal Opportunities");
-        } else if ($wScroll >= $posPrograms - $windowH * startTrans && wScroll < $posTalks - $windowH * startTrans) {
+        } else if ($wScroll >= $posPrograms - $windowH * startTrans && $wScroll < $posTalks - $windowH * startTrans) {
             $sectionIndicator.html("Programs");
-        } else if ($wScroll >= $posTalks - $windowH * startTrans && wScroll < $posChapters - $windowH * startTrans) {
+        } else if ($wScroll >= $posTalks - $windowH * startTrans && $wScroll < $posChapters - $windowH * startTrans) {
             $sectionIndicator.html("Jack Talks");
-        } else if ($wScroll >= $posChapters - $windowH * startTrans && wScroll < $posSummits - $windowH * startTrans) {
+        } else if ($wScroll >= $posChapters - $windowH * startTrans && $wScroll < $posSummits - $windowH * startTrans) {
             $sectionIndicator.html("Jack Chapters");
-        } else if ($wScroll >= $posSummits - $windowH * startTrans && wScroll < $posBethere - $windowH * startTrans) {
+        } else if ($wScroll >= $posSummits - $windowH * startTrans && $wScroll < $posBethere - $windowH * startTrans) {
             $sectionIndicator.html("Jack Summits");
-        } else if ($wScroll >= $posBethere - $windowH * startTrans && wScroll < $posYVR - $windowH * startTrans) {
+        } else if ($wScroll >= $posBethere - $windowH * startTrans && $wScroll < $posYVR - $windowH * startTrans) {
             $sectionIndicator.html("Be There");
-        } else if ($wScroll >= $posYVR - $windowH * startTrans && wScroll < $posDev - $windowH * startTrans) {
+        } else if ($wScroll >= $posYVR - $windowH * startTrans && $wScroll < $posDev - $windowH * startTrans) {
             $sectionIndicator.html("Youth Voice Report");
-        } else if ($wScroll >= $posDev - $windowH * startTrans && wScroll < $posBrainfreeze - $windowH * startTrans) {
+        } else if ($wScroll >= $posDev - $windowH * startTrans && $wScroll < $posBrainfreeze - $windowH * startTrans) {
             $sectionIndicator.html("Developement");
-        } else if ($wScroll >= $posBrainfreeze - $windowH * startTrans && wScroll < $posRide - $windowH * startTrans) {
+        } else if ($wScroll >= $posBrainfreeze - $windowH * startTrans && $wScroll < $posRide - $windowH * startTrans) {
             $sectionIndicator.html("Brainfreeze");
-        } else if ($wScroll >= $posRide - $windowH * startTrans && wScroll < $posInstitutional - $windowH * startTrans) {
+        } else if ($wScroll >= $posRide - $windowH * startTrans && $wScroll < $posInstitutional - $windowH * startTrans) {
             $sectionIndicator.html("Jack Ride");
-        } else if ($wScroll >= $posInstitutional - $windowH * startTrans && wScroll < $posCommunity - $windowH * startTrans) {
+        } else if ($wScroll >= $posInstitutional - $windowH * startTrans && $wScroll < $posCommunity - $windowH * startTrans) {
             $sectionIndicator.html("Institutional Funders");
-        } else if ($wScroll >= $posCommunity - $windowH * startTrans && wScroll < $posStory - $windowH * startTrans) {
+        } else if ($wScroll >= $posCommunity - $windowH * startTrans && $wScroll < $posStory - $windowH * startTrans) {
             $sectionIndicator.html("Community Changemakers");
-        } else if ($wScroll >= $posStory - $windowH * startTrans && wScroll < $posDigital - $windowH * startTrans) {
+        } else if ($wScroll >= $posStory - $windowH * startTrans && $wScroll < $posDigital - $windowH * startTrans) {
             $sectionIndicator.html("Storytelling");
-        } else if ($wScroll >= $posDigital - $windowH * startTrans && wScroll < $posOriginals - $windowH * startTrans) {
+        } else if ($wScroll >= $posDigital - $windowH * startTrans && $wScroll < $posOriginals - $windowH * startTrans) {
             $sectionIndicator.html("Digital Community");
-        } else if ($wScroll >= $posOriginals - $windowH * startTrans && wScroll < $posDemystified - $windowH * startTrans) {
+        } else if ($wScroll >= $posOriginals - $windowH * startTrans && $wScroll < $posDemystified - $windowH * startTrans) {
             $sectionIndicator.html("Jack Originals");
-        } else if ($wScroll >= $posDemystified - $windowH * startTrans && wScroll < $posAnthem - $windowH * startTrans) {
+        } else if ($wScroll >= $posDemystified - $windowH * startTrans && $wScroll < $posAnthem - $windowH * startTrans) {
             $sectionIndicator.html("Demystified");
-        } else if ($wScroll >= $posAnthem - $windowH * startTrans && wScroll < $posFinance - $windowH * startTrans) {
+        } else if ($wScroll >= $posAnthem - $windowH * startTrans && $wScroll < $posFinance - $windowH * startTrans) {
             $sectionIndicator.html("Anthem Awards");
-        } else if ($wScroll >= $posFinance - $windowH * startTrans && wScroll < $posGrow - $windowH * startTrans) {
+        } else if ($wScroll >= $posFinance - $windowH * startTrans && $wScroll < $posGrow - $windowH * startTrans) {
             $sectionIndicator.html("Audited Financial Statements");
-        } else if ($wScroll >= $posGrow - $windowH * startTrans && wScroll < $posFund - $windowH * startTrans) {
+        } else if ($wScroll >= $posGrow - $windowH * startTrans && $wScroll < $posFund - $windowH * startTrans) {
             $sectionIndicator.html("Grow With Us");
-        } else if ($wScroll >= $posFund - $windowH * startTrans && wScroll < $posFoot - $windowH * startTrans) {
+        } else if ($wScroll >= $posFund - $windowH * startTrans && $wScroll < $posFoot - $windowH * startTrans) {
             $sectionIndicator.html("Our Funders");
-        } else if ($wScroll >= $posFoot- $windowH * startTrans && wScroll < $lengthFoot - $windowH * startTrans) {
+        } else if ($wScroll >= $posFoot- $windowH * startTrans && $wScroll < $lengthFoot - $windowH * startTrans) {
             $sectionIndicator.html(" ");    
         } else {
             $sectionIndicator.html(" ");
