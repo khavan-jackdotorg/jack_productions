@@ -237,7 +237,7 @@ function dropDown() {
 
             setTimeout( function() {
                 $main.parents('.annual-tile').siblings('.annual-drop-content').addClass("drop-reveal");
-            }, 800);
+            }, 600);
             
             console.log('open-dropdown');
         }
@@ -255,17 +255,6 @@ function dropDown() {
             $droplink.children().text("Learn More");
         }
         console.log('close-dropdown');
-    });
-}
-function smoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
     });
 }
 function animateType() {
@@ -542,6 +531,5 @@ function mapClick() {
     dropDown();
     animateType();
     navLink();
-    // smoothScroll();
     $(window).scroll($.throttle(30, windowScroll));
 }(jQuery));
