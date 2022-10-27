@@ -212,7 +212,7 @@ function dropDown() {
             $main.parents('.annual-tile').removeClass("drop-reveal");
             $main.parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");
             $main.parent().removeClass("drop-reveal");
-            $main.parent().siblings('.margin-right.drop-hidden').removeClass('drop-reveal');
+            $main.siblings('.margin-right.drop-hidden').removeClass('drop-reveal');
             if ($main.parents('.annual-drop-container').hasClass("french")) { //french
                 $main.children().text("En savoir plus");
             } else {
@@ -224,7 +224,7 @@ function dropDown() {
             event.preventDefault();
             $droplink.removeAttr("href");
             $dropContent.removeClass("drop-reveal");
-            $main.parent().siblings('.margin-right.drop-hidden').addClass('drop-reveal');
+            $main.siblings('.margin-right.drop-hidden').addClass('drop-reveal');
             $main.parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
 
             $main.parent().addClass("drop-reveal");
@@ -246,7 +246,7 @@ function dropDown() {
         let $main = $(this);
         $dropContent.removeClass("drop-reveal");
         $main.parents('.tile-sec').children('.annual-drop-content').removeClass("drop-reveal");
-        $main.parent().siblings('.margin-right.drop-hidden').removeClass('drop-reveal');
+        $main.siblings('.margin-right.drop-hidden').removeClass('drop-reveal');
         $main.parents('.annual-tile').siblings('.annual-drop-content').removeClass("drop-reveal");
         $main.parents('.annual-drop-container').children('.annual-tile').removeClass("drop-reveal");
         if ($main.parents('.annual-drop-container').hasClass("french")) { //french
