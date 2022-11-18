@@ -33,7 +33,6 @@ function windowScroll() {
     let $scrollstory = $("#story");
         let $scrollDigital = $("#digital");
         let $scrollOriginals = $("#originals");
-        let $scrollDemy = $("#demystified");
         let $scrollAnthem = $("#anthem");
     let $scrollFinance = $("#finance");
     let $scrollGrow = $("#grow");
@@ -62,7 +61,6 @@ function windowScroll() {
     let $posStory = $scrollstory.offset().top;
         let $posDigital = $scrollDigital.offset().top;
         let $posOriginals = $scrollOriginals.offset().top;
-        let $posDemystified = $scrollDemy.offset().top;
         let $posAnthem = $scrollAnthem .offset().top;
     let $posFinance = $scrollFinance.offset().top;
     let $posGrow = $scrollGrow.offset().top;
@@ -115,10 +113,8 @@ function windowScroll() {
             $sectionIndicator.html("Témoignages");
         } else if ($wScroll >= $posDigital - $windowH * startTrans && $wScroll < $posOriginals - $windowH * startTrans) {
             $sectionIndicator.html("Communauté numérique");
-        } else if ($wScroll >= $posOriginals - $windowH * startTrans && $wScroll < $posDemystified - $windowH * startTrans) {
+        } else if ($wScroll >= $posOriginals - $windowH * startTrans && $wScroll < $posAnthem - $windowH * startTrans) {
             $sectionIndicator.html("Jack Originals");
-        } else if ($wScroll >= $posDemystified - $windowH * startTrans && $wScroll < $posAnthem - $windowH * startTrans) {
-            $sectionIndicator.html("Démystifié");
         } else if ($wScroll >= $posAnthem - $windowH * startTrans && $wScroll < $posFinance - $windowH * startTrans) {
             $sectionIndicator.html("Prix Anthem");
         } else if ($wScroll >= $posFinance - $windowH * startTrans && $wScroll < $posGrow - $windowH * startTrans) {
@@ -173,10 +169,8 @@ function windowScroll() {
             $sectionIndicator.html("Storytelling");
         } else if ($wScroll >= $posDigital - $windowH * startTrans && $wScroll < $posOriginals - $windowH * startTrans) {
             $sectionIndicator.html("Digital Community");
-        } else if ($wScroll >= $posOriginals - $windowH * startTrans && $wScroll < $posDemystified - $windowH * startTrans) {
+        } else if ($wScroll >= $posOriginals - $windowH * startTrans && $wScroll < $posAnthem - $windowH * startTrans ) {
             $sectionIndicator.html("Jack Originals");
-        } else if ($wScroll >= $posDemystified - $windowH * startTrans && $wScroll < $posAnthem - $windowH * startTrans) {
-            $sectionIndicator.html("Demystified");
         } else if ($wScroll >= $posAnthem - $windowH * startTrans && $wScroll < $posFinance - $windowH * startTrans) {
             $sectionIndicator.html("Anthem Awards");
         } else if ($wScroll >= $posFinance - $windowH * startTrans && $wScroll < $posGrow - $windowH * startTrans) {
