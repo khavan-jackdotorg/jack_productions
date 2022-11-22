@@ -88,7 +88,7 @@ function windowScroll() {
         } else if ($wScroll >= $posEqual - $windowH * startTrans && $wScroll < $posPrograms - $windowH * startTrans) {
             $sectionIndicator.html("La voie vers l’égalité des résultats");
         } else if ($wScroll >= $posPrograms - $windowH * startTrans && $wScroll < $posTalks - $windowH * startTrans) {
-            $sectionIndicator.html("Programmes");
+            $sectionIndicator.html("Département des programmes");
         } else if ($wScroll >= $posTalks - $windowH * startTrans && $wScroll < $posChapters - $windowH * startTrans) {
             $sectionIndicator.html("Présentations Jack");
         } else if ($wScroll >= $posChapters - $windowH * startTrans && $wScroll < $posSummits - $windowH * startTrans) {
@@ -100,7 +100,7 @@ function windowScroll() {
         } else if ($wScroll >= $posYVR - $windowH * startTrans && $wScroll < $posDev - $windowH * startTrans) {
             $sectionIndicator.html("Rapport La voix des jeunes");
         } else if ($wScroll >= $posDev - $windowH * startTrans && $wScroll < $posBrainfreeze - $windowH * startTrans) {
-            $sectionIndicator.html("Développement");
+            $sectionIndicator.html("Département du développement");
         } else if ($wScroll >= $posBrainfreeze - $windowH * startTrans && $wScroll < $posRide - $windowH * startTrans) {
             $sectionIndicator.html("Frissons");
         } else if ($wScroll >= $posRide - $windowH * startTrans && $wScroll < $posInstitutional - $windowH * startTrans) {
@@ -144,7 +144,7 @@ function windowScroll() {
         } else if ($wScroll >= $posEqual - $windowH * startTrans && $wScroll < $posPrograms - $windowH * startTrans) {
             $sectionIndicator.html("The Path to Equal Opportunities");
         } else if ($wScroll >= $posPrograms - $windowH * startTrans && $wScroll < $posTalks - $windowH * startTrans) {
-            $sectionIndicator.html("Programs");
+            $sectionIndicator.html("Programs Department");
         } else if ($wScroll >= $posTalks - $windowH * startTrans && $wScroll < $posChapters - $windowH * startTrans) {
             $sectionIndicator.html("Jack Talks");
         } else if ($wScroll >= $posChapters - $windowH * startTrans && $wScroll < $posSummits - $windowH * startTrans) {
@@ -156,7 +156,7 @@ function windowScroll() {
         } else if ($wScroll >= $posYVR - $windowH * startTrans && $wScroll < $posDev - $windowH * startTrans) {
             $sectionIndicator.html("Youth Voice Report");
         } else if ($wScroll >= $posDev - $windowH * startTrans && $wScroll < $posBrainfreeze - $windowH * startTrans) {
-            $sectionIndicator.html("Developement");
+            $sectionIndicator.html("Development Department");
         } else if ($wScroll >= $posBrainfreeze - $windowH * startTrans && $wScroll < $posRide - $windowH * startTrans) {
             $sectionIndicator.html("Brainfreeze");
         } else if ($wScroll >= $posRide - $windowH * startTrans && $wScroll < $posInstitutional - $windowH * startTrans) {
